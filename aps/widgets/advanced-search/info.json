@@ -1,5 +1,0 @@
-{
-    "title": "Advanced Search",
-    "tag": ["ready"],
-    "dependencies": ["component/accordion", "widget/accrodion-widget"]
-}

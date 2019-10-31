@@ -1,6 +1,0 @@
-{
-    "title": "Favorites",
-    "tag": ["ready"],
-    "description": "List of publication/journal bookmarks",
-    "dependencies": ["component/tables"]
-}

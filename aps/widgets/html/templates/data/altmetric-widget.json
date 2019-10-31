@@ -1,9 +1,0 @@
-{
-    "thisWidget": {
-        "id": "altmetricWidget",
-        "properties": {
-            "render": "html",
-            "html": "<div class=\"altmetric-embed\" data-badge-type=\"donut\" data-doi=\"10.1094/PHYTO-12-17-0418-A\" data-hide-no-mentions=\"true\" data-reactid=\".r[2d8s7]\" data-uuid=\"aa767460-b5fe-d507-52f1-4a6a218987d7\" data-badge-details=\"right\" data-condensed=\"true\"><div style=\"overflow:hidden;\"><div class=\"altmetric-condensed-legend\" style=\"display: inline-block; float:left; margin-right: 20px;\"><a target=\"_self\" href=\"https://www.altmetric.com/details.php?domain=www.altmetric.com&amp;citation_id=49185435\" style=\"display:inline-block;\"><img alt=\"Article has an altmetric score of 1\" src=\"https://badges.altmetric.com/?size=128&amp;score=1&amp;types=tttttttt\" width=\"64px\" height=\"64px\" style=\"border:0; margin:0; max-width: none;\"></a></div><div id=\"_altmetric_popover_el\" class=\"altmetric-embed right\" style=\"margin:0; padding:0; display:inline-block; float:left; position:relative;\"><div class=\"altmetric_container\" id=\"_altmetric_container\"><div class=\"altmetric-embed altmetric-popover-inner right\" id=\"_altmetric_popover_inner\"><div style=\"padding:0; margin: 0;\" class=\"altmetric-embed altmetric-popover-content\"><div style=\"padding-left: 10px; line-height:18px; border-left: 16px solid #74CFED;\"><a class=\"link-to-altmetric-details-tab\" target=\"_self\" href=\"https://www.altmetric.com/details.php?domain=www.altmetric.com&amp;citation_id=49185435&amp;tab=twitter\">Twitter (1)</a></div><div class=\"altmetric-embed readers\" style=\"margin-top: 10px;\"><div class=\"altmetric-embed tip_mendeley\" style=\"padding-left: 10px; line-height:18px; border-left: 16px solid #A60000;\">Mendeley (2)</div></div></div></div></div></div></div></div>"
-        }
-    }
-}

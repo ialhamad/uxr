@@ -1,6 +1,0 @@
-{
-    "title": "Tabs-widget",
-    "template": "doc",
-    "tag": ["ready"],
-    "dependencies": ["component/tabs"]
-}

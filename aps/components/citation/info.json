@@ -1,7 +1,0 @@
-{
-    "title": "Citation",
-    "template": "doc",
-    "tag": ["components"],
-    "description": "Displays item title, issue/volume number and list of authors",
-    "dependencies": ["component/loa", "component/parent-item"]
-}

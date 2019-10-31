@@ -1,6 +1,0 @@
-{
-    "title": "Journal meta",
-    "template": "doc",
-    "tag": ["htmlStructure"],
-    "description": "Displays journal type, title, issn, frequency, quote and author"
-}

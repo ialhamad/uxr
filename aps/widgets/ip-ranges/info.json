@@ -1,6 +1,0 @@
-{
-    "title": "IP Ranges",
-    "tag": ["ready"],
-    "description": "IP ranges access configuration",
-    "dependencies": ["component/tables"]
-}

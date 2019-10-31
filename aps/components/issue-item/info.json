@@ -1,7 +1,0 @@
-{
-    "title": "Issue item",
-    "template": "doc",
-    "tag": ["components"],
-    "description": "Displays item type, title, list of authors, publication date and download links",
-    "dependencies": ["component/loa", "component/parent-item"]
-}

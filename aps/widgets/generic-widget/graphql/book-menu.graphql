@@ -1,7 +1,0 @@
-query {
-  content {
-    ...on Book {
-      addFavorite: link(service: addFavoritePublication)
-    }
-  }
-}

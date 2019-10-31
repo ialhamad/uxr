@@ -1,7 +1,0 @@
-{
-    "title": "Table of content",
-    "template": "doc",
-    "tag": ["ready"],
-    "description": "TOC wrapper to display pre-rendered HTML"
-}
-

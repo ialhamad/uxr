@@ -1,8 +1,0 @@
-extends  ../generic-widget/journal-menu-tmpl
-
-block loiDropBlock
-    | !{pb.render("list-of-issues", "list-of-issues/demo/list-of-issues-demo", "loi-data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
-
-block customMenuItemsDropBlock
-    a(href="#" title="Special Issues") Special Issues
-    a(href="#" title="Pre-1997") Pre-1997
