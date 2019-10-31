@@ -1,0 +1,76 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+
+
+block content
+
+    h1 Journal Home page
+    .source_info
+
+
+
+    section.source_section
+        h2 Journal Home page
+        markdown
+
+        h3 Journal Home page (MPMI)
+        .source_example
+            | !{pb.render("header", "header/header-mpmi", "header-journal-mpmi.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-mpmi"]}}}})}
+            main.content.journal-home.series-mpmi
+                .meta-wrapper
+
+                .container
+                    | !{pb.render("html", "journal-meta.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                    | !{pb.render("generic-widget", "demo/journal-menu-demo", "journal-menu-phyto.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                    | !{pb.render("breadcrumbs", "mpmi-home.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                    .row.separator
+                        .col-lg-9.col-md-8.gutterless
+                            | !{pb.render("multi-search", "multi-search/multi-search-home", "most-x-featured-1-result.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["grid-sm-2"], "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "Just Published"}}}})}
+                            .row.separator--extra
+                                //mpu ad
+                                .mpu
+                            | !{pb.render("publication-list", "publication-list/publication-list-home", "most-x-featured.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["grid-sm-2"], "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "Featured Articles"}}}})}
+                            .row.separator--extra
+                                //mpu ad
+                                .mpu
+
+                        .col-lg-3.col-md-4
+                            // tower ad
+                            .towerad.side-tower.visible-xlg
+                            | !{pb.render("multi-search", "multi-search/multi-search-home", "most-cited-3.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["column-tint"], "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "Most Cited"}}}})}
+                            | !{pb.render("multi-search", "multi-search/multi-search-home", "most-cited-3.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["column-tint"], "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "Most Read"}}}})}
+                            | !{pb.render('tweets', {"body": [{"screenName": "plantdisease", "height": "510"}]}, {"shared": {"model": {"config": {"wrapper": "true", "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "APS SOCIETY TWITTER"}}}})}
+
+            | !{pb.render("footer", "footer/footer-mpmi", "footer-mpmi.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-mpmi"]}}}})}
+
+        h3 Journal Home page (Phyto)
+        .source_example
+            | !{pb.render("header", "header-journal.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-phyto"]}}}})}
+            main.content.journal-home.series-phyto
+                .meta-wrapper
+
+                .container
+                    | !{pb.render("html", "journal-meta.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                    | !{pb.render("list-of-issues", "list-of-issues/demo/list-of-issues-demo", "loi-data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                    | !{pb.render("breadcrumbs", "phyto-home.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                    .row.separator
+                        .col-md-8.col-sm-7.gutterless
+                            | !{pb.render("multi-search", "multi-search/multi-search-home", "most-x-featured.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["grid-sm-2"], "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "Just Published"}}}})}
+
+                            .row.separator--extra
+                                //mpu ad
+                                .mpu
+                            | !{pb.render("publication-list", "publication-list/publication-list-home", "most-x-featured.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["grid-sm-2"], "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "Featured Articles"}}}})}
+                            .row.separator--extra
+                                //mpu ad
+                                .mpu
+
+                        .col-md-4.col-sm-5
+                            // tower ad
+                            .towerad.side-tower.visible-xlg
+                            | !{pb.render("multi-search", "multi-search/multi-search-home", "most-cited-3.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["column-tint"], "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "Most Cited"}}}})}
+                            | !{pb.render("multi-search", "multi-search/multi-search-home", "most-cited-3.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["column-tint"], "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "Most Read"}}}})}
+                            | !{pb.render('tweets', {"body": [{"screenName": "TwitterDev", "height": "510"}]})}
+
+            | !{pb.render("footer", "footer.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-phyto"]}}}})}
+    | #{''}

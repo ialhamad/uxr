@@ -1,0 +1,62 @@
+// create grid classes for printing
+// .col-print-1 - .col-print-12
+@for $i from 1 through 12 {
+    .col-print-#{$i} {
+        width: #{percentage(round($i*8.33)/100)};
+        float: left;
+    }
+}
+
+.hidden-print {
+    display: none!important;
+}
+
+html {
+    right: 0;
+    left: 0;
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    overflow: auto;
+}
+
+.content {
+    min-height: 0;
+    padding-top: 0;
+}
+
+//WIDTH: 100%
+.header--first-row.container,
+.container {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+// DISPLAY: NONE
+.main-nav,
+.header__quick-menu,
+.pb-ad,
+.coolBar,
+.loi__banner,
+.contact__nav,
+.sitemap {
+    display:none;
+}
+
+.header.fixed {
+    position: static!important;
+}
+
+footer a img {
+    margin: 0;
+}
+
+.article-section__inline-figure figure {
+    width: 100%;
+    float: none;
+}
+
+.accordion__content {
+    display: block!important;
+}

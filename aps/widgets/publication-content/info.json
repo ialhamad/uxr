@@ -1,0 +1,6 @@
+{
+    "title": "Publication content",
+    "template": "doc",
+    "tag": ["ready"],
+    "dependencies": ["component/accordion", "component/coolbar", "component/tabs", "component/citation", "component/loa", "component/parent-item"]
+}

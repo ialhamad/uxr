@@ -1,0 +1,31 @@
+{
+    "title": "Top Content",
+    "tag": ["ready"],
+    "description": "List of teaser components",
+    "dependencies": ["component/teaser", "component/parent-item", "component/date", "component/lazy-load"],
+    "templates": {
+        "default": "top-content",
+        "alternative": {
+            "teaser": {
+                "name": "Teaser",
+                "path": "teaser",
+                "deprecated": false
+            },
+            "teaser-home": {
+                "name": "Teaser on Homepage",
+                "path": "teaser-home",
+                "deprecated": false
+            },
+            "teaser-featured": {
+                "name": "Featured Teaser",
+                "path": "teaser-featured",
+                "deprecated": false
+            },
+            "teaser-parentItem": {
+                "name": "Teaser with Parent Item",
+                "path": "teaser-parentItem",
+                "deprecated": false
+            }
+        }
+    }
+}

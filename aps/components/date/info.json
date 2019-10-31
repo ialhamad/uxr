@@ -1,0 +1,6 @@
+{
+    "title": "Date",
+    "template": "doc",
+    "tag": ["components"],
+    "description": "Date rendering helper"
+}

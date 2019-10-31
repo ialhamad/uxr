@@ -1,0 +1,60 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    h1 Exam Disclosure, Show Exam, and Exam Denial Pages
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-template-include-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        p The following page layout is used for the Exam Disclosure, Show Exam, and Exam Denial pages.
+
+    section.source_section
+        h2 Exam Disclosure
+        p The Exam Disclosure widget is used twice in the default design. For the first usage, configure the widget to display the title only. For the second usage, configure the widget to display the related article only.
+        p The Exam Agreement widget is used to render the 'Take this course' buttons along with the exam disclosure.
+        .source_example
+            | !{pb.render('header', 'header/demo/header')}
+            main.content
+                .container
+                    .row
+                        div.col-xs-12.exam-header
+                            | !{pb.render('exams-disclosure', 'data-title-only.json')}
+                                
+                .container
+                    .row
+                        .col-sm-8                            
+                            | !{pb.render('exams-disclosure', 'data-related-only.json')}
+                            | !{pb.render('exam-agreement', 'data.json')}
+
+                        .col-sm-4
+                            | !{pb.render('my-exams', 'data.json', {"shared": {"model": {"config": {"wrapper": "false", "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "My Exams"}}}})}
+                            //- Additional widgets can be added in the right column here.
+
+            | !{pb.render('footer', 'footer/demo/footer')}
+
+    section.source_section
+        h2 Show Exam
+        p Note: The exam content will not render here due to a pb.render bug.
+        .source_example
+            | !{pb.render('header', 'header/demo/header')}
+            main.content
+                .container
+                    .row
+                        div.col-xs-12
+                            | !{pb.render('exams-disclosure', 'data-title-only.json')}
+                                
+                .container
+                    .row
+                        .col-sm-8                            
+                            | !{pb.render('show-exam', 'data-form.json')}
+
+                        .col-sm-4
+                            | !{pb.render('my-exams', 'data.json', {"shared": {"model": {"config": {"wrapper": "false", "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "My Exams"}}}})}
+                            //- Additional widgets can be added in the right column here.
+
+            | !{pb.render('footer', 'footer/demo/footer')}
+
+    | #{''}

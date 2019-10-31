@@ -1,0 +1,131 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-template-include-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/share/templates/share/share-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Navigation template.
+
+        +printJson({
+            "thisWidget": {
+                "id": "share2"
+            },
+            "model": {
+                "config": {
+                    "more": "false"
+                },
+                "data": {
+                    "services": [
+                        {
+                            "name": "facebook",
+                            "code": "facebook",
+                            "icon": "icon-facebook"
+                        },
+                        {
+                            "name": "twitter",
+                            "code": "twitter",
+                            "icon": "icon-twitter"
+                        },
+                        {
+                            "name": "LinkedIn",
+                            "code": "linkedin",
+                            "icon": "icon-linkedin"
+                        },
+                        {
+                            "name": "Google +",
+                            "code": "google_plusone_share",
+                            "icon": "icon-google-plus"
+                        },
+                        {
+                            "name": "Email",
+                            "code": "email",
+                            "icon": "icon-Email"
+                        }
+                    ],
+                    "customJs": "var addthis_share = addthis_share || {}; addthis_share = { passthrough : { twitter: { url: \"http://dx.doi.org/10.1148/radiol.2016160261\", text: \"From @Radiology_RSNA\"}}}"
+                }
+            }
+
+        })
+        markdown
+            p `config` data
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `more`
+                        td `true`, `false`, if true addthis more icon will appear at the end of the social media list
+                    tr
+                        td `profileId`
+                        td Addthis profile id, default value `xa-4faab26f2cff13a7`
+                    tr
+                        td `customHtml`
+                        td if this option set the list of services option will appear
+
+
+            p `data` data
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `services`
+                        td list of services
+                    tr
+                        td `name`
+                        td Service name
+                    tr
+                        td `code`
+                        td Addthis Service Codes,
+                            a(href="https://www.addthis.com/services") AddThis Services API
+                    tr
+                        td `icon`
+                        td icoomoon class name to use as service icon
+                    tr
+                        td `image`
+                        td Url of image to use as service icon
+                    tr
+                        td `customJs`
+                        td custom js
+
+
+
+    | #{''}
+
+    section.source_section
+        h2 Example
+
+
+        h3 Share - Custom Html
+        markdown
+            p the generated html in the template will be
+        code.src-html.source_visible.source_example
+            | <div class="addthis addthis_toolbox addthis_default_style addthis_32x32_style">
+            |     <a class="addthis_button_twitter">Twitter</a>
+            |     <a class="addthis_button_facebook">Facebook</a>
+            |     <a class="addthis_button_linkedin">LinkedIn</a>
+            |     <a class="addthis_button_more">More</a>
+            | </div>
+        .source_example
+            | !{pb.render("share", "share-addthis.json")}
+
+
+        h3 Share -  Custom icons
+        .source_example
+            | !{pb.render("share", "share-custom-icons.json")}
+
+    | #{''}

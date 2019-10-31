@@ -1,0 +1,6 @@
+{
+    "title": "Html",
+    "template": "doc",
+    "tag": ["ready"],
+    "description": "Displays pre-rendered HTML"
+}

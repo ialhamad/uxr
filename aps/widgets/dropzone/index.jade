@@ -1,0 +1,30 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+    section.source_section
+        h2 Dropzone template
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/dropzone/templates/dropzone/dropzone-tmpl.jade')
+        h3 Data
+        p The following data structure must exist to be able to use Dropzone template.
+        +printJson({
+            "model": {
+                "data": {
+                    "name": "TestDropZone"
+                }
+            }
+
+        })
+    | #{''}
+
+    section.source_section
+        h2 Dropzone example
+        p Use the following snippet if you want to place a dropzone in your spec template.
+        +printJsCode('!{pb.renderDropzone(thisWidget, "TestDropZone")}')
+        .source_example
+            | !{pb.renderDropzone(thisWidget, 'TestDropZone')}
+    | #{''}

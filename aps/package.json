@@ -1,0 +1,14 @@
+
+    {
+      "name": "aps",
+      "version": "1.0.0",
+      "description": "aps",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "install": "if [ -f node_modules/ui-automation/npm-hooks/install-uptodate.sh ]; then ./node_modules/ui-automation/npm-hooks/install-uptodate.sh; fi",
+        "build": "webpack"
+      },
+
+      "license": "UNLICENSED"
+    }

@@ -1,0 +1,61 @@
+{
+    "thisWidget": {
+        "id": "6587",
+        "properties": {
+            "numOfHistoryItems": "3",
+            "numOfPublicationTitles": "3",
+            "numOfTopics": "3",
+            "numOfContributors": "3",
+            "displayQuickMenuButton": "false",
+            "quickMenuLabel":"",
+            "quickMenuIcon":"icon-search",
+            "placeHolderText":"Search here",
+            "publicationText":"Journal",
+            "yearText":"Year",
+            "volumeText":"Volume",
+            "issueText":"Issue",
+            "pageText":"Page"
+        }
+    },
+    "data": {
+        "isLoggedIn" :true,
+        "searchTerm": "test",
+        "dropdown": [
+            {
+                "label": "All Content",
+                "dataSearchIn": "default"
+            },
+            {
+                "dataSearchIn": "thisBook",
+                "label": "This Book",
+                "id": "thisBook",
+                "value": "10.2217/9781780841595"
+            },
+            {
+                "label": "Citation",
+                "value": "citation",
+                "dataSearchIn": "citation"
+
+            },
+            {
+                "label": "This Journal",
+                "value": "ajrcmb",
+                "dataSearchIn": "thisJournal",
+                "placeholder": "Search here",
+                "id": "thisJournal"
+            },
+            {
+                "label": "This Journal",
+                "value": "ajrcmb",
+                "dataSearchIn": "alo",
+                "placeholder": "Search here",
+                "id": "alo"
+            }
+        ],
+        "props":{
+            "maxWords": "7",
+            "maxChars": "40"
+        },
+        "selectName": "seriesKey"
+    }
+}

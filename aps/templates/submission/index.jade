@@ -1,0 +1,65 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    h1 Submission Tool Page
+
+    p.source_info
+        |The Institutional login page template contains the following components: Header, Footer...
+
+    section.source_section
+        h2 Submission page
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("header", "header.json")}
+
+            main.content.content__submission
+                .container
+                    h1 Start Your Submission
+                    .draft-form
+                        h4.border-bottom Submission Info
+                        form#draftForm.uploader-form(method="post", enctype="multipart/form-data")
+                            input(type="hidden", name="doi", value="doi123")
+                            input(type="hidden", name="index", value="1")
+                            input(type="hidden", name="anti-forgery-token", value="xyz")
+                            input(type="hidden", name="signature", value="sig")
+
+                            .row
+                                .col-md-8.gutterless
+                                    .col-md-12
+                                        .note.note--yellow.border All question must be answered, unless marked (optional)
+                                        | !{pb.render("pd-basic-metadata", "pd-basic-metadata/pd-basic-metadata-update", "basic-metadata.json")}
+                                        | !{pb.render("pd-editorial-category", "pd-editorial-category/pd-editorial-category-update", "category.json")}
+                                        | !{pb.render("pd-search-categories", "pd-search-categories/pd-search-categories-update", "categories.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-authors", "pd-authors/pd-authors-update", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-grants", "pd-grants/pd-grants-update", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-pdf", "pd-pdf/pd-pdf-update", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-supplemental-files", "pd-supplemental-files/pd-supplemental-files-update", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-supplemental-links", "pd-supplemental-links/pd-supplemental-links-update", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    hr.separator.clearfix
+                                    .actions.pull-right
+                                        a(href="#").btn--cancel Cancel
+                                        a(href="#").btn--submit.button Save as Draft
+                                        a(href="#").btn--submit.button Review and Submit
+
+            | !{pb.render("footer", "footer.json")}
+    | #{''}

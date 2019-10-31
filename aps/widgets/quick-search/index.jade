@@ -1,0 +1,90 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/quick-search/templates/quick-search/quick-search-tmpl.jade')
+        p This template includes <a href="/specs/ux3/components/refine-search/">Refine search</a> template in <code>refineSearch</code> block.
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Quick search form template.
+
+        +printJson({
+            "data": {
+                "options": [
+                    {
+                        "text": "All content"
+                    },
+                    {
+                        "text": "This Journal"
+                    }
+                ],
+                "historyLink": {
+                    "itemUrl": "#"
+                },
+                "savedLink": {
+                    "itemUrl": "#"
+                },
+                "input": {
+                    "placeholder": "Text input"
+                },
+                "button": {
+                    "icon": "icon-search",
+                    "text": ""
+                },
+                "refine": {
+                    "open": "Refine search",
+                    "close": "Close Refine search"
+                },
+                "months": [
+                    {
+                        "text": "Month"
+                    },
+                    {
+                        "text": "Jan"
+                    }
+                ],
+                "years": [
+                    {
+                        "text": "Year"
+                    },
+                    {
+                        "text": "2016"
+                    }
+                ]
+            }
+        })
+        markdown
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `options`
+                        td
+
+    | #{''}
+
+    section.source_section
+        h2 Example
+        p The following example demonstrates Quick search form.
+
+        h3 Quick search
+        .source_example
+            .container.wrapper
+                | !{pb.render("quick-search", "quick-search.json")}
+
+        h3 Quick search Menu
+        .source_example
+            .container.wrapper
+                | !{pb.render("quick-search", "quick-search-menu.json")}
+
+    | #{''}

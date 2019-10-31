@@ -1,0 +1,71 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/figure/templates/figure/figure-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Figure template.
+        +printJson({
+            "config": {
+                "meta": {
+                    "figure": ["custom-figure"]
+                }
+            },
+            "list": [
+                {
+                    "src": "/specs/products/aps/releasedAssets/images/components/figure/facets-2015-0010-f1-standard.jpg",
+                    "figureId": "fig-1",
+                    "caption": "<strong>Fig.1</strong> Map of the Stillaguamish River Basin. Map produced for this article by Oleksandr Stevankiv at the National Marine Fisheries Service Northwest Fisheries Science Center."
+                },
+                {
+                    "src": "/specs/products/aps/releasedAssets/images/components/figure/facets-2015-0010-f2-standard.png",
+                    "figureId": "fig-2",
+                    "caption": "<strong>Fig.2</strong> Schematic of life-cycle model stages. Parr are age 1; smolts are age 2. Numbers indicate age of post-smolt stages. Immature (Juvenile) stages are labeled with “J” and colored light yellow. Adults maturing for the first time (maiden spawners) are labeled “M” followed by either “S” (light blue) to indicate spawners or “H” (orange) to indicate in-river or terminal area harvest. Mature adults returning for a repeat spawning are labeled “R” followed by either “S” (light green) or “H” (orange) as for maiden spawners."
+                },
+                {
+                    "src": "/specs/products/aps/releasedAssets/images/components/figure/facets-2015-0010-f3-standard.png",
+                    "figureId": "fig-3",
+                    "caption": "<strong>Fig.3</strong> Time trajectory of the modeled late 19th century Stillaguamish adult female steelhead population starting at the unfished equilibrium in year 0, with harvest starting in year 11 and building to a constant maximum harvest rate of 0.545 in year 16. Black line: total returning adult steelhead. Dark red line: total maiden spawners. Green line: total repeat spawners. Blue line: total adults harvested. The straight-line trajectories for years 1–10 show the unfished equilibrium abundance levels."
+                }
+            ]
+        })
+
+        markdown
+            p You can add custom classes to container elements by passing an array of additional class names in `"addClassNames": ["...", "..."]` field for these elements. See the table below for the list of container elements and their default class names.
+
+            table
+                thead
+                    tr
+                        th Container element
+                        th Default class name
+                        th Description
+                tbody
+                    tr
+                        td `figure`
+                        td figure
+                        td Figure container element
+                    tr
+                        td `img`
+                        td figure\__image
+                        td Figure image element
+                    tr
+                        td `figcaption`
+                        td figure\__caption
+                        td Figure caption element
+
+    | #{''}
+
+    section.source_section
+        h2 Examples
+        .source_example.source_visible
+            | !{pb.render('figure', 'figure.json')}
+    | #{''}

@@ -1,0 +1,18 @@
+.article {
+	&__access {
+		.citation__access__type {
+			
+			text-transform: uppercase;
+			
+			&.open-access {
+				color: $badge-oa-color;
+			}
+			&.no-access {
+				color: $badge-na-color;
+			}
+			&.free-access {
+				color: $badge-fa-bg-color;
+			}
+		}
+	}
+}

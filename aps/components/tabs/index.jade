@@ -1,0 +1,542 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/tabs/templates/tabs/tabs-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Tabs template.
+
+        +printJson({
+            "config": {
+                "type": "flex",
+                "id": "re4",
+                "effect": "accordion",
+                "vPort":"xsmall"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "<div id=\"idid2\" class=\"scrollable-div\"> without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap </div>tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstratab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstratab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstratab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap <div id=\"idid\" class=\"scrollable-div\"> without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap </div>"
+                    },
+                    {
+                        "text": "Access",
+                        "icon": ["icon-permissions"],
+                        "itemUrl": "/home"
+                    }
+
+                ]
+            }
+        })
+
+        markdown
+            p configuration
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                        th Default value
+                tbody
+                    tr
+                        td `type`
+                        td Type "style" of tabs, `default`, `vertical`, `flex`
+                        td `default`
+                    tr
+                        td `id`
+                        td Used to be add as a uniqe value to each pane and nav item in tab
+                        td no default value
+                    tr
+                        td `effect`
+                        td Tabs transformation on mobile, `accordion`, `dropdown`, `slide`, `swipe`
+                        td no default value
+                    tr
+                        td `vPort`
+                        td Viewpoint that the effect will start on `xsmall`
+                        td no default value
+
+
+            p Data
+                table
+                    thead
+                        tr
+                            th Property name
+                            th Description
+                    tbody
+                        tr
+                            td `nav`
+                            td List of tabs
+                        tr
+                            td `text`
+                            td Tab navigation item text
+                        tr
+                            td `icon` - optional
+                            td Tab navigation item Icon
+                        tr
+                            td `content`
+                            td Tab content which could be other widget
+                        tr
+                            td `itemUrl` - optional
+                            td Item url, used for external links
+
+    | #{''}
+
+    section.source_section
+        h2 Default tabs
+        markdown
+            p in the example bellow we used `itemUrl` as external lenk for access item
+        +printJson({
+            "config": {
+                "type": "default",
+                "id": "m1x"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Access",
+                        "icon": ["icon-permissions"],
+                        "itemUrl": "/home"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+
+                    }
+                ]
+            }
+        })
+        .source_example
+            div(class="col-md-5")
+                | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'default-tabs.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Flex tabs
+        markdown
+            p In the example below we used `flex` as configration type, which gave it the flex style.
+        +printJson({
+            "config": {
+                "type": "flex",
+                "id": "dx3"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    }
+
+                ]
+            }
+        })
+        .source_example
+            div(class="col-md-5")
+                | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'flex.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Left side tabs
+        markdown
+            p In the example below we used `vertical` as configration type, which gave it the left sided style.
+        +printJson({
+            "config": {
+                "type": "vertical",
+                "id": "we6"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "content": "tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    }
+
+                ]
+            }
+        })
+        .source_example
+            div(class="col-md-12")
+                | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'left-side-tabs.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Nested tabs
+        markdown
+            p In the example below we've nested tabs within tabs, you can use dropzone "$pug in json form" from page builder.
+        .source_example
+            div(class="col-md-5")
+                | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'nested-tabs.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Tabs with background
+        markdown
+            p in the example tabs navigation have background color. Wrapper class 
+                strong tab_with_bg
+        +printJson({
+            "config": {
+                "type": "flex",
+                "id": "m11"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "content": {
+                            "$pug": {
+                                "template": "./templates/tabs/tabs-tmpl.jade",
+                                "data": {
+                                    "config": {
+                                        "type": "flex",
+                                        "id": "m14"
+                                    },
+                                    "data": {
+                                        "nav": [
+                                            {
+                                                "text": "Figures",
+                                                "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                                            },
+                                            {
+                                                "text": "References",
+                                                "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        })
+        .source_example
+            div(class="tab_with_bg")
+                | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'tabs-accoudrion.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Tabs on mobile
+        markdown
+            p There are three options of how the tabs will look on mobile, please activate the clear view with mobile viewport to see the examples bellow.
+
+        h3 Slider Default
+        markdown
+            p For default tabs the slider effect will be activated by default on mobile - `effect` doesnt set, if the screen size is smaller than the tabs navigation. It won't be activated for side tabs.
+        +printJson({
+            "config": {
+                "type": "default",
+                "id": "mlld"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab444 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab555 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "tab666 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab777 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab888 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "tab999 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    }
+
+                ]
+            }
+        })
+        .source_example
+            div(class="col-md-7")
+                | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'too-many-tabs.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+        h3 Slider Flex
+        markdown
+            p For flex tabs set `swipe` to `effect` (flex tabs) will have the slider "swipe" effect on mobile.
+        +printJson({
+            "config": {
+                "type": "flex",
+                "id": "xde",
+                "effect": "swipe"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab444 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab555 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "tab666 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab777 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab888 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "tab999 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    }
+
+                ]
+            }
+        })
+        .source_example
+            div(class="col-md-7")
+                | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'tabs-flex-mobile.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+        h3 Dropdown tabs
+        markdown
+            p in the example bellow set `dropdown` to `effect` (side tabs) will have the dropdown effect on mobile.
+        +printJson({
+            "config": {
+                "type": "vertical",
+                "id": "b2e",
+                "effect": "dropdown"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "content": "tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    }
+
+                ]
+            }
+        })
+        .source_example
+            .container
+                div(class="col-md-12")
+                    | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'dropdown.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+        h3 Accordion tabs
+        markdown
+            p in the example bellow set `accordion` to `effect` tabs navigation will have the accordion effect on mobile.
+        +printJson({
+            "config": {
+                "type": "flex",
+                "id": "re4",
+                "effect": "accordion"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    }
+
+                ]
+            }
+        })
+        .source_example
+            div(class="col-md-7")
+                | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'tabs-accoudrion.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Scrollable links
+        code.src-html.source_visible
+            | <a href="#idid" data-tab="tab3f" class="tab-link">link text</a>
+        markdown
+            p To be able to use the tabs scrollable functionality, the anchor must have `"tab-link"` class and the following attributes:
+            table
+                thead
+                    tr
+                        th Attribute
+                        th Description
+                tbody
+                    tr
+                        td `href`
+                        td Must contain the target `Id` that we want to scroll to in our tabs
+                    tr
+                        td `data-tab`
+                        td Must contain the destination tabs' `Id` that holds our target we want to scroll to in our tabs
+
+
+        .source_info
+            p NOTE: The scroll functionality is not working on this example since the height of tabs is not limited by the screen, please visit #[a(href="../../templates/article/?clarify=true&tpl=clear&sections=1") Article page] page for a working demo.
+        +printJson({
+            "config": {
+                "type": "flex",
+                "id": "mf4",
+                "effect": "slide",
+                "vPort": "xsmall"
+            },
+            "data": {
+                "nav": [
+                    {
+                        "text": "Figures",
+                        "icon": ["icon-shoppingcart"],
+                        "content": "tab111 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "References",
+                        "icon": ["icon-search"],
+                        "content": "tab222 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap"
+                    },
+                    {
+                        "text": "Related",
+                        "icon": ["icon-profile_empty"],
+                        "content": "<div id=\"idid2\" class=\"scrollable-div\"> without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap </div>tab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstratab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstratab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstratab333 You can activate a tab or pill navigation without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap <div id=\"idid\" class=\"scrollable-div\"> without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap without writing any JavaScript by simply specifying on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap </div>"
+                    }
+
+                ]
+            }
+        })
+        .source_example
+            .container
+                .col-md-8.col-xs-11
+                    Recovery of species and distinct population segments (DPS) listed as threatened or endangered under the United States Endangered Species Act
+                    | “is the process by which listed species and their ecosystems are restored and their future is safeguarded to the point that protections under
+                    | the ESA are no longer needed”
+                    a.tab-link(href="#idid" data-tab="pane-mf421")  NMFS 2010
+                    | For Pacific salmon and steelhead (Oncorhynchus spp.), this is generally thought to require attaining
+                    | a condition in which the species or DPS has a probability of persisting for the next 100 years of at least 0.95 (McElhany et al. 2000). Setting
+                    | endangered species recovery goals and objectives requires a systematic and scientifically rigorous assessment of population needs and the
+                    | ability of the environment to support those needs (Tear et al. 2005; Beechie et al. 2010). This is especially true when habitat loss is a significant
+                    | contributor to species declines, and recovery plans emphasize habitat restoration as a means to achieving recovery goals (e.g., Beechie et al. 2003).
+                    a.tab-link(href="#idid2" data-tab="pane-mf421")  NMFS 2010
+                    | Within a recovery plan, recovery goals may be narrative statements, but habitat restoration objectives must be specific and measureable actions
+                    | and targets for improving habitat quantity and quality (Tear et al. 2005; Beechie et al. 2013). One example of this type of recovery plan is
+                    | that of the threatened Puget Sound steelhead (Oncorhynchus mykiss) in Washington, USA, which declined at least, in part, due to loss and impairment
+                    | of freshwater spawning and rearing habitats (Hard et al. 2007, 2015).
+                .col-md-4.col-xs-1.sticko__parent
+                    | !{pb.render('tabs', 'tabs/demo/demo-tabs', 'extra.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}

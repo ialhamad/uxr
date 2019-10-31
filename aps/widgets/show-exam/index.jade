@@ -1,0 +1,42 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Show Exam
+            h3 Include template
+            +printJsCode('include /specs/ux3/widgets/show-exam/templates/show-exam/show-exam-tmpl.jade')
+        h3 Data
+        markdown
+            p The following the JSON structure must exist to be able to use Show Exam template.
+    | #{''}
+
+    section.source_section
+        h2 Example (From)
+        p The following example demonstrates Show Exam (Form).
+        .source_example
+            .container
+                | !{pb.render("show-exam", "data-form.json")}
+    section.source_section
+        h2 Example (Success - Credit Amount Claimed)
+        p The following example demonstrates Show Exam (Success - Credit Amount Claimed).
+        .source_example
+            .container
+                | !{pb.render("show-exam", "data-success-credit.json")}
+    section.source_section
+        h2 Example (Success)
+        p The following example demonstrates Show Exam (Success).
+        .source_example
+            .container
+                | !{pb.render("show-exam", "data-success.json")}
+    section.source_section
+        h2 Example (Fail)
+        p The following example demonstrates Show Exam (Fail).
+        .source_example
+            .container
+                | !{pb.render("show-exam", "data-fail.json")}
+    | #{''}

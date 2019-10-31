@@ -1,0 +1,25 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+
+
+block content
+
+    h1 Publication Browse page
+    section.source_section
+        h2 Publication Browse page
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("header", "header.json")}
+            main.content
+                .container
+                    .row.title__primary__margin
+                        .col-sm-4
+                            #filter.hidden-xs.hidden-sm.search__filters
+                                | !{pb.render("search-facets", "browse-facet.json")}
+                        .col-sm-8
+                            | !{pb.render("search-result", "browse-search.json")}
+
+            | !{pb.render("footer", "footer.json")}
+
+    | #{''}

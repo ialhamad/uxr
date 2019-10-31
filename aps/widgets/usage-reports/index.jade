@@ -1,0 +1,55 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+    section.source_section
+        h2 Usage Reports widget
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/usage-reports/templates/usage-reports/usage-reports-tmpl.jade')
+        h3 Data
+        p The following the JSON structure provided by the Front-end:
+        +printJson({
+            "data": {
+                "extraPageTitle": "View/Download Usage Data",
+                "usageReportSushiHeader": "",
+                "sushiRequestUrl": "",
+                "sushiRequestId": "",
+                "sushiCustomerRefId": "",
+                "emailCounterEnabled": "",
+                "emailCounterEnabledLabel": "E-mail when COUNTER usage data for the current month has been processed and is ready for reporting.",
+                "usageReportSaveButtonValue": "Update settings",
+                "rangeHeading": "Select Range",
+                "yearOnly": {
+                    "yearOnlyRadioOption": "",
+                    "year": ""
+                },
+                "monthRange": {
+                    "monthRangeRadioOption": "",
+                    "startMonth": "",
+                    "startYear": "",
+                    "endMonth": "",
+                    "endYear": ""
+                },
+                "reports": {
+                    "counterIdsjournal1": true,
+                    "counterIdsjournal1GOA": true
+                },
+                "formats": {
+                    "xml": "",
+                    "html": "",
+                    "tsv": ""
+                },
+                "recipients": {
+                    "usageReportEmailAddress": "",
+                    "emailAllAdminsTrue": ""
+                },
+                "sendMailLabel": "Submit reports request"
+            }
+        })
+        .source_example
+            .container
+                | !{pb.render("usage-reports", "data.json")}
+    | #{''}

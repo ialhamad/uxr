@@ -1,0 +1,38 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    h1 Exam Certificate
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-template-include-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        p The following page layout is used for the Exam certificate
+        p It is unique in that the page must include the 'no-print' class on any elements that should not be printed along with the certificate.
+
+    section.source_section
+        h2 Exam Certificate
+        .source_example
+            | !{pb.render('header', 'header/demo/header')}
+            main.content
+                .container
+                    .row
+                        div.col-xs-12.exam-header
+                            //- HTML Widget - Exam List
+                            h1 Exam Certificate
+                            p Your exam certificate is available below.
+                                
+                .container
+                    .row
+                        .col-sm-8
+                            | !{pb.render('exam-certificate', 'data.json', {"shared": {"model": {"config": {"wrapper": "false", "headingLevel": "h3", "headingClass": ["section__header border-bottom hidden-text"]}, "data": {"title": "Available Exams"}}}})}
+
+                        .col-sm-4
+                            | !{pb.render('my-exams', 'data.json', {"shared": {"model": {"config": {"wrapper": "false", "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "My Exams"}}}})}
+                            //- Additional widgets can be added in the right column here.
+
+            | !{pb.render('footer', 'footer/demo/footer')}
+
+    | #{''}

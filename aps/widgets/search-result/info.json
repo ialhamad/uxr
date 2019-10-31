@@ -1,0 +1,7 @@
+{
+    "title": "Search result",
+    "template": "doc",
+    "tag": ["unready"],
+    "dependencies": ["widget/advanced-search", "component/tabs", "component/modal", "component/drop-block"]
+}
+

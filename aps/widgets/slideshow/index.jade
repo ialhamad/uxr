@@ -1,0 +1,142 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    .source_info
+        p We are using the #[a(href="/specs/plugins/owl-carousel/") Owl Carousel plugin] in the <strong>slideshow</strong> widget.
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/slideshow/templates/slideshow/slideshow-tmpl.jade')
+
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use slideshow template.
+        +printJson({
+            "data": {
+                "widget": {
+                    "items": "2",
+                    "autoplay": "true",
+                    "speed": "2000",
+                    "animation": "fade",
+                    "indicators": "true",
+                    "arrow": "true",
+                    "controls": "true",
+                    "background":"",
+                    "slides": [
+                        {},
+                        {},
+                        {}
+                    ]
+                }
+            }
+
+        })
+        markdown
+            p Use the `slides` array to provide content for the individual slides.
+
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                        td Default values
+                tbody
+                    tr
+                        td `items`
+                        td Integer value, the number of items per slide.
+                        td `1`
+                    tr
+                        td `speed`
+                        td Integer value, transition slide speed
+                        td `250`
+                    tr
+                        td `autoplay`
+                        td `true`, `false`, Autoplay
+                        td `true`
+                    tr
+                        td `animation`
+                        td `fade`, `slide`, Animation
+                        td `slide`
+                    tr
+                        td `arrow`
+                        td `true`, `false`, Show Arrows
+                        td `false`
+                    tr
+                        td `indicators`
+                        td `true`, `false`, Show indicators
+                        td `true`
+                    tr
+                        td `controls`
+                        td `true`, `false`, Show controls
+                        td `false`
+
+
+
+    | #{''}
+
+
+    section.source_section
+        h2 Example
+        
+        h3 Slideshow of cards - used on APS
+            
+        .source_example(style="background-color:#006a4e;")
+            div.container(style="background-color:#006a4e;")
+                | !{pb.render("slideshow", "slideshow/demo/slideshow-demo", "cards.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["card card--extra-gutter slideshow-wrapper slideShow--arrows"]}}}})}
+
+        h3 Slideshow of cards - default 'slide effect' with background
+
+        .source_example
+            div.container
+                | !{pb.render("slideshow", "slide.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["left-side-image", "card--gutter"]}}}})}
+
+        h3 Slideshow of cards - 'fade effect'
+
+        .source_example
+            div.container
+                | !{pb.render("slideshow", "slideshow/demo/slideshow-demo", "cards.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["left-side-image", "card--gutter"]}}}})}
+
+        h3 Slideshow of cards - 'fade effect'
+
+        .source_example
+            div.container
+                | !{pb.render("slideshow", "slideshow/demo/slideshow-demo", "realDemo.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["left-side-image", "card--gutter"]}}}})}
+
+        h3 Slideshow Responsive
+        markdown
+            p To make slider responsive please add `responsive-slider` class as wrapper and add attribute `data-responsive` with reponsive option ex: data-responsive='{\"xsMin\":{\"items\":1},\"smMin\":{\"items\":2},\"mdMin\":{\"items\":4}}'
+
+        .source_example
+            div.container(class="responsive-slider" data-responsive="{\"xsMin\":{\"items\":1},\"smMin\":{\"items\":2},\"mdMin\":{\"items\":3}}")
+                | !{pb.render("slideshow", "slideshow/demo/slideshow-demo", "colored-slides.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["left-side-image", "card--gutter"]}}}})}
+
+        h3 Slideshow with Arrows
+        markdown
+            p To make next & prev buttons appears like arrows please add `slideShow--arrows` class as wrapper'
+
+        .source_example
+            div.container(class="slideShow--arrows")
+                | !{pb.render("slideshow", "slideshow/demo/slideshow-demo", "realDemo.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Slideshow - Equal Height Slides
+        markdown
+            p To make all slides same height please add class `equal-height-slides`.<br>Note:be sure the content of the slider item has height 100%. <br>please clear view to see the result.
+
+        .source_example
+            div.container(class="equal-height-slides")
+                | !{pb.render("slideshow", "slideshow/demo/slideshow-demo", "colored-slides.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["left-side-image", "card--gutter"]}}}})}
+
+        h3 Slideshow Only on Mobile
+        markdown
+            p To make slider only on mobile view please add class `viewport-slider` and data attribute `data-slider-vport='screen-sm'`
+
+        .source_example
+            div.container(class="viewport-slider" data-slider-vport="screen-sm")
+                | !{pb.render("slideshow", "slideshow/demo/slideshow-demo", "colored-slides.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["left-side-image", "card--gutter"]}}}})}
+
+
+    | #{''}

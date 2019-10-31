@@ -1,0 +1,233 @@
+{
+    "logo": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/images/templates/images/images-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "properties": {
+                                            "link": "#",
+                                            "src": "/specs/products/aps/releasedAssets/images/logo.png",
+                                            "alt": "logo"
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "logo2": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/images/templates/images/images-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "properties": {
+                                            "link": "#",
+                                            "src": "/specs/products/aps/releasedAssets/images/logo.png",
+                                            "alt": "logo"
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "contact": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "true",
+                        "className": ["contact"]
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/html/templates/html/html-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "id":"facebookFooter1",
+                                        "properties": {
+                                            "render": "html",
+                                            "html": "<nav class=\"contact__nav\"><ul class=\"rlist--inline separator separated-list footer--contact__list\"><li><a href=\"#\">Contact Us</a></li><li><a href=\"#\">About Us</a></li><li><a href=\"#\">Contact Us</a></li></ul><ul class=\"rlist--inline\"><li><a href=\"#\" title=\"icon-facebook\"><i class=\"icon-facebook\" aria-hidden=\"true\"></i></a></li><li><a href=\"#\" title=\"icon-twitter\"><i class=\"icon-twitter\" aria-hidden=\"true\"></i></a></li><li><a href=\"#\" title=\"icon-linkedin\"><i class=\"icon-linkedin\" aria-hidden=\"true\"></i></a></li><li><a href=\"#\" title=\"icon-Rss\"><i class=\"icon-Rss\" aria-hidden=\"true\"></i></a></li></ul></nav><div class=\"contact__address\">1801 Alexander Bell Drive Reston, VA 20191-4400 703-295-6300 | 800-548-2723</div>"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sitemapF": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../widgets/html/templates/html/html-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "id":"latestArticleFooter1",
+                                        "properties": {
+                                            "render": "html",
+                                            "html": "<h5 class=\"border-top\">Latest Articles</h5><ul class=\"rlist\"><li><a href=\"#\">Nick Gayeski</a></li><li><a href=\"#\">George Pess</a></li><li><a href=\"#\">Tim Beechie</a></li></ul>"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sitemapS": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/html/templates/html/html-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "id":"listFooter1",
+                                        "properties": {
+                                            "render": "html",
+                                            "html": "<h5 class=\"border-top\">Latest Articles</h5><ul class=\"rlist\"><li><a href=\"#\">Nick Gayeski</a></li><li><a href=\"#\">George Pess</a></li><li><a href=\"#\">Tim Beechie</a></li></ul>"
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sitemapT": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/html/templates/html/html-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "id":"listFooter12",
+                                        "properties": {
+                                            "render": "html",
+                                            "html": "<h5 class=\"border-top\">Latest Articles</h5><ul class=\"rlist\"><li><a href=\"#\">Nick Gayeski</a></li><li><a href=\"#\">George Pess</a></li><li><a href=\"#\">Tim Beechie</a></li></ul>"
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "nav": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/html/templates/html/html-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "id":"termsCondition1",
+                                        "properties": {
+                                            "render": "html",
+                                            "html": "<ul class=\"rlist--inline separator\"><li><a href=\"#\">Terms and condition</a></li><li><a href=\"#\">Privacy policy</a></li></ul>"
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "copyright": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/html/templates/html/html-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "id":"copyRight1",
+                                        "properties": {
+                                            "render": "html",
+                                            "html": "<div class=\"copyright\">© 2016 Atypon Systems Incorporated</div>"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

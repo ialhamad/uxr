@@ -1,0 +1,44 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Article/Chapter History widget
+        .source_example
+            | !{pb.render("article-chapter-history", "data.json")}
+
+        p The following the JSON structure Provided by the Front-end:
+        +printJson({
+            "data": {
+                "item": {
+                    "received": "6/25/16 12:00 AM",
+                    "accepted": "5/10/17 12:00 AM",
+                    "epub": "2/16/18 1:26 AM",
+                    "ppub": "8/22/17 12:00 AM",
+                    "realPubDate": "8/22/17 12:00 AM"
+                }
+            },
+            "thisWidget": {
+                "lastModifed": "Mar 28, 2018 1:00:56 PM",
+                "id": "6b9facfa-b2a0-4a26-bac8-bb3741a6b091",
+                "properties": {
+                    "identifier": "",
+                    "headingLvl": "h2",
+                    "wrapperClass": "",
+                    "queryFile": "/pb2/widgets/ux3-graphql/content/contentItemHistory.graphql",
+                    "displayPpub": "true",
+                    "headingClass": "",
+                    "ux3/template": "",
+                    "wrapperTag": "div",
+                    "displayAccepted": "true",
+                    "title": "",
+                    "displayReceived": "true",
+                    "displayEpub": "true"
+                }
+            },
+            "errors": []
+        })
+
+    | #{''}

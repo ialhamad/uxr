@@ -1,0 +1,361 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/search-result/templates/search-result/search-result-tmpl.jade')
+        h3 Data
+        p The following data structure must exist to be able to use Search result template.
+
+        +printJson({
+            "config": {
+                "headingLevel": 4
+            },
+            "data": {
+                "result": {
+                    "count": "68,862",
+                    "start": 1,
+                    "end": 20
+                },
+                "itemsPerPage": {
+                    "selected": 20,
+                    "options": [
+                        {
+                            "title": 20,
+                            "optionUrl": "#20"
+                        },
+                        {
+                            "title": 50,
+                            "optionUrl": "#50"
+                        },
+                        {
+                            "title": 100,
+                            "optionUrl": "#100"
+                        }
+                    ]
+                },
+                "sort": {
+                    "selected": {
+                        "title": "Relevance",
+                        "optionUrl": "#rel"
+                    },
+                    "options": [
+                        {
+                            "title": "Relevance",
+                            "optionUrl": "#rel"
+                        },
+                        {
+                            "title": "Date",
+                            "optionUrl": "#dat"
+                        },
+                        {
+                            "title": "Author",
+                            "optionUrl": "#aut"
+                        }
+                    ]
+                },
+                "loi": [
+                    {
+                        "itemUrl": "#",
+                        "title": "The King-Devick test of rapid number naming for concussion detection: meta-analysis and systematic review of the literature",
+                        "options": [
+                            {
+                                "icon": [
+                                    "icon-download",
+                                    "inline-icon"
+                                ],
+                                "text": "Download (PDF)",
+                                "itemurl": "#"
+                            },
+                            {
+                                "icon": [
+                                    "icon-abstract",
+                                    "inline-icon"
+                                ],
+                                "text": "Reprints",
+                                "itemurl": "#"
+                            },
+                            {
+                                "icon": [
+                                    "icon-permissions",
+                                    "inline-icon"
+                                ],
+                                "text": "Permissions",
+                                "itemurl": "#"
+                            }
+                        ],
+                        "authors": [
+                            {
+                                "text": "Nick Gayeski",
+                                "itemurl": "/author/search/url?q=Nick Gayeski"
+                            },
+                            {
+                                "text": "George Pess",
+                                "itemurl": "/author/search/url?q=George Pess"
+                            },
+                            {
+                                "text": "Tim Beechie",
+                                "itemurl": "/author/search/url?q=Tim Beechie"
+                            }
+                        ],
+                        "meta": {
+                            "date": "Dec 1946",
+                            "dateUrl": "#",
+                            "name": "Journal of Materials in Civil Engineering",
+                            "nameUrl": "#"
+                        },
+                        "more": " An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead."
+
+                    }
+                ]
+            }
+        })
+
+        markdown
+            p You can add custom classes to the container elements by passing an array of additional class names in `"addClassNames": ["...", "..."]` field for these elements. If you need to replace the default class name, use `"useClassNames": ["...", "..."]` instead. See the table below for the list of container elements and their default class names.
+
+            table
+                thead
+                    tr
+                        th Container element
+                        th Default class name
+                        th Description
+                tbody
+                    tr
+                        td `issue`
+                        td issue-item
+                        td Issue item container element
+
+
+            p Use `headingLevel` parameter to set custom heading level for Issue item title. Default heading is `h5`.
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 Search result
+        +printJson({
+            "config": {
+                "headingLevel": 4
+            },
+            "data": {
+                "result": {
+                    "count": "68,862",
+                    "start": 1,
+                    "end": 20
+                },
+                "itemsPerPage": {
+                    "selected": 20,
+                    "options": [
+                        {
+                            "title": 20,
+                            "optionUrl": "#20"
+                        },
+                        {
+                            "title": 50,
+                            "optionUrl": "#50"
+                        },
+                        {
+                            "title": 100,
+                            "optionUrl": "#100"
+                        }
+                    ]
+                },
+                "sort": {
+                    "selected": {
+                        "title": "Relevance",
+                        "optionUrl": "#rel"
+                    },
+                    "options": [
+                        {
+                            "title": "Relevance",
+                            "optionUrl": "#rel"
+                        },
+                        {
+                            "title": "Date",
+                            "optionUrl": "#dat"
+                        },
+                        {
+                            "title": "Author",
+                            "optionUrl": "#aut"
+                        }
+                    ]
+                },
+                "loi": [
+                    {
+                        "itemUrl": "#",
+                        "title": "The King-Devick test of rapid number naming for concussion detection: meta-analysis and systematic review of the literature",
+                        "options": [
+                            {
+                                "icon": [
+                                    "icon-download",
+                                    "inline-icon"
+                                ],
+                                "text": "Download (PDF)",
+                                "itemurl": "#"
+                            },
+                            {
+                                "icon": [
+                                    "icon-abstract",
+                                    "inline-icon"
+                                ],
+                                "text": "Reprints",
+                                "itemurl": "#"
+                            },
+                            {
+                                "icon": [
+                                    "icon-permissions",
+                                    "inline-icon"
+                                ],
+                                "text": "Permissions",
+                                "itemurl": "#"
+                            }
+                        ],
+                        "authors": [
+                            {
+                                "text": "Nick Gayeski",
+                                "itemurl": "/author/search/url?q=Nick Gayeski"
+                            },
+                            {
+                                "text": "George Pess",
+                                "itemurl": "/author/search/url?q=George Pess"
+                            },
+                            {
+                                "text": "Tim Beechie",
+                                "itemurl": "/author/search/url?q=Tim Beechie"
+                            }
+                        ],
+                        "meta": {
+                            "date": "Dec 1946",
+                            "dateUrl": "#",
+                            "name": "Journal of Materials in Civil Engineering",
+                            "nameUrl": "#"
+                        },
+                        "more": " An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead."
+
+                    },
+                    {
+                        "itemUrl": "#",
+                        "title": "The King-Devick test of rapid number naming for concussion detection: meta-analysis and systematic review of the literature",
+                        "options": [
+                            {
+                                "icon": [
+                                    "icon-download",
+                                    "inline-icon"
+                                ],
+                                "text": "Download (PDF)",
+                                "itemurl": "#"
+                            },
+                            {
+                                "icon": [
+                                    "icon-abstract",
+                                    "inline-icon"
+                                ],
+                                "text": "Reprints",
+                                "itemurl": "#"
+                            },
+                            {
+                                "icon": [
+                                    "icon-permissions",
+                                    "inline-icon"
+                                ],
+                                "text": "Permissions",
+                                "itemurl": "#"
+                            }
+                        ],
+                        "authors": [
+                            {
+                                "text": "Nick Gayeski",
+                                "itemurl": "/author/search/url?q=Nick Gayeski"
+                            },
+                            {
+                                "text": "George Pess",
+                                "itemurl": "/author/search/url?q=George Pess"
+                            },
+                            {
+                                "text": "Tim Beechie",
+                                "itemurl": "/author/search/url?q=Tim Beechie"
+                            }
+                        ],
+                        "meta": {
+                            "date": "Dec 1946",
+                            "dateUrl": "#",
+                            "name": "Journal of Materials in Civil Engineering",
+                            "nameUrl": "#"
+                        },
+                        "more": " An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead."
+
+                    },
+                    {
+                        "itemUrl": "#",
+                        "title": "The King-Devick test of rapid number naming for concussion detection: meta-analysis and systematic review of the literature",
+                        "options": [
+                            {
+                                "icon": [
+                                    "icon-download",
+                                    "inline-icon"
+                                ],
+                                "text": "Download (PDF)",
+                                "itemurl": "#"
+                            },
+                            {
+                                "icon": [
+                                    "icon-abstract",
+                                    "inline-icon"
+                                ],
+                                "text": "Reprints",
+                                "itemurl": "#"
+                            },
+                            {
+                                "icon": [
+                                    "icon-permissions",
+                                    "inline-icon"
+                                ],
+                                "text": "Permissions",
+                                "itemurl": "#"
+                            }
+                        ],
+                        "authors": [
+                            {
+                                "text": "Nick Gayeski",
+                                "itemurl": "/author/search/url?q=Nick Gayeski"
+                            },
+                            {
+                                "text": "George Pess",
+                                "itemurl": "/author/search/url?q=George Pess"
+                            },
+                            {
+                                "text": "Tim Beechie",
+                                "itemurl": "/author/search/url?q=Tim Beechie"
+                            }
+                        ],
+                        "meta": {
+                            "date": "Dec 1946",
+                            "dateUrl": "#",
+                            "name": "Journal of Materials in Civil Engineering",
+                            "nameUrl": "#"
+                        },
+                        "more": " An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead."
+
+                    }
+                ]
+            }
+        })
+        .source_example
+            .container
+                | !{pb.render("search-result", "content.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    section.source_section
+        h2 Examples
+
+        h3 Search result for Books
+        .source_example
+            .container
+                | !{pb.render("search-result", "search-result/demo/demo-search-result-books", "search_book.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}

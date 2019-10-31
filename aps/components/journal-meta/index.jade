@@ -1,0 +1,98 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/journal-meta/templates/journal-meta/journal-meta-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Journal information template.
+        +printJson({
+
+        })
+
+        markdown
+            table
+                thead
+                    tr
+                        th Container element
+                        th Default class name
+                        th Description
+                tbody
+                    tr
+                        td `meta`
+                        td meta
+                        td Journal information container element
+                    tr
+                        td `issns`
+                        td meta\__issns
+                        td ISSN paragraph
+                    tr
+                        td `frequency`
+                        td meta\__frequency
+                        td Publication frequency paragraph
+                    tr
+                        td `qtext`
+                        td meta\__quote
+                        td Component content element (blockquote)
+                    tr
+                        td `qattribution`
+                        td meta\__attribution
+                        td Author information paragraph
+    | #{''}
+
+    section.source_section
+        h2 Examples
+        
+        h3 Example 1
+        .source_example
+            | !{pb.render('journal-meta', 'journal-meta.json')}
+
+        h3 Example 2
+        .source_example
+            | !{pb.render('journal-meta', 'journal-type.json')}
+
+
+    section.source_section
+        h2 HTMLstructure
+        .source_example
+            .container
+                .card.card--gutter.card--shadow.meta__body
+                    .meta__left-side.left-side-image
+                        img(alt='cover', src='http://ux3-proto.literatumonline.com/resources/cms/settings/fum/publications/fca/cover.png')
+                        h4.meta__title Et Harum Quidem
+                        .meta__info
+                            p.meta__issns ISSN: 2056-3299 (Online)
+                            p.meta__frequency Frequency: Ongoing
+                            blockquote.quote
+                                | Concussions have become a critical public health issue, resulting in a substantial increase in research. As a clinician searching for the most up-to-date information, Concussion can serve as the go-to journal.Concussions have become a critical public health issue, resulting in a substantial increase in research. As a clinician searching for the most up-to-date information, Concussion can serve as the go-to journal.
+                            p.meta__attr - Editorial board member Steven P Broglio, University of Michigan, MI, USA
+                    .meta__right-side
+                        a.btn.btn--inverse.btn--journal-meta Submit an article
+                        a.btn.btn--inverse.btn--journal-meta Subscribe
+
+
+    section.source_section
+        h2 HTMLstructure
+        .source_example
+            .container
+                .card.card--gutter.meta__body
+                    .meta__left-side
+                        h1.meta__title Journal of Aerospace Engineering
+                        .meta__info
+                            p ISSN (print): 0893-1321 | ISSN (online): 1943-5525
+                            p Frequency: Bimonthly | Sponsored by the Aerospace Division
+
+                            p.meta__contrib Editor: Wieslaw Binienda, Ph.D., F.ASCE, University of Akron
+
+                    .meta__right-side
+                        a.btn.btn--inverse.btn--journal-meta(href"#") Submit an article
+                        a.btn.btn--inverse.btn--journal-meta(href"#") Subscribe
+
+    | #{''}

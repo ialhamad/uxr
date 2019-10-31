@@ -1,0 +1,62 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin
+    include /specs/page-structure/helpers/print-js-code-mixin
+    include /specs/page-structure/helpers/print-html-code-mixin
+
+    section.source_section
+        h2 Datepicker
+        h3 Native date picker with fallback to jQuery UI component
+        markdown
+            p `input[type=date]`
+            p we have fallback JS for unsupported devices
+            p input type date always has a ISO-format value - yyyy-mm-dd - independent from localized format shown
+
+        +printJson({
+            "data": {
+                "inputValue": "2017-10-28",
+                "fieldName": "date2",
+                "id": "date2"
+            }
+        })
+
+        .source_example
+            | !{pb.render("datepicker", "data.json")}
+
+        h3 Example jQuery datepicker on all devices
+        markdown
+            p For force use of jQuery UI component on every device you have to add class `.datepicker`
+            p `input[type=text].datepicker`
+
+        +printJson({
+            "data": {
+                "inputValue": "2017-10-28",
+                "fieldName": "date2",
+                "id": "date2"
+            }
+        })
+
+        .source_example
+            | !{pb.render("datepicker", "datepicker/datepicker-jqueryui", "data-jqueryui.json")}
+
+        h3 Example jQuery datepicker with localized format displayed
+        markdown
+            p For force use of jQuery UI component on every device you have to add class `.datepicker`
+            p `input[type=text].datepicker`
+            p jQuery datepicker doesn't have standardized format, when You use localized format to display
+                | you will have to read value from hidden input suffixed `-value` which will contain ISO format
+
+        +printJson({
+            "data": {
+                "inputValue": "28/07/2017",
+                "dateFormat": "dd/mm/yy",
+                "fieldName": "date3",
+                "id": "date3"
+            }
+        })
+
+        .source_example
+            | !{pb.render("datepicker", "datepicker/datepicker-jqueryui", "data-jqueryui-dateFormat.json")}
+
+    | #{''}

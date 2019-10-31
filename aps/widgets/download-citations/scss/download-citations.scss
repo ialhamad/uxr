@@ -1,0 +1,30 @@
+.citationFormats {
+    .formats {
+        vertical-align: top;
+        label{
+            position: relative;
+            top: -2px;
+        }
+    }
+
+    input, label {
+        display: inline;
+    }
+
+    input[type=radio] {
+        vertical-align: top;
+        margin-bottom: 30px;
+        @include media('<tablet'){
+            margin-bottom: 10px;
+        }
+    }
+
+    label {
+        vertical-align: top;
+    }
+
+    th {
+        width: 140px;
+        padding: 10px;
+    }
+}

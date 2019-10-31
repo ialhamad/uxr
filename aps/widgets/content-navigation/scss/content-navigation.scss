@@ -1,0 +1,16 @@
+.content-navigation {
+	@include font-size(12);
+	margin-top: 20px;
+
+	i {
+		color: $site-naigation-arrows;
+	}
+
+	&__btn--pre, &__btn--next {
+		background-color: $site-light-border;
+		border-radius: 5px;
+		color: $site-dark-text;
+		padding: 6px 14px;
+		width: auto;
+	}
+}

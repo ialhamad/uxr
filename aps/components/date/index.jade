@@ -1,0 +1,88 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/date/templates/date/date-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Date template.
+        +printJson({
+            "date": "04/19/11 09:45 AM",
+            "format": "dateMonthYear"
+        })
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 Format date - monthYear
+        +printJson({
+            "date": "07/11/16 11:30 AM",
+            "format": "monthYear"
+        })
+        .source_example
+            | !{pb.render("date", {"date": "07/11/16 11:30 AM", "format": "monthYear"})}
+
+        h3 Format date - monthYearShort
+        +printJson({
+            "date": "12/03/14 01:15 PM",
+            "format": "monthYearShort"
+        })
+        .source_example
+            | !{pb.render("date", {"date": "12/03/14 01:15 PM", "format": "monthYearShort"})}
+
+        h3 Format date - monthYearCompact
+        +printJson({
+            "date": "03/29/15 12:05 PM",
+            "format": "monthYearCompact"
+        })
+        .source_example
+            | !{pb.render("date", {"date": "03/29/15 12:05 PM", "format": "monthYearCompact"})}
+
+        h3 Format date - dateMonthYear
+        +printJson({
+            "date": "04/19/11 10:30 AM",
+            "format": "dateMonthYear"
+        })
+        .source_example
+            | !{pb.render("date", {"date": "04/19/11 10:30 AM", "format": "dateMonthYear"})}
+
+        h3 Format date - dateMonthYearShort
+        +printJson({
+            "date": "11/04/15 08:55 PM",
+            "format": "dateMonthYearShort"
+        })
+        .source_example
+            | !{pb.render("date", {"date": "11/04/15 08:55 PM", "format": "dateMonthYearShort"})}
+
+        h3 Format date - dateMonthYearCompact
+        +printJson({
+            "date": "10/21/13 11:30 AM",
+            "format": "dateMonthYearCompact"
+        })
+        .source_example
+            | !{pb.render("date", {"date": "10/21/13 11:30 AM", "format": "dateMonthYearCompact"})}
+
+        h3 Format date - fromNow
+        +printJson({
+            "date": "01/24/17 11:00 AM",
+            "format": "fromNow"
+        })
+        .source_example
+            | !{pb.render("date", {"date": "01/24/17 11:00 AM", "format": "fromNow"})}
+
+        h3 Format date - custom
+        +printJson({
+            "date": "09/13/12 09:45 AM",
+            "format": "dddd, MMMM Do YYYY"
+        })
+        .source_example
+            | !{pb.render("date", {"date": "09/13/12 09:45 AM", "format": "dddd, MMMM Do YYYY"})}
+
+    | #{''}

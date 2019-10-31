@@ -1,0 +1,84 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+
+    section.source_section
+        h2 List variations
+
+        h3 Ordered list
+        .source_example
+            ol
+                li Nick Gayeski
+                li George Pess
+                li Tim Beechie
+
+
+        h3 Unstyled list
+        markdown
+            p In the example below we've used the default class `rlist`.
+        .source_example
+            ul.rlist
+                li Nick Gayeski
+                li George Pess
+                li Tim Beechie
+
+        h3 Inline list
+        markdown
+            p In the example below we've used `rlist--inline`.
+        .source_example
+            ul.rlist--inline
+                li Nick Gayeski
+                li George Pess
+                li Tim Beechie
+
+        h3 List with separator - bottom
+        markdown
+            p adding `separator` class to `rlist` list will add separator between items "to the bottom of each item".
+        .source_example
+            ul.rlist.separator
+                li Nick Gayeski
+                li George Pess
+                li Tim Beechie
+
+
+        h3 List with separator - left
+        markdown
+             p adding `separator` class to `rlist--inline` list will add separator between items "to the left of each item".
+        .source_example
+            ul.rlist--inline.separator
+                li Nick Gayeski
+                li George Pess
+                li Tim Beechie
+
+
+        h3 Separated list
+        markdown
+            p In the example below we've used `separated-list` class to add a borders above and below the list
+        .source_example
+            ul.rlist--inline.separator.separated-list
+                li Nick Gayeski
+                li George Pess
+                li Tim Beechie
+
+
+        h3 expandable-list
+        markdown
+            p In the example below we've used `separated-list` class to add a borders above and below the list
+        .source_example
+            ul.rlist
+                li
+                    div.expandable-list
+                        a.expandable-list__toggle(href='#' data-toggle='dropdown' id="pane-1")
+                            i.icon-add_box(aria-hidden="true")
+                            | list
+                        ul.rlist.expandable-list__body( aria-hidden='true' aria-labelledby="pane-1")
+                            li reem
+                            li majid
+                            li ali
+
+                li George Pess
+                li Tim Beechie
+
+
+
+    | #{''}

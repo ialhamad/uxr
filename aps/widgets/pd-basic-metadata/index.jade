@@ -1,0 +1,119 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+
+block content
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-template-include-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use basic- meta data widget.
+
+        +printJson({
+            "data": {
+                "inputs": {
+                    "type": {
+                        "value": "poster"
+                    },
+                    "meeting-name": {
+                        "value": "m1"
+                    },
+                    "meeting-date": {
+                        "value": "22/9/2017"
+                    },
+                    "session-id": {
+                        "value": "55"
+                    },
+                    "poster-id": {
+                        "value": "22"
+                    },
+                    "first-presented": {
+                        "value": "28/9/2017"
+                    },
+                    "title": {
+                        "value": "Test Title"
+                    },
+                    "abstract": {
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed finibus dui. Aenean eget sem pellentesque, rhoncus nibh sit amet, interdum velit. Mauris mauris velit, feugiat id sapien sit amet, aliquet efficitur neque. Pellentesque consectetur mi at magna sodales, sed ornare orci aliquet. Curabitur vehicula sem condimentum leo auctor luctus. Sed maximus ultrices nisi vel pharetra. Mauris blandit mi mauris, non pharetra augue convallis nec.",
+                        "message": {
+                            "type": "error",
+                            "text": "error occure"
+                        }
+                    },
+                    "license": {
+                        "value": "l3",
+                        "message": {
+                            "type": "info",
+                            "text": "license info"
+                        }
+                    },
+                    "submitted-to": {
+                        "value": "j2"
+                    }
+                },
+                "meetings": [
+                    {
+                        "date": "11-15 December 2016",
+                        "name": "2016",
+                        "location": "New Orleans, LA",
+                        "label": "2016 Meeting"
+                    },
+                    {
+                        "date": "11-15 December 2018",
+                        "name": "2017",
+                        "location": "New Orleans, LA",
+                        "label": "2017 Meeting"
+                    }
+                ],
+                "journals": [
+                    {
+                        "name": "j1",
+                        "label": "Journal 1"
+                    },
+                    {
+                        "name": "j2",
+                        "label": "Journal 2"
+                    },
+                    {
+                        "name": "j3",
+                        "label": "Journal 3"
+                    }
+                ],
+                "licenses": [
+                    {
+                        "name": "l1",
+                        "label": "License 1"
+                    },
+                    {
+                        "name": "l2",
+                        "label": "License 2"
+                    },
+                    {
+                        "name": "l3",
+                        "label": "License 3"
+                    }
+                ]
+            }
+        })
+
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 Basic Metadata
+        .source_example
+            .container
+                | !{pb.render("pd-basic-metadata", "pd-basic-metadata-update", "basic-metadata.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+        h3 Basic Metadata - Readonly
+        .source_example
+            .container
+                | !{pb.render("pd-basic-metadata", "pd-basic-metadata-read-only", "basic-metadata.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}

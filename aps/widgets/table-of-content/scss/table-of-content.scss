@@ -1,0 +1,141 @@
+.table-of-content {
+
+	.toc__heading {
+		border-bottom: 2px solid $site-light-border;
+		margin-top: 40px;
+		margin-bottom: 0;
+		padding-bottom: 12px;
+
+	}
+
+	.tocHeading {
+		@include font-size(16);
+		border-bottom: 2px solid $site-light-border;
+		padding: 40px 0 14px 0;
+		text-transform: uppercase;
+	}
+
+	.toc__section {
+		display: none;
+	}
+
+	.issue-item {
+		margin-top: 0;
+		
+		&__title {
+			display: inline;
+		}
+		
+		.loa {
+			padding-top: 15px;
+		}
+		
+		.badges {
+			@include media('<desktop') {
+				margin-left: 15px;
+			}
+			display: inline;
+			float: right;
+
+			.icon-cc_large2 {
+				display: none;
+			}
+		}
+
+		.pull-right.code {
+			display: none;
+		}
+
+		&:not(:first-child) {
+			border-top: 0;
+			border-bottom: 1px solid $site-light-border;
+		}
+		&:first-child {
+			border-top: 0;
+			border-bottom: 1px solid $site-light-border;
+		}
+
+		p {
+			a {
+				@include font-size(12);
+				margin-bottom: 16px;
+			}
+		}
+
+		.toc {
+			&-item__footer {
+				.toc-item__detail {
+
+					@include font-size(11);
+
+					li {
+						margin-right: 7px;
+						padding-right: 7px;
+					}
+
+					span {
+						color: $site-grey-logo;
+						font-weight: 600;
+						text-transform: uppercase;
+					}
+
+					i[class*=icon-] {
+						color: $site-dark-text;
+						@include font-size(16);
+						margin: 0 5px;
+					}
+
+					.icon-full-text:before {
+						content: "\e611";
+					}
+
+					.icon-file-pdf:before {
+						content: "\eadf";
+					}
+
+					.supplementalLink {
+
+						a {
+							background: url('/specs/products/aps/releasedAssets/images/extra.gif') bottom left no-repeat;
+							height: 18px;
+							width: 37px;
+							display: block;
+						}
+
+						span {
+							display: none;
+						}
+					}
+
+
+				}
+				.rlist--inline.separator>li:not(:last-of-type) {
+					border-color: $site-light-border;
+				}
+
+				.accordion__control {
+					@include font-size(11);
+					@include themify($themes) {
+						color: themed('color');
+					}
+					margin-top: 8px;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+
+.bookToc {
+	.table-of-content {
+		.tocHeading {
+			@include font-size(19);
+			text-transform: none;
+		}
+	}
+}
+
+.read-less:before {
+	content: " ";
+	white-space: pre;
+}

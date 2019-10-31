@@ -1,0 +1,115 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+    section.source_section
+        h2 Trusted Proxy widget
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/trusted-proxy/templates/trusted-proxy/trusted-proxy-tmpl.jade')
+        h3 Data
+        p The following data structure must exist to be able to use Trusted Proxy widget.
+        +printJson({
+            "data": {
+                "personal-information.json": {
+                    "label": ""
+                },
+                "chooseServerForm": {
+                    "serverDropdown": {
+                        "label": "You are managing:",
+                        "options": [
+                            {
+                                "label": "New Server",
+                                "value": "-1"
+                            },
+                            {
+                                "label": "",
+                                "value": ""
+                            }
+                        ]
+                    }
+                },
+                "serverDetailsForm": {
+                    "deleteButton": {
+                        "value": "Delete this identity"
+                    },
+                    "minIP": {
+                        "label": "",
+                        "value": "",
+                        "label2": "",
+                        "errorRequired": "",
+                        "errorInvalid": ""
+                    },
+                    "maxIP": {
+                        "label": "",
+                        "value": "",
+                        "label2": "",
+                        "errorInvalid": "",
+                        "errorRequired": ""
+                    },
+                    "domain": {
+                        "label": "",
+                        "value": "",
+                        "label2": "",
+                        "errorInvalid": "",
+                        "errorRequired": ""
+                    },
+                    "banner": {
+                        "label": "",
+                        "value": "",
+                        "label2": ""
+                    },
+                    "journalUrl": {
+                        "label": "URL of the journal to grant access:",
+                        "value": "",
+                        "label2": "URL of the List of Issues page of the journal",
+                        "errorRequired": "",
+                        "errorInvalid": ""
+                    },
+                    "errorUrl": {
+                        "label": "",
+                        "value": "",
+                        "label2": "",
+                        "errorRequired": "",
+                        "errorInvalid": ""
+                    },
+                    "languageDropdown": {
+                        "label": "",
+                        "value": "",
+                        "options": [
+                            {
+                                "label": "Java/JSP",
+                                "value": "jsp"
+                            },
+                            {
+                                "label": "Perl",
+                                "value": "perl"
+                            },
+                            {
+                                "label": "ColdFusion",
+                                "value": "coldfusion"
+                            },
+                            {
+                                "label": "PHP",
+                                "value": "php"
+                            },
+                            {
+                                "label": "ASP/.NET",
+                                "value": "asp"
+                            }
+                        ]
+                    },
+                    "submitButton": {
+                        "value": ""
+                    }
+                }
+            }
+        })
+    | #{''}
+
+    section.source_section
+        h2 Personal Information
+        .source_example
+            | !{pb.render("trusted-proxy", "trusted-proxy.json")}
+    | #{''}

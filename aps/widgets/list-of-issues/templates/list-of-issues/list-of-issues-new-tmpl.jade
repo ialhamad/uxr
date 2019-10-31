@@ -1,0 +1,12 @@
+extends ../../../../../ux3/widgets/list-of-issues/templates/list-of-issues/list-of-issues-new-tmpl.jade
+
+block loi
+    if (data.ajaxRequest)
+        | !{pb.render("list-of-issues", "list-of-issues/extended/ext-tabs", {originaldata: data})}
+    else
+        div.loi__banner.uncollapsible
+            div.loi-wrapper(data-widget-id=thisWidget.id data-order= order data-journal-doi= data.loi.journalDoi data-grouptype=data.loi.groupType )
+                if(data.loi)
+                    div(id=thisWidget.id data-grouptype=data.loi.groupType)
+                        block loitabs
+                            | !{pb.render("list-of-issues", "list-of-issues/extended/ext-tabs", {originaldata: data})}

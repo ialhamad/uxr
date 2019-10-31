@@ -1,0 +1,135 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    .source_info
+        p The Recommend to a Librarian widget provides a form that allows an end user to submit subscription recommendations to their librarian.
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+        h2 Usage
+        h3 Data
+            markdown
+                p The following data structure must exist to be able to use this template.
+            +printJson({
+                "name": "recommendationForm",
+                "id": "recommendationForm",
+                "actionUrl": "/action/recommendation",
+                "captchaEnabled": false,
+                "form": {
+                    "publicationMeta": {
+                        "type": "Article",
+                        "coverImage": "https://www.future-science.com/na101/home/literatum/publisher/fus/journals/covergifs/bio/cover.jpg",
+                        "title": "Title of the Article",
+                        "issn": "issn",
+                        "eIssn": "eIssn"
+                    },
+                    "submitButton": {
+                        "type": "submit",
+                        "name": "doEmailRecommendation",
+                        "value": "Submit"
+                    },
+                    "resetButton": {
+                        "type": "reset",
+                        "value": "Clear"
+                    },
+                    "fromInput": {
+                        "label": "From:",
+                        "id": "fromName",
+                        "name": "fromName",
+                        "value": "Mohammad Hamdan",
+                        "required": false,
+                        "hidden": false
+                    },
+                    "departmentInput": {
+                        "label": "Position:",
+                        "id": "fromPosition",
+                        "name": "fromPosition",
+                        "required": false,
+                        "hidden": false
+                    },
+                    "positionInput": {
+                        "label": "Department:",
+                        "id": "fromDepartment",
+                        "name": "fromDepartment",
+                        "value": "",
+                        "required": false,
+                        "hidden": false
+                    },
+                    "libraryInstitutionInput": {
+                        "label": "Library/Institution:",
+                        "id": "mailToInstitution",
+                        "name": "mailToInstitution",
+                        "required": false,
+                        "hidden": false
+                    },
+                    "librarianInput": {
+                        "label": "Librarian:",
+                        "id": "mailToName",
+                        "name": "mailToName",
+                        "required": false,
+                        "hidden": false
+                    },
+                    "emailAddressInput": {
+                        "label": "E-mail address:<sup>*</sup>",
+                        "id": "mailToAddress",
+                        "name": "mailToAddress",
+                        "value": "mhamdan@atypon.com",
+                        "required": true,
+                        "hidden": false
+                    },
+                    "publicationInput": {
+                        "label": "Publication Name:<sup>*</sup>",
+                        "id": "doi",
+                        "name": "doi",
+                        "value": "10.1111/(ISSN)1365-2133",
+                        "required": true,
+                        "hidden": true
+                    },
+                    "referenceInput": {
+                        "label": "<strong>REFERENCE</strong> &mdash; I will refer to this publication frequently for new research articles related to my work",
+                        "id": "reference",
+                        "name": "reason",
+                        "value": "reference",
+                        "required": false,
+                        "hidden": false
+                    },
+                    "studentsInput": {
+                        "label": "<strong>STUDENT REFERENCE</strong> &mdash; I will be referring my students to this publication regularly to assist their studies",
+                        "id": "students",
+                        "name": "reason",
+                        "value": "students",
+                        "required": false,
+                        "hidden": false
+                    },
+                    "benefitInput": {
+                        "label": "<strong>BENEFIT TO THE LIBRARY'S COLLECTION</strong> &mdash; My assessment of this publication is positive. Its acquisition will benefit department, faculty and student needs",
+                        "id": "benefit",
+                        "name": "reason",
+                        "value": "benefit",
+                        "required": false,
+                        "hidden": false
+                    },
+                    "affiliationInput": {
+                        "label": "<strong>AFFILIATION</strong> &mdash; I'm a member of the publication's editorial board and strongly support the publication. I will regularly recommend articles to colleagues and students",
+                        "id": "affiliation",
+                        "name": "reason",
+                        "value": "affiliation",
+                        "required": false,
+                        "hidden": false
+                    }
+                }
+
+            })
+    section.source_section
+        h2 Example
+
+        h3 Recommend to Librarian
+        .source_example
+            div.container
+                | !{pb.render("recommend-to-librarian", "data.json")}
+
+    | #{''}
+
+
+

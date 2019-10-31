@@ -1,0 +1,47 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    section.source_section
+
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+        include /specs/ux3/components/lazy-load/templates/demo/lazy-load-demo-mixin.jade
+        h2 Usage
+
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/lazy-load/templates/lazy-load/lazy-load-tmpl.jade')
+        +printJsCode('include /specs/ux3/components/lazy-load/templates/lazy-load/lazy-load-mixin.jade')
+
+        p lazyload component is a gray scale component that appears once you open the page in the browsers that doesnt support "-webkit-line-clamp" css feature to solve flash of un-styled content (FOUC).
+
+        h3 how to use it
+        markdown
+            p you need to include this component within your template and hide the section that you need to hide using class `delayLoad`.
+            p calling lazyload mixin `+loading('image')` with `image` boolean parameter,
+             | in case `true` the component will generate an gray scale div refer to image block
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 LAZYLOAD - default style
+        markdown
+            p `+loading('true')`
+        .source_example
+            +loading('true')
+
+        h3 LAZYLOAD - without image
+        markdown
+            p `+loading('false')`
+        .source_example
+            +loading('false')
+
+        h3 LAZYLOAD - left side image
+        markdown
+            p in case for components that have a left side image style, the lazyload will take the same style as the component since we are using `left-side-image` class as a parent div for both.
+                | in case that wasn't the scenario add `left-side-image` class
+        .source_example
+            .left-side-image
+                +loading('true')
+
+
+    | #{''}

@@ -1,0 +1,75 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+
+
+    section.source_section
+        h2 Examples
+
+        h3 No saved searches
+        +printJson({
+            "data": {
+                "noSearchesMessage": "You do not have any saved searches",
+                "searches": []
+            }
+        })
+        .source_example
+            | !{pb.render("saved-searches", "example-empty.json")}
+
+        h3 All fields visible
+        +printJson({
+            "data": {
+                "noSearchesMessage": "You do not have any saved searches",
+                "searches": [
+                    {
+                        "queryName": "test: jordan",
+                        "queryNotes": "Weekly",
+                        "savedDate": "Mar 23, 17",
+                        "runDate": "Mar 23, 17",
+                        "runUrl": "/action/doSearch?target=saved&amp;runSaved=707",
+                        "deleteUrl": "/action/doDeleteSearch?searchType=saved&amp;queryId=707"
+                    },
+                    {
+                        "queryName": "test: santa clara",
+                        "queryNotes": "Monthly",
+                        "savedDate": "Mar 23, 17",
+                        "runDate": "Mar 23, 17",
+                        "runUrl": "/action/doSearch?target=saved&amp;runSaved=707",
+                        "deleteUrl": "/action/doDeleteSearch?searchType=saved&amp;queryId=707"
+                    },
+                    {
+                        "queryName": "test: brighton",
+                        "queryNotes": "Never",
+                        "savedDate": "Mar 23, 17",
+                        "runDate": "Mar 23, 17",
+                        "runUrl": "/action/doSearch?target=saved&amp;runSaved=707",
+                        "deleteUrl": "/action/doDeleteSearch?searchType=saved&amp;queryId=707"
+                    }
+                ]
+            },
+            "properties": {
+                "displaySavedOn": "true",
+                "displayLastRunOn": "true",
+                "numberOfSearchesToDisplay": "5"
+            }
+        })
+        .source_example
+            .container
+                | !{pb.render("saved-searches", "example.json")}
+
+        h3 Saved Searches Example : with hidden fields
+        +printJson({
+            "properties": {
+                "displaySavedOn": "false",
+                "displayLastRunOn": "false",
+                "numberOfSearchesToDisplay": "5"
+            }
+        })
+        .source_example
+            .container
+                | !{pb.render("saved-searches", "example-hidden-fields.json")}
+    | #{''}

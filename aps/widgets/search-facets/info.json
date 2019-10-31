@@ -1,0 +1,7 @@
+{
+    "title": "Facets",
+    "template": "doc",
+    "tag": ["ready"],
+    "description": "Search filters",
+    "dependencies": ["component/facet", "component/alphanumeric", "component/applied-facets", "component/facet-date"]
+}

@@ -1,0 +1,153 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/accordion/templates/accordion/accordion-tmpl.jade')
+        h3 Data
+        p The following data structure must exist to be able to use Accordion template.
+
+        +printJson({
+           "thisWidget": {
+               "id": "id1"
+           },
+           "data": {
+               "items": [
+                   {
+                       "label": "Accordion w/ mixer 1",
+                       "content":"An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead."
+                   },
+                   {
+                       "label": "Accordion w/ mixer 2",
+                       "content": "An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead."
+                   },
+                   {
+                       "label": "Accordion w/ mixer 3",
+                       "content": "An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead."
+                   },
+                   {
+                       "label": "external link",
+                       "icon": {
+                           "expanded": "",
+                           "collapsed": "",
+                           "location":""
+                       },
+                       "url":"/home",
+                       "content":"An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead."
+                   }
+               ]
+           }
+        })
+
+        markdown
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `label`
+                        td accordion lable
+                    tr
+                        td `content`
+                        td accordion content could be dropzone
+                    tr
+                        td `icon expanded`
+                        td icon when tab is expanded
+                    tr
+                        td `icon collapsed`
+                        td icon when tab is collapsed
+                    tr
+                        td `icon location`
+                        td icon location, `after`, `before` the label
+                    tr
+                        td `url`
+                        td the link of the label in case it was an external link
+
+    | #{''}
+
+    section.source_section
+        h2 Tabbed accordion (List of accordion tabs)
+        p  Following example demonstrates a list of accordion tabs.
+        markdown
+            p used `tabbed` as type
+            p and for the external link we used the `url`
+        .source_example(style="max-width: 500px")
+            | !{pb.render('accordion', 'accordion/demo/demo-accordion', 'accordion.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Tabbed accordion with arrow
+        p  Following example demonstrates a list of accordion tabs.
+        markdown
+            p used `accordion-with-arrow` class as wrapper to add arrows to tab accordion
+
+        .source_example(style="max-width: 500px")
+             | !{pb.render('accordion', 'accordion/demo/demo-accordion', 'accordion.json', {"shared": {"model": {"config": {"wrapper": "true", "className": ["accordion-with-arrow"]}}}})}
+    | #{''}
+
+
+    section.source_section
+        h2 Tabbed accordion behavior only on specific viewports.
+        markdown
+            p Use `data-accordion-vport` attribute as wrapper of accordion to specify the viewport of accordion behavior ex: `data-accordion-vport='screen-sm'` in this example accordion behavior will be on 'screen-sm' viewport and below.
+            p If you want accordion on specific viewport to have arrows please add attribute as wrapper `data-accordion-option='with-arrow'`
+            p This is jade template shows how to use responsive accordion attributes
+                code.src-html.source_visible.source_example
+                    | div(data-accordion-vport="screen-sm", data-accordion-option="with-arrow")
+                    |           &nbsp;&nbsp;(render here you accordion widget or html)
+
+            p  The following example demonstrates accordion behavior only on screen-sm viewport and below also shows arrows for the accordion when you are on small screen.
+
+
+        .source_example(style="max-width: 500px")
+            div(data-accordion-vport="screen-sm" data-accordion-option="with-arrow")
+                | !{pb.render('accordion', 'accordion/demo/demo-accordion', 'accordion.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+    | #{''}
+
+
+    section.source_section
+        h2 Single accordion examples
+
+        h3 Single accordion - fluid
+        p Following example demonstrates a fluid single accordion tab.
+        p This is the default single accordion style, no need for class addition.
+        markdown
+            p used `single` as type
+        .source_example(style="max-width: 500px")
+            | !{pb.render('accordion', 'accordion/demo/demo-accordion', 'single-accordion.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Single accordion - centered
+        p Following example demonstrates a centered single accordion tab.
+        markdown
+            p To have the following centered style, add `centered` class to the accordion wrapper.
+        .source_example(style="max-width: 500px")
+            | !{pb.render('accordion', 'accordion/demo/demo-accordion', 'centered-accordion.json', {"shared": {"model": {"config": {"wrapper": "true", "className": ["accordion--centered"]}}}})}
+
+        h3 Single accordion - bordered
+        p Following example demonstrates a bordered single accordion tab.
+        markdown
+            p To have the following bordered style, add `bordered` class to the accordion wrapper.
+        .source_example(style="max-width: 500px")
+            | !{pb.render('accordion', 'accordion/demo/demo-accordion', 'bordered-accordion.json', {"shared": {"model": {"config": {"wrapper": "true", "className": ["accordion--bordered"]}}}})}
+
+        h3 Subsection of accordion
+        p Following example demonstrates a sub section in a single accordion tab.
+
+        markdown
+            p To have the following subsection style please add a `subSection` as `type`.
+            p To have the left border style add a `border` class to the accordion wrapper.
+        .source_example(style="max-width: 500px")
+            section
+                h2.title Accordion title
+                div
+                    p Description text, autohrs, etc.
+                | !{pb.render('accordion', 'accordion/demo/demo-accordion', 'sub-single-accordion.json', {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}

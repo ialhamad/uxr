@@ -1,0 +1,160 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+
+    section.source_section
+        h2 Inputs
+
+        h3 Text input
+        .source_example
+            .input-group
+                input(type="text" placeholder="Text input")
+
+        h3 Select list
+        markdown
+            p In the example below we are creating `select` element. In this case we must also add `options` array.
+        .source_example
+            .input-group
+                select
+                    option Lorem
+                    option Ipsum
+                    option Dolor
+
+        h3 Labels
+        .source_example
+            .input-group
+                label label
+
+        h3 Label with input
+        .source_example
+            .input-group
+                label(for="example-input1") label
+                input(type="text" placeholder="Example" id="example-input1")
+
+        h3 left side Label with input
+        .source_example
+            .input-group.left-side-label
+                label(for="example-input") label
+                input(type="text" placeholder="Example" id="example-input")
+
+        h3 left side Label with rigth content
+        .source_example
+                .input-group
+                    .side-label
+                      label(for="example-input") label
+                    .side-content
+                      input(type="text" placeholder="Example")
+                      span.error error
+
+
+        h3 Checkbox
+        markdown
+            p In the example below we are creating `checkbox` element
+        .source_example
+            .input-group
+                label
+                    input(type="checkbox")
+                    span(class="label-txt") Example Label
+
+        markdown
+            p adding `checkbox--primary` class to change the style
+        .source_example
+            .input-group
+                label(class="checkbox--primary")
+                    input(type="checkbox")
+                    span(class="label-txt") Example Label
+
+        markdown
+            p adding `checkbox--secondary` class to change the style
+        .source_example
+            .input-group
+                label(class="checkbox--secondary")
+                    input(type="checkbox")
+                    span(class="label-txt") Example Label
+
+        h3 Radio
+        markdown
+            p In the example below we are creating `radio` element.
+        .source_example
+            .input-group
+                label
+                    input(type="radio")
+                    span(class="label-txt") Example label
+
+        markdown
+            p adding `radio--primary` class to change the style
+        .source_example
+            .input-group
+                label(class="radio--primary")
+                    input(type="radio")
+                    span(class="label-txt") Example label
+
+        markdown
+            p adding `radio--secondary` class to change the style
+        .source_example
+            .input-group
+                label(class="radio--secondary")
+                    input(type="radio")
+                    span(class="label-txt") Example label
+
+        h3 File
+        markdown
+            p In the example below we are creating `file` element.
+        .source_example
+            .input-group
+                label Example label
+                input(type="file")
+
+
+        h3 Textarea
+        markdown
+            p In the example below we are creating `textarea` element, and we also use `rows` and `cols` attributes.
+        .source_example
+            .input-group
+                label(for="example-textarea") Example Textarea
+                textarea(rows="5" cols="100" placeholder="Example" id="example-textarea")
+
+
+        h3 Reproducible fields
+        markdown
+        .source_example
+            .reproducible__wrapper
+                .reproducible.input-group
+                    input(type="text" placeholder="Enter Search term" )
+                    a.remove-ctrl-field(href="#" title="Remove search field")
+                        i.icon-trash-can(aria-hidden="true")
+                    a.add-ctrl-field(href="#" title="Add search field")
+                        i.icon-circle-plus(aria-hidden="true")
+
+
+    section.source_section
+        h2 Custom Form elements (JCF)
+        markdown
+            p In the examples below we are setting `jcf` option to true, in default cases JCF plugin will effect their styles
+        h3 Select list
+        .source_example
+            .input-group
+                select.jcf(datajcf='{"wrapNative": false,"wrapNativeOnMobile": false}')
+                    option Lorem
+                    option Ipsum
+                    option Dolor
+
+    section.source_section
+        h2 Accessibility
+        markdown
+            p In order to hide labels (f.ex to match the designs) but not lose the accessibility, add class `is-accessible` to the desired tag (label, legend etc)
+        h3 Hidden Labels
+        .source_example
+            .input-group
+                label.is-accessible(for='word') Select Word
+                select#word.jcf(datajcf='{"wrapNative": false,"wrapNativeOnMobile": false}')
+                    option Lorem
+                    option Ipsum
+                    option Dolor
+
+    | #{''}

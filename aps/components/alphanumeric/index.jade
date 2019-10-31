@@ -1,0 +1,42 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/alphanumeric/templates/alphanumeric/alphanumeric-tmpl.jade')
+        h3 Data
+            +printJson({
+                "type": "alphabetRange",
+                "title": "Alphanumeric",
+                "values": [
+                    {
+                        "label": "0-9",
+                        "link": "#",
+                        "used": false
+                    },
+                    {
+                        "label": "A",
+                        "link": "#",
+                        "used": true
+                    },
+                    {
+                        "label": "B",
+                        "link": "#",
+                        "used": false
+                    }
+                ]
+
+            })
+
+    | #{''}
+
+    section.source_section
+        h2 Titles
+        .source_example
+            | !{pb.render('alphanumeric', 'data.json')}
+    | #{''}
+

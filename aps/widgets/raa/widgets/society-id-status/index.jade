@@ -1,0 +1,19 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    .source_info
+        p This is not a UX3 widget, this is a legacy widget.
+
+
+    section.source_section
+        h2 Example
+        p The following example demonstrates Society ID Status widget.
+
+        h3 Society ID Status
+        .source_example
+            .container.wrapper
+                | !{pb.render("society-id-status", "data.json")}
+
+    | #{''}
+
+

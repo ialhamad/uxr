@@ -1,0 +1,28 @@
+.issue-item {
+	&__title {
+		@include font-size(19);
+		color: $creative-title-color;
+	}
+
+	.loa {
+		color: $site-medium-text;
+	}
+
+	.toc-item__detail {
+		span {
+			color: $site-dark-text;
+			font-weight: 700;
+		}
+
+	}
+
+	p {
+		a {
+			color: $creative-title-color;
+		}
+
+		a:before {
+			content: " ";
+		}
+	}
+}

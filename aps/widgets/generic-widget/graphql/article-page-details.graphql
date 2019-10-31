@@ -1,0 +1,45 @@
+query {
+  item {
+  	type
+    ...on Chapter {
+      group {
+        ...on Book {
+          title(type:PRIMARY)
+          bookLink:link(service:showBook)
+          isbn
+          eisbn
+          coverImage {
+            src
+          }
+        }
+      }
+    }
+    ...on Article {
+      group {
+        ...on Issue {
+          citationLine
+          volume
+          issue
+          isAheadOfPrint
+          tocLink:link(service:showToc)
+          date(type:PPUB)
+          coverImage {
+          	src
+        	}
+          attachments {
+            name
+            type
+            link
+          }
+          serial {
+            ...on Journal {
+              code
+              issn
+              eissn
+            }
+          }
+        }
+      }
+    }
+  }
+}

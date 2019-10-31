@@ -1,0 +1,475 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        h2 Truncate Tests
+        
+        h3 Single paragraph
+        .source_example
+            p.single-paragraph
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam diam leo, fringilla quis porta vitae, vulputate id mi. Donec sagittis tortor non mi vestibulum efficitur. Pellentesque hendrerit 
+                a(href="/abc" style="color: blue") efficitur scelerisque. 
+                | Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc bibendum nec tellus eget blandit. Sed sed arcu nec metus dapibus finibus in ut libero. Nam id tempus orci. Aliquam ut nisl vitae purus laoreet pharetra quis ut magna. Morbi ultrices semper pulvinar. Vestibulum at metus leo. Aenean bibendum libero vel ligula tristique aliquam. Aenean eleifend consequat dui, consectetur iaculis enim malesuada sed. Pellentesque habitant morbi tristique senectus et netus et malesuada 
+                a(href="/abc" style="color: blue") fames ac turpis 
+                | egestas. Aenean fringilla finibus libero at maximus. Cras convallis eros volutpat, maximus ipsum sit amet, fermentum mi. Integer quis condimentum ipsum. Nunc velit eros, euismod lacinia risus eget, hendrerit dictum erat. Duis vehicula eleifend mauris id imperdiet. Proin molestie finibus fermentum. Suspendisse dapibus, turpis in condimentum varius, neque turpis elementum diam, ac rutrum est urna nec diam. Curabitur pharetra molestie quam, id malesuada quam hendrerit nec. Suspendisse convallis dolor non ex laoreet, et efficitur mi bibendum. Integer porta faucibus ultrices. Fusce a eros purus. Donec mi est, condimentum sed ultrices in, bibendum sit amet ante. Aenean fermentum porta ultrices. Fusce ac dui id lorem faucibus gravida nec non urna. Ut tincidunt malesuada malesuada. Curabitur eleifend orci nulla, sed eleifend justo blandit eu. Nullam fermentum libero eget mattis ultrices. In elementum sapien ut ornare lacinia. In ornare, leo nec hendrerit facilisis, sapien ex venenatis enim, et blandit ligula purus sit amet risus. Nunc egestas viverra dolor, id faucibus est pellentesque a. Integer laoreet lectus nec urna aliquam, quis interdum dolor elementum. In eu justo malesuada mauris aliquam pharetra sed ut ligula. Sed lorem velit, consectetur in elit vel, blandit consectetur ipsum. Sed pharetra, elit id mattis fermentum, erat enim finibus libero, a molestie quam mi in ligula. Sed elementum purus dolor, a varius metus cursus quis. Morbi id tellus non mi auctor venenatis sed sit amet risus. Nam convallis non risus nec volutpat. Fusce mollis, metus in scelerisque dapibus, neque purus vestibulum risus, eget vulputate odio turpis vitae nibh. Integer viverra consequat massa, pulvinar pulvinar sapien aliquam eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae turpis id elit vestibulum convallis. Pellentesque vulputate odio ullamcorper ipsum tincidunt, at tincidunt dolor viverra. Mauris vestibulum fringilla ante.
+
+        h3 Multiple paragraphs
+        .source_example
+            div.multi-paragraph
+                p
+                    | Donec mi est, condimentum sed ultrices in, bibendum sit amet ante. Aenean fermentum porta ultrices. Fusce ac dui id lorem faucibus gravida nec non urna.
+                p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    a(href="/abc" style="color: blue") Nullam diam leo, fringilla quis 
+                    | porta vitae, vulputate id mi. Donec sagittis tortor non mi vestibulum efficitur. Pellentesque hendrerit efficitur scelerisque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc 
+                    a(href="/abc" style="color: blue") bibendum nec tellus eget 
+                    | blandit. Sed sed arcu nec metus dapibus finibus in ut libero. Nam id tempus orci. Aliquam ut nisl vitae purus laoreet pharetra quis ut magna. Morbi ultrices semper pulvinar. Vestibulum at metus leo.
+
+                p
+                    | Aenean bibendum libero vel ligula tristique aliquam. Aenean eleifend consequat dui, consectetur iaculis enim malesuada sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean fringilla finibus libero at maximus. Cras convallis eros volutpat, maximus ipsum sit amet, fermentum mi. 
+                    a(href="/abc" style="color: blue") Integer quis condimentum ipsum. Nunc velit eros, euismod lacinia risus eget
+                    | , hendrerit dictum erat. Duis vehicula eleifend mauris id imperdiet. Proin molestie finibus fermentum. Suspendisse dapibus, turpis in condimentum varius, neque turpis elementum diam, ac rutrum est urna nec diam. Curabitur pharetra molestie quam, id malesuada quam hendrerit nec. Suspendisse convallis dolor non ex laoreet, et efficitur mi bibendum. Integer porta faucibus ultrices. Fusce a eros purus.
+
+                p
+                    | Donec mi est, condimentum sed ultrices in, bibendum sit amet ante. Aenean fermentum porta ultrices. Fusce ac dui id lorem faucibus gravida nec non urna. Ut tincidunt malesuada malesuada. Curabitur eleifend orci nulla, sed eleifend justo blandit eu. Nullam fermentum libero eget mattis ultrices. In elementum sapien ut ornare lacinia. In ornare, leo nec hendrerit facilisis, sapien ex venenatis enim, et blandit ligula purus sit amet risus. Nunc egestas viverra dolor, id faucibus est pellentesque a.
+
+                p
+                    | Integer laoreet lectus nec urna aliquam, quis interdum dolor elementum. In eu justo malesuada mauris aliquam pharetra sed ut ligula. Sed lorem velit, consectetur in elit vel, blandit consectetur ipsum. Sed pharetra, elit id mattis fermentum, erat enim finibus libero, a molestie quam mi in ligula. Sed elementum purus dolor, a varius metus cursus quis. Morbi id tellus non mi auctor venenatis sed sit amet risus. Nam convallis non risus nec volutpat. Fusce mollis, metus in scelerisque dapibus, neque purus vestibulum risus, eget vulputate odio turpis vitae nibh. Integer viverra consequat massa, pulvinar pulvinar sapien aliquam eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae turpis id elit vestibulum convallis. Pellentesque vulputate odio ullamcorper ipsum tincidunt, at tincidunt dolor viverra. Mauris vestibulum fringilla ante.
+
+        h3 List of authors - homepage
+        .source_example
+            .creative-work
+              .delayLoad
+                a(href='/doi/10.4155/bio-2016-0111', title='LC&#x2013;MS/MS-based quantification of kynurenine metabolites, tryptophan, monoamines and neopterin in plasma, cerebrospinal fluid and brain')
+                  h5.creative-work__title(style="height: auto")
+                    | LC–MS/MS-based quantification of kynurenine metabolites, tryptophan, monoamines and neopterin in plasma, cerebrospinal fluid and brain quantification of kynurenine metabolites, tryptophan, monoamines and neopterin in plasma, cerebrospinal fluid and brain kynurenine metabolites, tryptophan, monoamines and neopterin in plasma, cerebrospinal fluid
+                ul.rlist--inline.loa.mobile-authors(title='list of authors')
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Fuertig%2C+Ren%C3%A9', title='René Fuertig') René Fuertig
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Ceci%2C+Angelo', title='Angelo Ceci') Angelo Ceci
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Camus%2C+Sandrine+M', title='Sandrine M Camus') Sandrine M Camus
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Hengerer%2C+Bastian', title='Bastian Hengerer') Bastian Hengerer
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Fuertig%2C+Ren%C3%A9', title='René Fuertig') René Fuertig
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Ceci%2C+Angelo', title='Angelo Ceci') Angelo Ceci
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Camus%2C+Sandrine+M', title='Sandrine M Camus') Sandrine M Camus
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Bezard%2C+Erwan', title='Erwan Bezard') Erwan Bezard
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Bezard%2C+Erwan', title='Erwan Bezard') Erwan Bezard
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Luippold%2C+Andreas+H', title='Andreas H Luippold') Andreas H Luippold
+                  |  & 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Hengerer%2C+Bastian', title='Bastian Hengerer') Bastian Hengerer
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Fuertig%2C+Ren%C3%A9', title='René Fuertig') René Fuertig
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Ceci%2C+Angelo', title='Angelo Ceci') Angelo Ceci
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Camus%2C+Sandrine+M', title='Sandrine M Camus') Sandrine M Camus
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Bezard%2C+Erwan', title='Erwan Bezard') Erwan Bezard
+                  | , 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Luippold%2C+Andreas+H', title='Andreas H Luippold') Andreas H Luippold
+                  |  & 
+                  li
+                    span.hlFld-ContribAuthor
+                      a(href='/author/Hengerer%2C+Bastian', title='Bastian Hengerer') Bastian Hengerer
+                .meta
+                  time(datetime='15 Aug 2016') 15 Aug 2016
+                  |  |
+                  | Bioanalysis
+
+
+        h3 List of authors - article page
+        .source_example
+            article.loa-article
+                .article__content
+                    .citation
+                        .loa-wrapper.hidden-xs
+                          #sb-1.accordion
+                            .accordion-tabbed.loa-accordion
+                              .accordion-tabbed__tab-mobile.accordion__closed
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a1', data-db-target-for='a1', title='Ivan Torre-Villalvazo')
+                                  span Ivan Torre-Villalvazo
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a1')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nutrition Physiology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Torre-Villalvazo%2C+Ivan')
+                                        | Search for more papers by this author
+                              |                                                 ,* 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a2', data-db-target-for='a2', title='Luz Graciela Cervantes-Pérez')
+                                  span Luz Graciela Cervantes-Pérez
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a2')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Pharmacology, Instituto Nacional de Cardiología Ignacio Chávez, México City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Cervantes-P%C3%A9rez%2C+Luz+Graciela')
+                                        | Search for more papers by this author
+                              |                                                 ,* 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a3', data-db-target-for='a3', title='Lilia G. Noriega')
+                                  span Lilia G. Noriega
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a3')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nutrition Physiology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Noriega%2C+Lilia+G')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a4', data-db-target-for='a4', title='Jose V. Jiménez')
+                                  span Jose V. Jiménez
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a4')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Jim%C3%A9nez%2C+Jose+V')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a5', data-db-target-for='a5', title='Norma Uribe')
+                                  span Norma Uribe
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a5')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Pathology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, México City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Uribe%2C+Norma')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a6', data-db-target-for='a6', title='María Chávez-Canales')
+                                  span María Chávez-Canales
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a6')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Molecular Physiology Unit, Instituto de Investigaciones Biomédicas, Universidad Nacional Autónoma de México, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Ch%C3%A1vez-Canales%2C+Mar%C3%ADa')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a7', data-db-target-for='a7', title='Claudia Tovar-Palacio')
+                                  span Claudia Tovar-Palacio
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a7')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Tovar-Palacio%2C+Claudia')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a8', data-db-target-for='a8', title='Braulio A. Marfil-Garza')
+                                  span Braulio A. Marfil-Garza
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a8')
+                                  p.author-type
+                                  p
+                                  p.orcid-account
+                                    a(href='')
+                                      a(href='https://orcid.org/0000-0002-7224-2127', title='orcid link')
+                                        span.icon-orcid
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Marfil-Garza%2C+Braulio+A')
+                                        | Search for more papers by this author
+                              a(href='https://orcid.org/0000-0002-7224-2127', title='orcid link')
+                                span.icon-orcid
+                              | , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a9', data-db-target-for='a9', title='Nimbe Torres')
+                                  span Nimbe Torres
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a9')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nutrition Physiology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Torres%2C+Nimbe')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a10', data-db-target-for='a10', title='Norma A. Bobadilla')
+                                  span Norma A. Bobadilla
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a10')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  p
+                                    | Molecular Physiology Unit, Instituto de Investigaciones Biomédicas, Universidad Nacional Autónoma de México, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Bobadilla%2C+Norma+A')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a11', data-db-target-for='a11', title='Armando R. Tovar')
+                                  span Armando R. Tovar
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a11')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nutrition Physiology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Tovar%2C+Armando+R')
+                                        | Search for more papers by this author
+                              |                                                 , and 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a12', data-db-target-for='a12', title='Gerardo Gamba')
+                                  span Gerardo Gamba
+                                  i.icon-Email(aria-hidden='true')
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a12')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  p
+                                    | Molecular Physiology Unit, Instituto de Investigaciones Biomédicas, Universidad Nacional Autónoma de México, Mexico City, Mexico
+                                  p
+                                    | Tecnologico de Monterrey, Escuela de Medicina y de Ciencias de la Salud, Monterrey, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Gamba%2C+Gerardo')
+                                        | Search for more papers by this author
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a2', data-db-target-for='a2', title='Luz Graciela Cervantes-Pérez')
+                                  span Luz Graciela Cervantes-Pérez
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a2')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Pharmacology, Instituto Nacional de Cardiología Ignacio Chávez, México City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Cervantes-P%C3%A9rez%2C+Luz+Graciela')
+                                        | Search for more papers by this author
+                              |                                                 ,* 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a3', data-db-target-for='a3', title='Lilia G. Noriega')
+                                  span Lilia G. Noriega
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a3')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nutrition Physiology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Noriega%2C+Lilia+G')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a4', data-db-target-for='a4', title='Jose V. Jiménez')
+                                  span Jose V. Jiménez
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a4')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Jim%C3%A9nez%2C+Jose+V')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a5', data-db-target-for='a5', title='Norma Uribe')
+                                  span Norma Uribe
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a5')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Pathology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, México City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Uribe%2C+Norma')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a6', data-db-target-for='a6', title='María Chávez-Canales')
+                                  span María Chávez-Canales
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a6')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Molecular Physiology Unit, Instituto de Investigaciones Biomédicas, Universidad Nacional Autónoma de México, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Ch%C3%A1vez-Canales%2C+Mar%C3%ADa')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a7', data-db-target-for='a7', title='Claudia Tovar-Palacio')
+                                  span Claudia Tovar-Palacio
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a7')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Tovar-Palacio%2C+Claudia')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a8', data-db-target-for='a8', title='Braulio A. Marfil-Garza')
+                                  span Braulio A. Marfil-Garza
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a8')
+                                  p.author-type
+                                  p
+                                  p.orcid-account
+                                    a(href='')
+                                      a(href='https://orcid.org/0000-0002-7224-2127', title='orcid link')
+                                        span.icon-orcid
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Marfil-Garza%2C+Braulio+A')
+                                        | Search for more papers by this author
+                              a(href='https://orcid.org/0000-0002-7224-2127', title='orcid link')
+                                span.icon-orcid
+                              | , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a9', data-db-target-for='a9', title='Nimbe Torres')
+                                  span Nimbe Torres
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a9')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nutrition Physiology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Torres%2C+Nimbe')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a10', data-db-target-for='a10', title='Norma A. Bobadilla')
+                                  span Norma A. Bobadilla
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a10')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  p
+                                    | Molecular Physiology Unit, Instituto de Investigaciones Biomédicas, Universidad Nacional Autónoma de México, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Bobadilla%2C+Norma+A')
+                                        | Search for more papers by this author
+                              |                                                 , 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a11', data-db-target-for='a11', title='Armando R. Tovar')
+                                  span Armando R. Tovar
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a11')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nutrition Physiology, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Tovar%2C+Armando+R')
+                                        | Search for more papers by this author
+                              |                                                 , and 
+                              .accordion-tabbed__tab-mobile
+                                a.author-name.accordion-tabbed__control.visible-x(href='#', data-id='a12', data-db-target-for='a12', title='Gerardo Gamba')
+                                  span Gerardo Gamba
+                                  i.icon-Email(aria-hidden='true')
+                                  i.icon-arrow_d_n(aria-hidden='true')
+                                .author-info.accordion-tabbed__content(data-db-target-of='a12')
+                                  p.author-type
+                                  p
+                                  p
+                                    | Department of Nephrology and Mineral Metabolism, Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán, Mexico City, Mexico
+                                  p
+                                    | Molecular Physiology Unit, Instituto de Investigaciones Biomédicas, Universidad Nacional Autónoma de México, Mexico City, Mexico
+                                  p
+                                    | Tecnologico de Monterrey, Escuela de Medicina y de Ciencias de la Salud, Monterrey, Mexico
+                                  .bottom-info
+                                    p
+                                      a(href='/author/Gamba%2C+Gerardo')
+                                        | Search for more papers by this author
+
+            
+    | #{''}

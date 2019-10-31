@@ -1,0 +1,49 @@
+{
+    "data": {
+        "config": {
+            "headingLevel": 2
+        },
+        "sections":  [
+            {
+                "title": "Abstract",
+                "separator": "false",
+                "body": "<p>An age-structured life-cycle model of steelhead (Oncorhynchus mykiss) for the Stillaguamish River in Puget Sound, Washington, USA, was employed to estimate the number of age-1 steelhead parr that could have produced the estimated adult return of 69 000 in 1895. We then divided the estimated parr numbers by the estimated area of steelhead rearing habitat in the Stillaguamish River basin in 1895 and under current conditions to estimate density of rearing steelhead then and now. Scaled to estimates of total wetted area of tributary and mainstem shallow shoreline habitat, our historic estimates averaged 0.39–0.49 parr·m−2, and ranged from 0.24 to 0.7 parr·m−2. These values are significantly greater than current densities in the Stillaguamish (mainstem average: 0.15 parr·m−2, tributaries: 0.07 parr·m−2), but well within the range of recent estimates of steelhead parr rearing densities in high-quality habitats. Our results indicate that modest improvement in the capacity of mainstem and tributary rearing habitat in Puget Sound rivers will yield large recovery benefits if realized in a large proportion of the area of river basins currently accessible to steelhead.</p>"
+            },
+            {
+                "title": "Introduction",
+                "separator": "false",
+                "body": "<p>Recovery of species and distinct population <a class=\"tab-link\" href=\"#fig-2\" data-tab=\"tab1f\" data-slide=\"tab1f\">Figure 2</a> (DPS) listed as threatened or endangered under the United States Endangered Species Act “is the process by which listed species and their ecosystems are restored and their future is safeguarded to the point that protections under the ESA are no longer needed” (NMFS 2010). For Pacific salmon and steelhead (Oncorhynchus spp.), this is generally thought to require attaining a condition in which the species or DPS has a probability of persisting for the next 100 years of at least 0.95 (McElhany et al. 2000). Setting endangered species recovery goals and objectives requires a systematic and scientifically rigorous assessment of population needs and the ability of the environment to support those needs (Tear et al. 2005; Beechie et al. 2010). This is especially true when habitat loss is a significant contributor to species declines, and recovery plans emphasize habitat restoration as a means to achieving recovery goals (e.g., Beechie et al. 2003). Within a recovery plan, recovery goals may be narrative statements, but habitat restoration objectives must be specific and measureable actions and targets for improving habitat quantity and quality (Tear et al. 2005; Beechie et al. 2013). One example of this type of recovery plan is that of the threatened Puget Sound steelhead (Oncorhynchus mykiss) in Washington, USA, which declined at least, in part, due to loss and impairment of freshwater spawning and rearing habitats (Hard et al. 2007, 2015).</p><p>Recovery of Puget Sound steelhead to a condition of de-listing will require, among other objectives, identifying threshold levels of freshwater juvenile rearing capacity necessary to sustain robust population numbers over multiple generations. However, identifying appropriate thresholds for the production of juvenile steelhead in freshwater will be hampered by lack of information about the capacity of freshwater rearing habitat that supported a much larger adult run size than exists today. Gayeski et al. (2011) employed a Bayesian approach to estimate the total adult run size from the available record of commercial catches for each of four large rivers in north Puget Sound, including the Stillaguamish. The estimated run size in the Stillaguamish River in 1895 ranged from 52 000 to 100 000 based on the 5th and 95th percentiles of the posterior distribution of the Bayes estimate, whereas a recent five-year geometric mean number of natural-origin spawners was 327 (Ford 2011, Table 74, page 237). This 100-fold decline far exceeds what might be expected in response to the loss of only 33% of stream habitat accessible to adult steelhead since 1895 (Gayeski et al. 2011) and a loss of 60% of estimated juvenile steelhead rearing habitat area (this study). Hence, it appears that the productivity of the freshwater rearing environment has experienced a decline since 1895 that is considerably out of proportion to the loss of accessible stream habitat area.</p><p>The main objective of this paper is to estimate this loss of productivity by estimating the steelhead parr rearing capacity of the Stillaguamish River in 1895 and compare it to the current productivity. Although post-smolt, marine survival of steelhead has also declined significantly during the past 25 years (Friedland et al. 2014), our focus in this paper is on the importance for the recovery of Puget Sound steelhead of attaining greater densities in steelhead parr rearing habitat than that indicated by recent data. We used an age-structured life-cycle model to estimate the number of age 1 steelhead parr that could produce an adult run size of 69 200 (the mode or most probable value of the posterior distribution of run sizes estimated by Gayeski et al. 2011) over a range of plausible parameter values for both freshwater production and marine (smolt-to-adult return) survival. We then divided the number of parr by estimates of the area of steelhead parr rearing habitat available in 1895 to derive estimates of historical steelhead parr rearing densities (parr·m−2). The life-cycle model incorporates density dependence and a realistic, complex adult age structure that is likely to capture the complex spawning structure of steelhead under minimally disturbed conditions. We conclude with a discussion of the relevance of our estimates to the conservation of Puget Sound steelhead.</p>"
+            },
+            {
+                "title": "Materials and methods",
+                "separator": "false",
+                "body": {
+                    "$pug": {
+                        "template": "../../components/section/templates/section/section-tmpl.jade",
+                        "data": {
+                            "config": {
+                                "headingLevel": 3
+                            },
+                            "data": {
+                                "sections":  [
+                                    {
+                                        "title": "Study area",
+                                        "separator": "false",
+                                        "header": "h3",
+                                        "body": "<p>The Stillaguamish River basin is located in the north-central region of Puget Sound in Washington, USA, discharging to Admiralty Inlet approximately 25 miles north of the city of Everett, Washington (Fig. 1). Puget Sound is a fjord system of flooded glacial valleys that acts as a large inland sea in Washington, USA. It is bounded by the Olympic Mountains to the west and the Cascade Mountains to the east covering 648 000 hectares with approximately 4023 km of shoreline. Numerous large (sixth-order and larger) and medium-sized (fourth- and fifth-order) rivers drain to Puget Sound and currently support 32 independent steelhead populations (Myers et al. 2015). The Stillaguamish River basin contains two major branches, the North and South Forks, which both arise on the west slopes of the North Cascade mountain range. Both forks contain spawning and rearing habitat for steelhead and Pacific salmon species over the majority of their lengths. The river basin has a drainage area of 1230 km2 (Myers et al. 2015, Table D-1), which is the size of an average Puget Sound river basin (Roni et al. 2010). The river is typical of most northern Puget Sound rivers in spanning a mixture of hydrologic regimes from lowland rain-dominated regions with historically forested floodplains to transitional rain/snow mixed piedmont, to snow-dominated forested headwaters (Myers et al. 2015). All hydrologic and climatic regions, except for small first- and second-order headwater tributaries provided historical spawning and (or) rearing habitat for steelhead.</p>"
+                                    },
+                                    {
+                                        "title": "Life-cycle model",
+                                        "separator": "false",
+                                        "header": "h3",
+                                        "body": "<p>We modeled a steelhead population consisting of a total of six age-classes, with four adult ages (3–6). We modeled females only and assumed a 1:1 sex ratio (Withler 1966; Ward and Slaney 1988; Seamons et al. 2004). The model includes repeat spawning at ages four, five, and six because repeat spawning is believed to have been an important characteristic of steelhead life history prior to the major reductions in winter-run steelhead population sizes during the past 40 years (Hard et al. 2015). The model consists of 19 stages. This results in a square population projection matrix, 19 rows by 19 columns, with fecundity values in the first row and transition rates or zero entries in all other rows. Life stages, transition rates, and fecundities used in the projection matrix and their abbreviations are listed in Supplementary Material 1, Tables S1 and S2. Figure 2 shows a schematic of the life-cycle model starting with parr (age 1) and terminating at each adult age (3–6) and life stage or fate (maiden or repeat spawner, surviving to spawn or harvested).</p>"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

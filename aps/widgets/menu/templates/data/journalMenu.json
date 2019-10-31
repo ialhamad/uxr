@@ -1,0 +1,61 @@
+{
+    "thisWidget": {
+        "properties": {
+            "vPort": "medium"
+        }
+    },
+    "data": {
+
+        "id": "main0",
+        "list": [
+            {
+                "text": "Home",
+                "link": "#",
+                "current": "true"
+            },
+            {
+                "text": "About",
+                "link": "#"
+            },
+            {
+                "text": "Submit",
+                "link": "#"
+            },
+            {
+                "text": "Journals",
+                "link": "#",
+                "list": [
+                    {
+                        "text": "Phytopathology",
+                        "link": "#"
+                    },
+                    {
+                        "text": "Plant Disease",
+                        "link": "#"
+                    },
+                    {
+                        "text": "Molecular Plant-Microbe Interactions®",
+                        "link": "#"
+                    },
+                    {
+                        "text": "Phytobiomes Journal",
+                        "link": "#"
+                    },
+                    {
+                        "text": "Plant Health Progress",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "text": "Books",
+                "link": "#"
+            },
+            {
+                "text": "Publisher’s Home",
+                "link": "#"
+            }
+        ]
+
+    }
+}

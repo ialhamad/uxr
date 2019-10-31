@@ -1,0 +1,39 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Exam Credit Claimed Confirmation
+            h3 Include template
+            +printJsCode('include /specs/ux3/widgets/exam-credit-claimed-confirmation/templates/exam-credit-claimed-confirmation/exam-credit-claimed-confirmation-tmpl.jade')
+        h3 Data
+        markdown
+            p The following the JSON structure must exist to be able to use Exam Credit Claimed Confirmation template.
+        +printJson({
+            "data": {
+                "exam": {
+                    "title": "Translational Aspects of the Human Respiratory Virome",
+                    "examLink": "http://thoracic-test.literatumonline.com/doi/exam/10.1164/atscme_course%3Bajrccm_194_12_1458",
+                    "certificateLink": "http://thoracic-test.literatumonline.com/action/showExamCertificate?doi=10.1164%2Fatscme_course%3Bajrccm_194_12_1458"
+                },
+                "session": {
+                    "person": {
+                        "email": "pwatson@atypon.com"
+                    }
+                }
+            },
+            "errors": []
+        })
+    | #{''}
+
+    section.source_section
+        h2 Example
+        p The following example demonstrates Exam Credit Claimed Confirmation.
+        .source_example
+            .container
+                | !{pb.render("exam-credit-claimed-confirmation", "data.json")}
+    | #{''}

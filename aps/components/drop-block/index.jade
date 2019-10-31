@@ -1,0 +1,103 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    h1 ux3 DropBlock moclecules
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-template-include-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+        markdown
+            p Each drop block must have <strong>`Controller`</strong> and <strong>`Target`</strong> elements to be functional. <strong>`Parent element is optional`</strong> and can be used based on the required scenario.
+        +printJson({
+            "controller": {
+                //........
+            },
+            "body": [
+                {
+                    "attr": {
+                        "data-db-target-of": "...."
+                    },
+                    "content": {
+                        //.........
+                    }
+                }
+            ]
+        })
+        h3 Control Element
+        +printJson({
+            "attr": {
+                "data-db-target-for": "sb1"
+            },
+        })
+
+        code.src-html.source_visible.source_example
+            | <a href="/search" class="quick-menu__item" data-db-target-for="sb1" data-db-switch="icon-close_thin">
+            |   ... header code over here ..
+            | </a>
+
+        markdown
+            p Control element handles the show / hide functionality , Add <strong>`data-db-target-for`</strong> data attribute to your <strong>`targeted`</strong> control element and give it a <strong>`unique`</strong> value. In the example above we gave it <strong>`sb1`</strong>
+            p `data-db-switch` data attribute can be used to change the controller icon based on its value:
+                ul
+                    li `"none"` to keep the icon as its
+                    li `"rotate"` to rotate the icon 180 degree
+                    li `"custom-icon-class"` to replace the default icon with a custom icon - example: search controller in header replaces the search icon with a thin "X" icon when ever the search is open
+        h3 Target Element
+        +printJson({
+            "attr": {
+                "data-db-target-of": "sb1"
+            },
+        })
+
+        code.src-html.source_visible.source_example
+            | <div class="search-form" data-db-target-for="sb1">
+            |   ... header code over here ...
+            | </div>
+
+        markdown
+            p Target element will take the show / hide effect based on the controller event, add <strong>`data-db-parent-of`</strong> data attribute to your <strong>`target`</strong> element and give it same value as it <strong>controller's `data-db-target-for`</strong> value. In the example above it's <strong>`sb1`</strong>
+
+        h3 Parent Element
+        +printJson({
+            "attr": {
+                "data-db-parent-of": "sb1"
+            },
+        })
+
+        code.src-html.source_visible.source_example
+            | <header class="sticko" data-db-parent-of="sb1">
+            |   ... header code over here ...
+            | </header>
+
+        markdown
+            p Parent element will act as relative `parent` for target element, add <strong>`data-db-parent-of`</strong> data attribute to your targeted parent element and give it same value as it controller's `data-db-target-for` and its target's `data-db-parent-of` value. In the example above it's <strong>`sb1`</strong>
+    | #{''}
+
+    section.source_section
+        h2 header Example
+        p In the following example, Drop block has been used with in the header to implement search functionality.
+        .source_example
+            | !{pb.render("header", "header/demo/header")}
+    | #{''}
+
+    section.source_section
+        h2 Drop Down Example
+        code.src-html.source_visible.source_example
+            | <a href="#" class="inline-icon" data-db-target-for="p1" data-db-switch="rotate"><i class="icon-section_arrow_d" aria-hidden="true"></i>list</a>
+        markdown
+            p The data attribute `data-db-switch` has `rotate` as a value which made the icon rotate.
+        .source_example
+            | !{pb.render('drop-block', 'drop-block.json', {"shared": {"model": {"config": {"wrapper": "true", "className": ["base", "dropBlock"]}}}})}
+    | #{''}
+
+
+    section.source_section
+        h2 Drop Down Actions Example
+        markdown
+            p  This dropdown actions example
+        .source_example
+            | !{pb.render('drop-block', 'drop-block/drop-block-actions', 'drop-block-actions.json', {"shared": {"model": {"config": {"wrapper": "true", "className": ["base", "dropBlock"]}}}})}
+    | #{''}

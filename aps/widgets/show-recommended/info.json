@@ -1,0 +1,7 @@
+{
+    "title": "Show Recommended",
+    "template": "doc",
+    "tag": ["ready"],
+    "description": "List of teaser components",
+    "dependencies": ["component/teaser", "component/parent-item", "component/date", "component/lazy-load"]
+}

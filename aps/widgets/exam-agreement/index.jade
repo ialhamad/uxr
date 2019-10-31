@@ -1,0 +1,44 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Exam Agreement
+            h3 Include template
+            +printJsCode('include /specs/ux3/widgets/exam-agreement/templates/exam-agreement/exam-agreement-tmpl.jade')
+        h3 Data
+        markdown
+            p The following the JSON structure must exist to be able to use Exam Agreement template.
+        +printJson({
+            "data": {
+                "exam": {
+                    "title": "Respiratory Mechanics in Acute Respiratory Distress Syndrome",
+                    "link": "/doi/exam/10.1164/atscme_course%3Bajrccm_196_7_822&amp;disclosure=accepted",
+                    "access": "full",
+                    "epubDate": "10/1/17 12:00 AM",
+                    "expiresDate": "10/1/19 12:00 AM",
+                    "isExpired": false,
+                    "xslt": "<!-- abstract content --><div class=\"hlFld-Abstract\"><a name=\"abstract\"></a><div class=\"sectionInfo abstractSectionHeading\"><div class=\"sectionHeading\">Abstract</div></div><div class=\"abstractSection abstractInFull\"><div class=\"NLM_sec NLM_sec_level_1\"><p><b>Target Audience</b></p><p></p><p>Pulmonologists, critical care specialists, translational researchers, and clinicians</p><p></p><p><b>Learning Objectives for this Course</b></p><p></p><p>At the conclusion of this activity, learners should be able to:</p><p></p><p>• Outline the components of a lung-protective ventilation strategy.</p><p>• Understand the role of airway closure and measured pressures in acute respiratory distress syndrome.</p><p>• Understand that strain changes happen despite constant tidal volumes if functional residual capacity changes.</p><p></p><p></p><p><b>Credit Designation Statement</b></p><p></p><p>The American Thoracic Society is accredited by the Accreditation Council for Continuing Medical Education to provide continuing medical education for physicians.</p><p></p><p>The American Thoracic Society designates this educational activity for a maximum of 1 <i>AMA PRA Category1 Credit</i><sup>TM</sup>. Physicians should only claim credit commensurate with the extent of their participation in the activity.</p><p></p><p><b>Release Date</b></p><p></p><p>This course was released October 1, 2017</p><p></p><p><b>Expiration</b></p><p></p><p>This course expires October 1, 2019</p><p></p><p><b>Article Authorship Disclosures (as submitted to the ATS prior to article publication date)</b></p><p></p><p>William R. Henderson, M.D. (University of British Columbia, Vancouver, British Columbia, Canada) reported no financial relationships relevant to this activity.</p><p>Lu Chen, M.D. (University of Toronto, Toronto, Ontario, Canada) reported no financial relationships relevant to this activity.</p><p>Marcelo B. P. Amato, M.D. (University of São Paulo, São Paulo, Brazil) reported grants from Covidien/Medtronics and Timpel.</p><p>Laurent J. Brochard, M.D. (St. Michael’s Hospital, Toronto, Ontario, Canada) reported grants from Medtronic Covidien, Air Liquide, and Fisher Paykel; personal fees from Air Liquide; nonfinancial support from Philips, Fisher Paykel, Maquet, and General Electric; and a pending patent on methods of evaluating a patient for PEEP therapy and alveolar recruitment (11173362.2-2320, France).</p><p></p><p><b>Off-Label Usage Disclosure</b></p><p></p><p>None</p><p></p></div></div></div><!-- /abstract content -->"
+                }
+            },
+            "errors": []
+        })
+    | #{''}
+
+    section.source_section
+        h2 Example
+        p The following example demonstrates Exam Agreement.
+        .source_example
+            .container
+                | !{pb.render("exam-agreement", "demo/demo-exam-agreement", "data.json")}
+    section.source_section
+        h2 Example
+        p The following example demonstrates the xslt content.
+        .source_example
+            .container
+                | !{pb.render("exam-agreement", "html/xslt")}
+    | #{''}

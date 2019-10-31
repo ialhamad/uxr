@@ -1,0 +1,131 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/author-index/templates/author-index/author-index-tmpl.jade')
+        h3 Data
+        p The following data structure must exist to be able to use author index template.
+
+        +printJson({
+            "data": {
+                "search": {
+                    "hitsLength": 623365,
+                    "startPage": 0,
+                    "dataLength": 10,
+                    "pageSize": 20,
+                    "results": [
+                        {
+                            "name": "Abd-Al-Aziz"
+                        },
+                        {
+                            "name": "Abdel-Azim"
+                        },
+                        {
+                            "name": "Alsheikh-Ali, Alawi A"
+                        },
+                        {
+                            "name": "Al-Hamaq, Abdulla O A A"
+                        },
+                        {
+                            "name": "Abdul-Aziz, Ahmed A"
+                        },
+                        {
+                            "name": "Alaribe"
+                        },
+                        {
+                            "name": "AlSheikh-Ali"
+                        },
+                        {
+                            "name": "Al-Teraifi"
+                        },
+                        {
+                            "name": "Karpman"
+                        },
+                        {
+                            "name": "Abdel-Aziz"
+                        },
+                        {
+                            "name": "Abd-Al-Aziz"
+                        },
+                        {
+                            "name": "Abdel-Azim"
+                        },
+                        {
+                            "name": "Alsheikh-Ali, Alawi A"
+                        },
+                        {
+                            "name": "Al-Hamaq, Abdulla O A A"
+                        },
+                        {
+                            "name": "Abdul-Aziz, Ahmed A"
+                        },
+                        {
+                            "name": "Alaribe"
+                        },
+                        {
+                            "name": "AlSheikh-Ali"
+                        },
+                        {
+                            "name": "Al-Teraifi"
+                        },
+                        {
+                            "name": "Karpman"
+                        },
+                        {
+                            "name": "Abdel-Aziz"
+                        }, {
+                            "name": "Abd-Al-Aziz"
+                        },
+                        {
+                            "name": "Abdel-Azim"
+                        },
+                        {
+                            "name": "Alsheikh-Ali, Alawi A"
+                        },
+                        {
+                            "name": "Al-Hamaq, Abdulla O A A"
+                        },
+                        {
+                            "name": "Abdul-Aziz, Ahmed A"
+                        },
+                        {
+                            "name": "Alaribe"
+                        },
+                        {
+                            "name": "AlSheikh-Ali"
+                        },
+                        {
+                            "name": "Al-Teraifi"
+                        },
+                        {
+                            "name": "Karpman"
+                        },
+                        {
+                            "name": "Abdel-Aziz"
+                        }
+                    ]
+                }
+            },
+            "errors": []
+        }
+        )
+
+
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 Author Index
+
+        .source_example
+            .container
+                | !{pb.render("author-index", "content.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}

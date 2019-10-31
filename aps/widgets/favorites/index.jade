@@ -1,0 +1,52 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+    section.source_section
+        h2 Favorites widget
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/favorites/templates/favorites/favorites-tmpl.jade')
+        h3 Data
+        p The following the JSON structure provided by the Front-end:
+        +printJson({
+            "data": {
+                "favorites": {
+                    "items": [
+                        {
+                            "type": "Article",
+                            "title": "Potential for use of creatine supplementation following mild traumatic brain injury",
+                            "doi": "",
+                            "epubDate": "3/21/17 4:10 AM",
+                            "group": {
+                                "volume": "0",
+                                "issue": "0",
+                                "serial": {
+                                    "title": "Concussion"
+                                }
+                            },
+                            "bestFormat": "http://ten-lts.literatumonline.com/doi/10.2217/cnc-2016-0016",
+                        }
+                    ],
+                    "booksAndSerials": [
+                        {
+                            "type": "Book Series",
+                            "title": "Future Science Book Series",
+                            "bestFormat": "http://ten-lts.literatumonline.com/doi/10.4155/books?publicationCode=fsbooks"
+                        },
+                        {
+                            "type": "Book",
+                            "title": "<i>In Silico</i> Drug Discovery and Design",
+                            "bestFormat": "http://ten-lts.literatumonline.com/doi/10.4155/9781909453012",
+                            "coverDate": "10/1/13 12:00 AM"
+                        }
+                    ]
+                }
+            },
+            "errors": []
+        })
+        .source_example
+            | !{pb.render("favorites", "data.json")}
+    | #{''}

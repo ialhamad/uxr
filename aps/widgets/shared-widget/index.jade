@@ -1,0 +1,62 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade')
+        markdown
+            p The following data structure must exist to be able to use shared-widget template.
+        +printJson({
+            "model": {
+                "config": {
+                    "wrapper": "true",
+                    "className": ["className"],
+                    "markup": "section",
+                    "headingLevel": "h3",
+                    "headingClass": ["className"]
+                },
+                "data": {
+                    "title": "widget title",
+                    "content": "widget data"
+                }
+            }
+        })
+        markdown
+            p we are using this template as widget wrapper properties,
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `wrapper`
+                        td Radio button, could be `"none"` for not adding a wrapper, or `"single"` to add single element
+                    tr
+                        td `className`
+                        td Text input, wrapper class name
+                    tr
+                        td `markup`
+                        td Dropdown, to choose the wrapper markup, by default will be `div`
+                    tr
+                        td `headingLevel`
+                        td Dropdown, to choose the Heading level from h1 to h6, by default will be `h2`
+                    tr
+                        td `headingClass`
+                        td Text input, headind class name
+
+    | #{''}
+
+    section.source_section
+        h2 Usage
+        h3 Include template
+        .source_example
+            | !{pb.render("shared-widget", "prop.json")}
+
+    | #{''}
+

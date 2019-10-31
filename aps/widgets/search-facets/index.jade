@@ -1,0 +1,98 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/search-facets/templates/search-facets/search-facets-tmpl.jade')
+        h3 Data
+        p The following (or similar) data structure must exist to be able to use Defined list template.
+
+        +printJson({
+
+            "data": {
+                "appliedFacets": [
+                    {
+                        "label": "Biology",
+                        "link": ""
+                    }
+                ],
+                "facets": [
+                    {
+                        "type": "alphabetRange",
+                        "title": "Alphanumeric",
+                        "values": [
+                            {
+                                "label": "A",
+                                "link": "#",
+                                "used": true
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Ppub",
+                        "title": "Publication Date",
+                        "style": "slider",
+                        "values": "?",
+                        "maxDate": "2017",
+                        "minDate": "2000"
+                    },
+                    {
+                        "type": "Taxonomy",
+                        "values": [
+                            {
+                                "label": "Technical Topics",
+                                "link": "#",
+                                "count": 36,
+                                "values": [
+                                    {
+                                        "label": "Biology",
+                                        "link": "#",
+                                        "count": 7
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ContribStored",
+                        "title": "Authors",
+                        "more": 95,
+                        "values": [
+                            {
+                                "label": "Martinez, Fernando J",
+                                "link": "#",
+                                "count": 167
+                            }
+                        ]
+                    }
+                ]
+            }
+
+
+        })
+
+        p In the above example we are using <a href="../../components/facet/"><strong>Facet</strong></a>, <a href="../../components/facet-date/"><strong>Facet Date</strong></a> ,  <a href="../../components/alphanumeric/"><strong>Alphanumeric</strong></a>
+            |and <a href="../../components/applied-facets/"><strong>Applied Facets</strong></a> components.
+        
+        h3 Widget Details
+        h4 Applied Facets
+        p Two types of facets can be applied: normal and pinned. Normal filters apply when selecting a filter from the facet widget. Pinned filters apply when performing a similarity search (/author or /keyword). In that case, the facet is considered pinned and cannnot be removed. We hide the 'X' icon and style the filter differently to indicate that it is pinned.
+
+
+    | #{''}
+
+    section.source_section
+        h2 Example
+
+        h3 Facets
+        .source_example
+            | !{pb.render("search-facets", "facet.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}
+
+

@@ -1,0 +1,18 @@
+- var addFavoriteLink = data.content.addFavorite + "&redirectUri=%2Faction%2FshowPreferences%3FmenuTab%3Dfavorites%26type%3DPublication";
+
+div(data-db-parent-of= dropblockID+"__content")
+    div.loi__banner.coolBar.stickybar
+        .coolBar__wrapper.stickybar__wrapper
+            a.hidden-md.hidden-lg.loi-slide__ctrl.w-slide__btn(href="#" data-slide-target="#loi-banner")
+                i.icon-toc
+                span Book
+
+            div.loi__banner-list
+                #loi-banner.hidden-sm.hidden-xs.pull-left
+                    block customMenuItemsDropBlock
+                        | !{pb.renderDropzone(thisWidget, "extraMenuItems")}  
+
+                .loi__banner__right-side.pull-right
+                    div.coolBar__section.coolBar-tools.pub-pages-about
+                        a(href=addFavoriteLink title="Add to Favorites")
+                            i.icon-favorites

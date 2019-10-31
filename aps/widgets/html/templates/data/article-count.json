@@ -1,0 +1,9 @@
+{
+    "thisWidget": {
+        "id": "articleCountMockup",
+        "properties": {
+            "render": "html",
+            "html": "<div data-widget-def=\"literatumContentItemDownloadCount\" data-widget-id=\"313363c6-caf3-4ec3-bf46-65d18b0d2e3d\" class=\"articleCountSection\"><h6 class=\"section__title\">Metrics</h6>Downloaded 8,943 times</div>"
+        }
+    }
+}

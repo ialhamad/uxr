@@ -1,0 +1,20 @@
+.creative-work {
+
+	&__title {
+		&.min-height {
+			height: 2.8em;
+		}
+	}
+
+	.meta {
+		text-transform: none;
+		font-size: 12px;
+	}
+
+	.hlFld-ContribAuthor {
+		a {
+			white-space: pre;
+		}
+	}
+
+}

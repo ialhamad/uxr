@@ -1,0 +1,22 @@
+.search-result.showPublications
+    ul.rlist.search-result__body.titles-results
+        each book in data.series.groups
+            li.clearfix.separator.search__item
+                .item__image
+                    a(href="#{book.link}" title="go to #{book.title}")
+                        img(src="#{book.coverImage.src}" title="#{book.title}")
+                .item__body.clearfix
+                    .meta__header
+                        span.meta__type Book
+                    h4.meta__title.meta__title__margin
+                        a(href="#{book.link}")
+                            span.hlFld-Title #{book.title}
+                    .meta__info
+                        !{book.authors}
+                        if (book.pubDate)
+                            .meta__details
+                                span.meta__date #{book.pubDate}
+                        if (book.isbn)
+                            .meta__eisbn ISBN: #{book.isbn}
+                        if (book.eisbn)
+                            .meta__eisbn EISBN: #{book.eisbn}

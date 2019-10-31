@@ -1,0 +1,56 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+include /specs/page-structure/helpers/print-json-mixin.jade
+include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+block content
+
+    h1 User Panel
+
+    .source_info
+        p User panel uses <strong>#[a(href="../../components/drop-block/") Drop block]</strong> functionality for logged in state functionality and <strong>#[a(href="../../components/modal/") Modal]</strong> for logged out state functionality.
+
+    section.source_section
+        h2 User login bar(Logged in)
+        .source_example
+            | !{pb.render("user-login-bar", "user-login-bar-logged-in.json")}
+    | #{''}
+
+    section.source_section
+        h2 User login bar(Logged out)
+        .source_example
+            | !{pb.render("user-login-bar", "user-login-bar-logged-out.json")}
+    | #{''}
+
+    section.source_section
+        h2 Logged in user panel Example
+        p The following example demonstrate Logged in state
+        markdown
+        code.src-html
+        .source_example
+            .container
+                | !{pb.render("user-login-bar", "logged-in-panel/logged-in-panel", "user-panel-logged-in.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Logged in user panel - right alignment example
+        p The following example demonstrate Logged in state whilist the dropdown alignment is right
+        markdown
+            p Add `right-side` class on the parent container
+        markdown
+        code.src-html
+        .source_example
+            .container
+                | !{pb.render("user-login-bar", "logged-in-panel/logged-in-panel-right", "user-panel-logged-in.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}
+
+    section.source_section
+        h2 Logged out user panel Example
+        p The following example demonstrate Logged out state
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("user-login-bar", "logged-out-panel/logged-out-panel", "user-panel-logged-out.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        markdown
+            p <strong>Note: </strong> the institutional anchor is absolute positioned to support accessibility
+    | #{''}

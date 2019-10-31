@@ -1,0 +1,21 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Exam List
+            h3 Include template
+            +printJsCode('include /specs/ux3/widgets/exam-list/templates/exam-list/exam-list-tmpl.jade')
+    | #{''}
+
+    section.source_section
+        h2 Example
+        p The following example demonstrates Exam List.
+        .source_example
+            .container
+                | !{pb.render("exam-list", "data.json")}
+    | #{''}

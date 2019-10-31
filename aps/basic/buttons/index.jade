@@ -1,0 +1,49 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        h2 Buttons variations
+
+        h3 Default with hover and focus effects button
+        markdown
+            p In the example below we have added `btn` to the button item.
+        .source_example
+            button.btn I am button
+
+        h3 Disabled button
+        markdown
+            p In the example below we have added `disabled` attribute to make the button disabled.
+        .source_example
+            button.btn(disabled="disabled") I am button
+
+        h3 Full-width button
+        markdown
+            p In the example below we have added `btn` and `btn--full-width` to the button item to be fluid width.
+        .source_example
+            button.btn.btn--full-width I am full-width button
+
+        h3 inverse button
+        markdown
+            p In the example below we have added `btn--inverse` to the button item.
+        .source_example
+            button.btn--inverse I am button
+        h3 inverse with extra border button
+        markdown
+            p In the example below we have added `btn--inverse extra-border` to the button item.
+        .source_example
+            button.btn--inverse.extra-border I am button
+
+        h3 Cancel button
+        markdown
+            p In the example below we have added `btn--cancel` class to the button item.
+        .source_example
+            button.btn--cancel I am button
+
+        h3  Meta Journal Button
+        markdown
+            p In the example below we have added link class `btn btn--inverse btn--journal-meta`
+        .source_example
+            a.btn.btn--inverse.btn--journal-meta Button
+
+    | #{''}

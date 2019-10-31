@@ -1,0 +1,164 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-template-include-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/menu/templates/menu/menu-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Navigation template.
+
+        +printJson({
+            "model": {
+                "data": {
+                    "id": "main1",
+                    "list": [
+                        {
+                            "text": "Journals",
+                            "link": "#",
+                            "current": "true",
+                            "list": [
+                                {
+                                    "text": "Books",
+                                    "link": "#",
+                                    "list": [
+                                        {
+                                            "text": "Books",
+                                            "link": "#"
+                                        },
+                                        {
+                                            "text": "Proceedings",
+                                            "link": "#",
+                                            "list": [
+                                                {
+                                                    "text": "Books",
+                                                    "link": "#"
+                                                },
+                                                {
+                                                    "text": "Proceedings",
+                                                    "link": "#"
+                                                },
+                                                {
+                                                    "text": "Blog",
+                                                    "link": "#",
+                                                    "list": [
+                                                        {
+                                                            "text": "Books",
+                                                            "link": "#"
+                                                        },
+                                                        {
+                                                            "text": "Proceedings",
+                                                            "link": "#"
+                                                        },
+                                                        {
+                                                            "text": "Blog",
+                                                            "link": "#"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "text": "Blog",
+                                            "link": "#"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "text": "Proceedings",
+                                    "link": "#"
+                                },
+                                {
+                                    "text": "Blog",
+                                    "link": "#"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Books",
+                            "link": "#"
+                        },
+                        {
+                            "text": "Books-drawer",
+                            "link": "#",
+                            "drawer": "true"
+                        }
+                    ]
+                }
+            }
+
+        })
+        markdown
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `id`
+                        td Menu unique id 
+                    tr
+                        td `list`
+                        td Array of menu items
+                    tr
+                        td `text`
+                        td Menu item text 
+                    tr
+                        td `link`
+                        td Menu item Url
+                    tr
+                        td `current`
+                        td `true`, `false` value for current active menu item
+                    tr
+                        td `drawer`
+                        td `true`, `false` if true the item will be displayed only on drawer "small screen size"
+            p
+                b note:
+                | The menu could be nested for no limited number of times
+
+    | #{''}
+
+    section.source_section
+        h2 Example
+        
+        h3 Header navigation
+        .source_example
+            a(href="#") Test link
+            | !{pb.render("menu", "mainMenu.json")}
+            a(href="#") Test link
+
+        h3 Header navigation (MPMI Journal pages)
+        .source_example
+            .series-mpmi
+                a(href="#") Test link
+                | !{pb.render("menu", "journalMenu.json")}
+                a(href="#") Test link
+
+        h3 Header navigation without dropzone for demo
+            .source_example
+                a(href="#") Test link
+                | !{pb.render("menu", "demo/menu-without-dropzone", "mainMenu.json")}
+                a(href="#") Test link
+
+        h3 Header navigation - Nested menu
+        .source_example
+            a(href="#") Test link
+            | !{pb.render("menu", "nestedMenu.json")}
+            a(href="#") Test link
+
+        h3 Header navigation-responsive menu
+        p this is alternative template named "responsive-menu"
+        .source_example
+             .container
+                  | !{pb.render("menu","demo/demo-responsive-menu", "responsiveMenu.json")}
+
+
+    | #{''}

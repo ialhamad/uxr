@@ -1,0 +1,47 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+    section.source_section
+        h2 file-uploader widget
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/file-uploader/templates/file-uploader/file-uploader-tmpl.jade')
+        h3 Data
+        p The following the JSON structure to use file uploader widget:
+        +printJson({
+            "data": {
+                "name": "pdf.path",
+                "labelLink": "Select one",
+                "labelText": "Drag and drop new PDF File ",
+                "isMultiple": "true",
+                "uploaderButton": "true"
+
+            }
+        }
+        )
+    section.source_section
+        h2 Example
+
+        h3 File Uploader-1 File with upload button
+        markdown
+            p Add `uploader-form` class to form use the file uploader widget
+
+        .source_example
+            div.container
+              form.uploader-form
+                | !{pb.render("file-uploader", "data.json")}
+
+        h3 File Uploader- multiple file without uploader button
+        markdown
+            p Add `uploader-form` class to form use the file uploader widget
+
+        .source_example
+            div.container
+              form.uploader-form
+                | !{pb.render("file-uploader", "data-multiple.json")}
+
+
+    | #{''}

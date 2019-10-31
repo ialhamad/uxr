@@ -1,0 +1,37 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    .source_info
+        p The <strong>User Profile Form</strong> uses <strong>#[a(href="../../widgets/dropzone/") Dropzone]</strong> functionality
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/user-profile-form/templates/user-profile-form/user-profile-form-tmpl.jade')
+        h3 Data
+        p The following (or similar) data structure must exist to be able to use User Profile Form widget with a custom submit label.
+
+        +printJson({
+            "model": {
+                "data": {
+                    "submitLabel": "Go!"
+                }
+            }
+        })
+
+
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 User Profile Form
+        .source_example
+            | !{pb.render("user-profile-form", "user-profile-form.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}
+
+

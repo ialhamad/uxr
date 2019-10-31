@@ -1,0 +1,6 @@
+{
+    "title": "List of authors",
+    "template": "doc",
+    "tag": ["components"],
+    "description": "Comma separated list of author names"
+}

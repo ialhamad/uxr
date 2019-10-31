@@ -1,0 +1,32 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    h1 Table Of Content page
+
+    section.source_section
+        h2 Table Of Content page
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("header", "header/header-mpmi", "header-journal-mpmi.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-mpmi"]}}}})}
+            main.content.toc.series-mpmi
+                .meta-wrapper
+
+                .container
+                    | !{pb.render("html", "journal-meta.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                    | !{pb.render("generic-widget", "demo/journal-menu-demo", "journal-menu-phyto.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                    .row.separator
+                        .col-lg-9.col-md-8
+                            | !{pb.render("breadcrumbs", "mpmi-toc.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                            | !{pb.render('html', {"thisWidget": {"id":"tocheading", "properties": {"render": "html", "html": "<h2 class=\"tocPageHead\">Volume 108, Number 10 / October 2018</h2>"}}}, {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+                            | !{pb.render("table-of-content", "table-of-content/markup")}
+
+                        .col-lg-3.col-md-4
+                            // tower ad
+                            .towerad.side-tower.visible-xlg
+                            | !{pb.render("generic-widget", "generic-widget/issue-book-details", "issue-book-details-issue.json", {"shared": {"model": {"config": {"wrapper": "true", "className": [" "]}}}})}
+                            | !{pb.render('tweets', {"body": [{"screenName": "plantdisease", "height": "510"}]}, {"shared": {"model": {"config": {"wrapper": "true", "headingLevel": "h3", "headingClass": ["section__header border-bottom"]}, "data": {"title": "APS SOCIETY TWITTER"}}}})}
+
+            | !{pb.render("footer", "footer/footer-mpmi", "footer-mpmi.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-mpmi"]}}}})}
+    | #{''}

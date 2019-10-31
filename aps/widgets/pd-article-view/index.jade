@@ -1,0 +1,48 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+
+block content
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin
+        include /specs/page-structure/helpers/print-template-include-mixin
+        include /specs/page-structure/helpers/print-js-code-mixin
+
+        h2 Usage
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Quick search form template.
+
+        +printJson({
+            "data": {
+                "data": {
+                    "title": "Relationship between electron field aligned anisotropy and dawn dusk magnetic field: Nine years of Cluster observation in the Earth magnetotail",
+                    "submissionDate": "September 7, 2017",
+                    "authors": [
+                        {
+                            "firstName": "Jan",
+                            "lastName": "Skocdopole"
+                        },
+                        {
+                            "firstName": "Josef",
+                            "lastName": "Novak"
+                        }
+                    ],
+                    "abstract": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus lacus, rutrum sollicitudin malesuada ac, pretium a velit. Mauris dictum tellus vitae purus pharetra egestas. Sed gravida elementum velit, eu posuere tellus convallis at. Integer pulvinar bibendum mi eget lacinia. Phasellus non lacus sem. Sed semper sagittis luctus. Praesent fringilla tortor eros, ut lacinia neque ornare vitae. Morbi accumsan purus ac mauris rutrum, id viverra mauris scelerisque. Nam condimentum suscipit nisl, ut posuere lorem interdum et. Mauris ut fringilla magna, vel condimentum leo. Aliquam tortor ligula, venenatis sed augue ac, congue rhoncus urna. Suspendisse ac porta elit. Sed vel feugiat arcu, a feugiat enim. Etiam lorem quam, pulvinar ac nisi ac, varius cursus nisi. Vivamus ac enim interdum, scelerisque nulla ut, maximus lectus.</p><p>Vestibulum mattis erat odio, sed dignissim quam fringilla vel. Curabitur nibh nisl, ullamcorper at odio a, efficitur cursus dolor. Integer congue, ante eget rutrum interdum, ipsum libero pulvinar dui, sed aliquam justo magna sodales leo. Ut eu nulla finibus, pretium dolor non, semper turpis. Vestibulum interdum velit arcu, eget egestas justo volutpat eget. Duis tristique lectus sit amet pretium lobortis. Mauris venenatis urna nec lorem euismod pellentesque. Pellentesque tristique, ex sit amet pretium finibus, tortor quam cursus velit, malesuada tempus erat diam a orci. Aliquam placerat est id arcu ultricies sollicitudin. Vestibulum aliquam tristique dictum. In dignissim libero eu posuere facilisis. Donec tristique arcu quam, quis pharetra sapien ullamcorper ut.</p>",
+                    "pdfLink": "...",
+                    "inlinePdfLink": "..."
+                }
+            }
+        })
+
+    | #{''}
+
+    section.source_section
+        h2 Example
+        h3 Dashboard Article View
+        .source_example
+            | !{pb.render("pd-article-view", "data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+        h3 Nothing is selected
+        .source_example
+            | !{pb.render("pd-article-view", "no-article", "no-data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+    | #{''}

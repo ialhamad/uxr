@@ -1,0 +1,107 @@
+{
+    "logo": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "true",
+                        "className": ["header__logo"]
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/html/templates/html/html-tmpl.jade",
+                                "data": {
+                                    "thisWidget": {
+                                        "properties": {
+                                            "render": "html",
+                                            "html": "<a href=\"#\"><picture class=\"mpmi\"><source srcset=\"/specs/products/aps/releasedAssets/images/aps-green-header-logo.png\" media=\"(min-width: 533px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/aps-green-logo-mobile.png\" media=\"(max-width: 532px)\"><img srcset=\"/specs/products/aps/releasedAssets/images/aps-green-header-logo.png\" alt=\"\"></picture></a><a href=\"#\"><picture><source srcset=\"/specs/products/aps/releasedAssets/images/is-mpmi-logo.png\" media=\"(min-width: 533px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/is-mpmi-mobile-header.png\" media=\"(max-width: 532px)\"><img srcset=\"/specs/products/aps/releasedAssets/images/is-mpmi-logo.png\" alt=\"\"></picture></a>"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "institution": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../ux3/widgets/institution-banner/templates/institution-banner/institution-banner-tmpl.jade",
+                                "data": {
+                                    "model": {
+                                        "data": {
+                                            "itemUrl": "#",
+                                            "institution": "Atypon Institution",
+                                            "introText": "brought to you by"
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+    },
+    "search": {
+        "$pug": {
+            "template": "../../../ux3/widgets/quick-search/templates/quick-search/quick-search-tmpl.jade",
+            "data": {
+                "$ref": "../../../../../ux3/widgets/quick-search/templates/data/quick-search-menu.json"
+            }
+        }
+    },
+    "cart": {
+        "$pug": {
+            "template": "../../../ux3/widgets/commerce/widgets/cart-indicator/templates/cart-indicator/cart-indicator-tmpl.jade",
+            "data": {
+                "$ref": "../../../../../ux3/widgets/quick-search/templates/data/quick-search-menu.json"
+            }
+        }
+    },
+    "user": {
+        "$pug": {
+            "template": "../../../ux3/widgets/raa/widgets/login-bar/templates/login-bar/login-bar-in-tmpl.jade",
+            "data": {
+                "$ref": "../../../../../ux3/widgets/quick-search/templates/data/quick-search-menu.json"
+            }
+        }
+    },
+    "mainmenu": {
+        "$pug": {
+            "template": "../../../ux3/widgets/shared-widget/templates/shared-widget/shared-widget-tmpl.jade",
+            "data": {
+                "model": {
+                    "config": {
+                        "wrapper": "false"
+                    },
+                    "data": {
+                        "content": {
+                            "$pug": {
+                                "template": "../../../aps/widgets/menu/templates/demo/menu-without-dropzone-tmpl.jade",
+                                "data": {
+                                    "$ref": "../../../../widgets/menu/templates/data/journalMenu.json"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

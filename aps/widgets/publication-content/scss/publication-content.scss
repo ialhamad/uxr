@@ -1,0 +1,398 @@
+article {
+
+	.citation {
+		&__title {
+			color: $site-dark-text;
+			a {
+				color: $site-dark-text;
+			}
+		}
+	}
+
+	.tab {
+		&__nav {
+
+			a, i {
+				@include themify($themes) {
+					color: themed('color');
+				}
+			}
+
+			.active {
+				a {
+					font-weight: 400;
+					@include themify($themes) {
+						color: themed('color');
+						border-bottom-color: themed('color');
+					}
+				}
+			}
+		}
+
+		&__content {
+			background-color: $site-page-tint;
+		}
+		
+		&__pane {
+			.ruledSection {
+				border-bottom: 1px solid $site-faint-rule;
+				padding: 1em 0;
+				
+				.section__body {
+					a {
+						color: $site-brand-color;
+						@include themify($themes) {
+							color: themed('color');
+						}
+					}
+				}
+				
+			}
+			.section__title {
+				margin: 1em 0;
+			}
+			.altmetric-embed {
+				margin: 2em 0 1em 1em;
+
+				div[id^=_altmetric_popover_el].altmetric-embed {
+					div#_altmetric_container.altmetric_container {
+						div#_altmetric_popover_inner {
+							.altmetric-popover-content {
+								background-color: transparent;
+							}
+						}
+					}
+				}
+			}
+			
+			.__dimensions_badge_embed__ {
+				margin-left: 1em;
+				
+				.__dimensions_Badge_Legend_padding.__dimensions_Badge_Legend_always {
+					background-color: transparent;
+				}
+			}
+			
+			.captionLabel {
+				display: block;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.mobile-authors {
+		.spacer {
+			margin-right: 5px;
+		}
+
+		.icon-Email {
+			margin-left: 5px;
+		}
+	}
+}
+
+.article {
+	&__content {
+		.article {
+			&__affiliations {
+				.accordion__control {
+					@include font-size(14);
+					color: $site-grey-logo;
+				}
+			}
+
+			&__tocHeading {
+				color: $site-grey-logo;
+				font-weight: 400;
+			}
+			
+			&__tabFigure {
+				.captionLabel {
+					display: block;
+				}
+			}
+
+			&__body {
+
+				color: $site-dark-text;
+				
+				p {
+					line-height: 1.8;
+				}
+				
+				a {
+					color: $site-brand-color;
+					@include themify($themes) {
+						color: themed('color');
+					}
+				}
+
+				.hlFld-Abstract, .NLM_abstract {
+					background-color: $site-page-tint;
+					@include media('>=tablet') {
+						padding: 0 1em 0.5em 1em;
+						margin-bottom: 1em;
+					}
+					@include media('<tablet') {
+						padding: 0 15px 0 15px;
+					}
+
+					&>* {
+						max-width: 737px;
+					}
+					
+					.abstractSectionHeading, .article-section__title {
+						padding-top: 1rem;
+					}
+					
+				}
+
+				.NLM_abstract {
+					strong:first-of-type {
+						display: inline-block;
+						padding-top: 1rem;
+						@include font-size(22);
+					}
+				}
+				
+				
+				.hlFld-Fulltext {
+					&>* {
+						max-width: 775px;
+					}
+					
+					.ack {
+						display: none;
+					}
+				}
+
+				.boxed-text-float {
+					background-color: $site-page-tint;
+					@include media('>=tablet') {
+						padding: 2em 2.5em 0.5em 2.5em;
+						margin-bottom: 1em;
+					}
+					.article-section__title {
+						text-align: center;
+					}
+				}
+
+				.NLM_bio {
+					
+					margin-top: 3em;
+					
+					img {
+						float: left;
+						margin: 0 1em 1em 0;
+					}
+				}
+				
+				.fn-group {
+					border-top: 1px solid $site-dark-border;
+				}
+				
+				.NLM_author-notes {
+
+					border-top: 1px solid $site-dark-border;
+					max-width: 775px;
+					
+					.fn_section__present-address {
+						padding-top: 1em;
+					}
+				}
+
+				
+				
+				.math-formula {
+					.formulaLabel {
+						display: block;
+						float: right;
+						margin-top: -2.5em;
+					}
+				}
+				
+			}
+
+			&__inlineFigure {
+				background-color: $site-page-tint;
+				margin: 40px 0;
+				@include media('>=tablet') {
+					padding: 42px 44px;
+				}
+				text-align: center;
+
+				figcaption {
+					text-align: left;
+					
+					.captionLabel {
+						display: block;
+					}
+				}
+			}
+			
+			&__breadcrumbs {
+				display: none;
+			}
+
+		}
+
+
+		.tableToggle {
+			background-color: $site-page-tint;
+			margin: 40px 0;
+			@include media('>=tablet') {
+				padding: 35px 43px;
+			}
+
+			&__image {
+				padding-left: 15px;
+			}
+
+			&__table {
+				background-color: $site-page-background;
+				overflow: auto;
+			}
+		}
+
+		a.tableToggle__trigger {
+			color: $site-brand-color;
+			@include themify($themes) {
+				color: themed('color');
+			}
+			padding-left: 15px;
+		}
+
+		.loa, .loa-wrapper {
+			color: $site-medium-text;
+		}
+
+		.author-name {
+			color: $site-medium-text;
+		}
+
+		.epub-section {
+			
+			margin: 15px 0 0;
+		
+			&__doi__text {
+				color: $site-brand-color;
+				@include themify($themes) {
+					color: themed('color');
+				}
+			}
+		}
+
+		.coolBar {
+
+			&--download {
+				color: $site-grey-logo;
+				text-transform: uppercase;
+				@include font-size(11);
+				margin: 18px 14px 18px 0;
+				padding: 0 0 0 14px;
+				border-left: 1px solid $site-light-border;
+				
+				.forceLower {
+					text-transform: lowercase;
+				}
+
+				.icon-file-pdf:before {
+					content: "\eadf";
+				}
+				.icon-full-text:before {
+					content: "\e611";
+				}
+				.icon-extra {
+					background: url('/specs/products/aps/releasedAssets/images/extra.gif') bottom left no-repeat;
+					height: 18px;
+					width: 37px;
+					display: inline-block;
+				}
+
+				a[href^="/doi/suppl/"] {
+					span {
+						position: absolute;
+						width: 1px;
+						height: 1px;
+						padding: 0;
+						overflow: hidden;
+						clip: rect(0, 0, 0, 0);
+						white-space: nowrap;
+						border: 0;
+					}
+				}
+			}
+
+			&__wrapper {
+				border-bottom: 1px solid $site-dark-border;
+			}
+
+			[class*=__ctrl] {
+				color: $site-grey-logo;
+				margin: 18px 0;
+				text-transform: uppercase;
+				@include font-size(11);
+			}
+			
+			&__section {
+				.coolBar-share {
+					@include media('<tablet') {
+						margin-left: 1em;
+					}
+				}
+			}
+		}
+
+	}
+
+	&__references {
+		a {
+			color: $site-brand-color;
+			@include themify($themes) {
+				color: themed('color');
+			}
+		}
+	}
+}
+
+.res-publication-content {
+	.article__body {
+		.article__references > * {
+			display: none;
+		}
+	}
+}
+
+.responsiveAccessDenialWidget {
+	.article {
+		&__access {
+			display: none;
+		}
+	}
+}
+
+.loa-accordion {
+	span {
+		white-space: pre;
+	}
+}
+
+.bookPubContent, .just-accepted {
+	.article {
+		&__content {
+			.article {
+				&__affiliations {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.bookPubContent {
+	.tab__pane {
+		.ruledSection:last-of-type {
+			display: none;
+		}
+	}
+}

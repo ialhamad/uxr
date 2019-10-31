@@ -1,0 +1,26 @@
+extends  ../article/article-tmpl
+
+block articleRow
+    .row
+        div(class=contentClasses)
+            .row
+                div
+                    | !{pb.render("breadcrumbs", "chapter.json")}
+            | !{pb.render("content-navigation", "demo/content-navigation-chapter", "content.json")}
+            //- +articleHEeader()
+            //- +articleCitation()
+            block includeCitation
+                include ../../../../../ux3/widgets/publication-content/templates/article/extended/ext-citation-tmpl
+                +epub()
+            //- +articleCoolbar()
+            block includeCoolbar
+                .scroll-to-target
+                    include ext-coolbar-demo-tmpl
+            +articleBody()
+
+        block tabsContainer
+            div(class=sidebarClasses)
+                block socialLinkDropZone
+                //- +articleTab()
+                block includeTabs
+                    include ext-tabs-demo-chapter-tmpl

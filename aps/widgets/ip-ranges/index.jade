@@ -1,0 +1,76 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+    section.source_section
+        h2 IP Ranges widget
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/ip-ranges/templates/ip-ranges/ip-ranges-tmpl.jade')
+        h3 Data
+        p The following the JSON structure provided by the Front-end:
+        +printJson({
+            "multiIPRangeEnabled": true,
+            "mail": {
+                "userEmail": "hhusban@atypon.com"
+            },
+            "multiIpInfoLink": "/action/showIdentities",
+            "ipInfo": "127.0.0.1",
+            "antiForgeryToken": "3977110d-94d6-425e-b2f5-b0d301c032d5",
+            "records": [
+                {
+                    "ipRangeUserDisplayName": "005.009.236.140:005.009.236.140",
+                    "ipRangeUserDescription": "Atypon Ip 005.009.236.140-005.009.236.140"
+                },
+                {
+                    "ipRangeUserDisplayName": "010.000.000.000:010.255.255.255",
+                    "ipRangeUserDescription": "Internal Ip 010.000.000.000-010.255.255.255"
+                },
+                {
+                    "ipRangeUserDisplayName": "172.016.000.000:172.031.255.255",
+                    "ipRangeUserDescription": "Internal Ip 172.016.000.000-172.031.255.255"
+                },
+                {
+                    "ipRangeUserDisplayName": "192.168.000.000:192.168.255.255",
+                    "ipRangeUserDescription": "Internal Ip 192.168.000.000-192.168.255.255"
+                }
+            ],
+            "addSectionTitle": "Add new IP range(s)",
+            "updateSectionTitle": "Update existing IP range(s)",
+            "ipRangesTitle": "IP Ranges",
+            "ipRangesInfo": "(For your information, the IP address of your current internet connection is: {0})",
+            "descLabel": "Description",
+            "ipRangeLabel": "IP range",
+            "agreementNote": "Please remember: Only the sites covered by the agreement are authorized to access this online subscription.",
+            "identityLink": "Show the IP Ranges",
+            "identityNote": "{0} and identities currently assigned to me through this connection.",
+            "mailLink": "Email me",
+            "mailNote": "{0} my IP addresses for my records.",
+            "afterRegNote": "\u003cb\u003eAfter finishing your Institution IP setup, click \u0027Done\u0027 below.\u003c/b\u003e",
+            "afterRegBtnSrc": "",
+            "afterRegBtnAlt": "Done",
+            "ipChangeExLabel": "Examples:",
+            "ipChangeEx1": "101.23.*.*",
+            "ipChangeEx2": "128.23.12.*",
+            "ipChangeEx3": "132.10.30-40.*",
+            "ipChangeEx4": "112.12.11.15:112.12.12.36",
+            "ipChangeForceLabel": "Ignore conflicts",
+            "ipChangeInfo": "",
+            "ipChangeUpdateLabel": "Update checked",
+            "ipChangeDeleteLabel": "Delete checked",
+            "ipChangeUpdateChecked": "Update checked",
+            "ipChangeDeleteChecked": "Delete checked"
+        })
+    section.source_section
+        h2 Examples
+        h3 IP Range With Edit mode
+        .source_example
+            | !{pb.render("ip-ranges", "data.json")}
+
+
+        h3 IP Range With ReadOnly mode
+        .source_example
+            | !{pb.render("ip-ranges", "readOnlyMode.json")}
+    | #{''}

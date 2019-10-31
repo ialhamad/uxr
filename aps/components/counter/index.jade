@@ -1,0 +1,47 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+        markdown
+            table
+                thead
+                    tr
+                        th Container element
+                        th Description
+                tbody
+                    tr
+                        td `js-counter`
+                        td Main component container
+                    tr
+                        td `js-counter__input` with mandatory attribute `data-maxchars=X`, where X is number of maximum length of input text.
+                        td Textarea
+                    tr
+                        td `js-counter__output`
+                        td Place with counter result
+
+
+    section.source_section
+        h2 Examples
+        markdown
+            p `data-maxchars=100`
+        .source_example
+            .js-counter
+                textarea.js-counter__input(cols=100, rows=10, data-maxchars=100)
+                    | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has bee
+                .warning
+                    span.js-counter__output null
+                    | #{" "} characters left
+
+
+        markdown
+            p `data-maxchars=400`
+        .source_example
+            .js-counter
+                textarea.js-counter__input(cols=100, rows=10, data-maxchars=400)
+                .warning
+                    span.js-counter__output null
+                    | #{" "} characters left

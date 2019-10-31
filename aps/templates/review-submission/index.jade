@@ -1,0 +1,61 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    h1 Review Submission Page
+
+    section.source_section
+        h2 Review Submission
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("header", "header.json")}
+
+            main.content.content__submission.readonly
+                .container
+                    h1 Review Submission
+                    .draft-form
+                        h4.border-bottom Submission Info
+                        form#draftForm.uploader-form(method="post", enctype="multipart/form-data")
+                            input(type="hidden", name="doi", value="doi123")
+                            input(type="hidden", name="index", value="1")
+                            input(type="hidden", name="anti-forgery-token", value="xyz")
+
+                            .row
+                                .col-md-8.gutterless
+                                    .col-md-12
+                                        | !{pb.render("pd-basic-metadata", "pd-basic-metadata/pd-basic-metadata-read-only", "basic-metadata.json")}
+                                        | !{pb.render("pd-editorial-category", "pd-editorial-category/pd-editorial-category-read-only", "category.json")}
+                                        | !{pb.render("pd-search-categories", "pd-search-categories/pd-search-categories-read-only", "categories.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-authors", "pd-authors/pd-authors-read-only", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-grants", "pd-grants/pd-grants-read-only", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-pdf", "pd-pdf/pd-pdf-read-only", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-supplemental-files", "pd-supplemental-files/pd-supplemental-files-read-only", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    | !{pb.render("pd-supplemental-links", "pd-supplemental-links/pd-supplemental-links-read-only", "data.json")}
+
+                            .row
+                                .col-md-12
+                                    hr.separator.clearfix
+                                    .actions.pull-right
+                                        a(href="#").btn--cancel Cancel
+                                        a(href="#").btn--submit.button Back to Edit
+                                        a(href="#").btn--submit.button Submit
+
+            | !{pb.render("footer", "footer.json")}
+    | #{''}
+

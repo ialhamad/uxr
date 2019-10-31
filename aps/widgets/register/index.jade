@@ -1,0 +1,14 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+
+    section.source_section
+        h2 Examples
+
+        h3!= data.items[0].title
+        .source_example
+            .container
+                | !{data.items[0].body}
+
+    | #{''}

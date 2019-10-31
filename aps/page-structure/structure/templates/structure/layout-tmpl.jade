@@ -1,0 +1,15 @@
+head
+    block append includes
+    block cssLastInHead
+        include css-lastin-head-tmpl.jade
+    block jsLastInHead
+        include js-lastin-head-tmpl.jade
+
+body
+    block jsFirstInBody
+        include js-firstin-body-tmpl.jade
+
+    block content
+
+    block jsLastInBody
+        include js-lastin-body-tmpl.jade

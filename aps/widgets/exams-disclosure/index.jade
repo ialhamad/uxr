@@ -1,0 +1,68 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Exams Disclosure
+            h3 Include template
+            +printJsCode('include /specs/ux3/widgets/exams-disclosure/templates/exams-disclosure/exams-disclosure-tmpl.jade')
+        h3 Data
+        markdown
+            p The following the JSON structure must exist to be able to use Exams Disclosure template.
+        +printJson({
+            "data": {
+                "exam": {
+                    "title": "Summary for Clinicians: Mechanical Ventilation in Adult Patients with Acute Respiratory Distress Syndrome Clinical Practice Guideline ",
+                    "link": "http://thoracic-test.literatumonline.com/doi/exam/10.1164/atscme_course%3Bajrccm_194_12_1458",
+                    "authors": "<ul aria-label=\"authors\" class=\"rlist--inline loa comma\"><li><a href=\"/author/search/url?q=Nick Gayeski\" title=\"Nick Gayeski\"><span>Nick Gayeski</span></a></li><li><a href=\"/author/search/url?q=George Pess\" title=\"George Pess\"><span>George Pess</span></a></li><li><a href=\"/author/search/url?q=Tim Beechie\" title=\"Tim Beechie\"><span>Tim Beechie</span></a></li><li><a href=\"/author/search/url?q=Nick Gayeski\" title=\"Nick Gayeski\"><span>Nick Gayeski</span></a></li><li><a href=\"/author/search/url?q=George Pess\" title=\"George Pess\"><span>George Pess</span></a></li><li><a href=\"/author/search/url?q=Tim Beechie\" title=\"Tim Beechie\"><span>Tim Beechie</span></a></li><li><a href=\"/author/search/url?q=Nick Gayeski\" title=\"Nick Gayeski\"><span>Nick Gayeski</span></a></li><li><a href=\"/author/search/url?q=George Pess\" title=\"George Pess\"><span>George Pess</span></a></li><li><a href=\"/author/search/url?q=Tim Beechie\" title=\"Tim Beechie\"><span>Tim Beechie</span></a></li></ul>",
+                    "disclosure": "<!-- abstract content --> <!--SNIPPED FOR BREVITY --> <!-- /abstract content -->",
+                    "related": [
+                        {
+                            "content": [
+                                {
+                                    "doi": "10.1164/rccm.201606-1278CI",
+                                    "pageRange": "pp. 1458-1464",
+                                    "epubDate": "12/15/16",
+                                    "group": {
+                                        "volume": "194",
+                                        "issue": "12",
+                                        "serial": {
+                                            "title": "American Journal of Respiratory and Critical Care Medicine"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "errors": []
+        })
+    | #{''}
+
+    section.source_section
+        h2 Examples
+        
+        h3 Exam Disclosure - Title Only
+        p This is an example where only the widget property 'Show Exam Title' is selected
+        .source_example
+            .container
+                | !{pb.render("exams-disclosure", "data-title-only.json")}
+
+        h3 Exam Disclosure - Related Article Only
+        p This is an example where only the widget property 'Show Related Article' is selected
+        .source_example
+            .container
+                | !{pb.render("exams-disclosure", "data-related-only.json")}
+
+        h3 Exam Disclosure
+        p This is an example of all three widget properties enabled.
+        .source_example
+            .container
+                | !{pb.render("exams-disclosure", "data.json")}
+            
+    | #{''}

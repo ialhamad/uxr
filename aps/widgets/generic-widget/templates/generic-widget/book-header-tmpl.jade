@@ -1,0 +1,59 @@
+- var doiLink = 'https://doi.org/' + data.content.doi
+
+.card.card--gutter.card--shadow.meta__body.book-header
+    .meta__left-side.left-side-image
+        img(alt=data.content.title src=data.content.coverImage.src)
+        
+        h1.meta__title !{data.content.title}
+        
+        .meta__info
+            div !{data.content.authors}
+            p.meta__general
+                span.bookDate #{data.content.pubdate} 
+                a.bookDoi(href=doiLink) #{doiLink}
+            p.meta__isbn    
+                if (data.content.isbn)
+                    span ISBN: 
+                    | #{data.content.isbn}
+                if (data.content.isbn && data.content.eisbn)
+                    br
+                if (data.content.eisbn)
+                    span EISBN: 
+                    | #{data.content.eisbn}
+                    
+            .meta__section.book-links.coolBar
+                if (data.content.pdfLink)
+                    span.coolBar__section.book-download
+                        a(href="#{data.content.pdfLink}")
+                            i.icon-Icon_Download
+                            span Full Book (PDF) 
+                if (data.content.epubLink)
+                    span.coolBar__section.book-download
+                        a(href="#{data.content.epubLink}")
+                            i.icon-Icon_Download
+                            span Open in eReader 
+                ul.coolBar__second.rlist
+                    li.book-tools.coolBar__section.coolBar-tools
+                        a(href="#" data-db-target-for="b83a9112-ff13-4233-be12-8a37252f58fb" data-db-switch="icon-close_thin" aria-haspopup="true" aria-controls="b83a9112-ff13-4233-be12-8a37252f58fb_Pop" role="button" id="b83a9112-ff13-4233-be12-8a37252f58fb_Ctrl" data-slide-target="#b83a9112-ff13-4233-be12-8a37252f58fb_Pop" class="article-tools w-slide__btn js--open" target="_self")
+                            i(aria-hidden="true" class="icon-Icon_Tools")
+                            span Tools
+                        div(data-db-target-of="b83a9112-ff13-4233-be12-8a37252f58fb" aria-labelledby="b83a9112-ff13-4233-be12-8a37252f58fb_Ctrl" role="menu" id="b83a9112-ff13-4233-be12-8a37252f58fb_Pop" class="article-tools__block fixed dropBlock__holder")
+                            ul.rlist.w-slide--list
+                                li(role="none" class="article-tool")
+                                    a(href="#{data.content.addFavorite}&redirectUri=%2Faction%2FshowPreferences%3FmenuTab%3Dfavorites%26type%3DPublication" role="menuitem")
+                                        i(aria-hidden="true" class="icon-Icon_Star-26")
+                                        span Add to Favorites
+                                li(role="none" class="article-tool")
+                                    a(href="#{data.content.downloadCitation}" role="menuitem")
+                                        i(aria-hidden="true" class="icon-Icon_Download")
+                                        span Download Citations
+                                li(role="none" class="article-tool")
+                                    a(href="#{data.content.citationAlert}" role="menuitem")
+                                        i(aria-hidden="true" class="icon-Icon_Track-citations")
+                                        span Track Citation
+                    li.book-tools.coolBar__section.coolBar-share
+                        block bookShareTools
+                            | !{pb.renderDropzone(thisWidget, "shareZone")}
+                
+                
+    .meta__right-side

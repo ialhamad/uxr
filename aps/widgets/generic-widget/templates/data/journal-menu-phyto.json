@@ -1,0 +1,18 @@
+{
+    "data": {
+        "journal": {
+            "code": "phyto",
+            "addFavorite": "/personalize/addFavoritePublication?journalCode=phyto",
+            "currentIssue": {
+                "link": "/toc/phyto/current"
+            },
+            "aop": {
+                "link": "/toc/phyto/0/0"
+            },
+            "ja": {
+                "link": "/toc/phyto/0/ja"
+            }
+        }
+    },
+    "errors": []
+}

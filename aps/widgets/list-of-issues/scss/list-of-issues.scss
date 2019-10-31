@@ -1,0 +1,94 @@
+.loi {
+	&__banner {
+		background-color: $site-brand-color;
+		@include themify($themes) {
+			background-color: themed('color');
+		}
+		box-shadow: 0px 2px 6px $site-box-shadow-color;
+		font-weight: 600;
+
+		.coolBar {
+			&__wrapper {
+				background-color: $site-brand-color;
+				@include themify($themes) {
+					background-color: themed('color');
+				}
+				border-bottom: 0;
+			}
+			&__section {
+				&>a {
+					padding: 0;
+					@include media('<desktop', '>=tablet') {
+						font-size: .75rem;
+					}
+				}
+			}
+		}
+
+		a {
+			display: inline-block;
+		}
+
+		[class*=__ctrl] {
+			color: $text-onDark;
+			display: inline-block;
+			padding: 0 10px;
+			font-weight: 600;
+		}
+
+		&__right-side {
+
+			i {
+				color: $text-onDark;
+				padding: 0 10px;
+			}
+
+			.pub-pages-about {
+
+				margin-left: 0;
+
+				.about__block {
+					top: 37px;
+					right: -5px;
+					width: 250px;
+					@include themify($themes) {
+						background-color: themed('color');
+					}
+					
+					li {
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+	}
+	
+	&__archive:after {
+		color: $site-page-background;
+	}
+
+	&__issue {
+		.parent-item {
+			text-transform: none;
+
+			.coverDate {
+				color: $creative-title-color;
+			}
+		}
+	}
+
+}
+#loi-banner>a {
+	color: $text-onDark;
+
+	&~a {
+		border-left: 1px solid $site-page-background;
+	}
+}
+.loi-slide {
+	&__ctrl {
+		i {
+			color: $text-onDark;
+		}
+	}
+}

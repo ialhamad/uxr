@@ -1,0 +1,61 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-template-include-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/most-cited/templates/show-recommended/show-recommended-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Most - Read template.
+        +printJson({
+            "data": {
+                "items": [
+                    {
+                        "contentType": "Article",
+                        "title": "Bridge Column Maximum Drift Estimation via Computer Vision",
+                        "tocHeading": "Technical Papers",
+                        "best": "/doi/full/10.1061/%28ASCE%29CP.1943-5487.0000527",
+                        "epubDate": "September 2015",
+                        "contribs": "<ul class=\"rlist--inline loa comma\" style=\"float: none;position: static;\" aria-label=\"authors\"><li><a href=\"/author/search/url?q=Nick Gayeski\" title=\"Nick Gayeski\"><span>Nick Gayeski</span></a></li><li><a href=\"/author/search/url?q=George Pess\" title=\"George Pess\"><span>George Pess</span></a></li><li><a href=\"/author/search/url?q=Tim Beechie\" title=\"Tim Beechie\"><span>Tim Beechie</span></a></li></ul>",
+                        "group": {
+                            "contentType": "Issue",
+                            "issue": "4",
+                            "volume": "30",
+                            "issueType": "NORMAL",
+                            "isAheadOfPrint": false,
+                            "isJustAccepted": false,
+                            "isForthcoming": false,
+                            "coverDate": "July 2016",
+                            "tocLink": "/toc/jccee5/30/4",
+                            "serial": {
+                                "title": "Journal of Computing in Civil Engineering",
+                                "journalLink": "/action/showJournal?doi=10.1061%2Fjccee5",
+                                "code": "jccee5"
+                            }
+                        }
+                    }
+                ]
+            },
+            "errors": []
+        })
+    | #{''}
+
+
+    section.source_section
+        h2 Examples
+
+        h3 Show Recommended - in home page
+        .source_example
+            | !{pb.render("show-recommended", "data.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["grid-md-2"]}, data: {"title": "Recommended Articles"}}}})}
+
+        h3 Show Recommended - in article page
+        .source_example
+            | !{pb.render("show-recommended", "data.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["list-of-recommended"]}}}})}
+
+    | #{''}

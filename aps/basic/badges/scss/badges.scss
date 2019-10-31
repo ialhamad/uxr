@@ -1,0 +1,22 @@
+.badge {
+
+	&-type {
+		@include font-size(11);
+		background-color: $site-page-background;
+		border: 1px solid $badge-type-bg-color;
+		border-radius: 2px;
+		color: $badge-type-bg-color;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	&-oa {
+		border-color: $badge-fa-bg-color;
+		color: $badge-fa-bg-color;
+	}
+
+	&-fa {
+		border-color: $badge-fa-bg-color;
+		color: $badge-fa-bg-color;
+	}
+}

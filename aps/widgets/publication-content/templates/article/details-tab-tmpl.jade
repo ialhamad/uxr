@@ -1,0 +1,49 @@
+extends ../../../../../ux3/widgets/publication-content/templates/article/details-tab-tmpl.jade
+
+block detailsTabTopSections
+    block detailsTabTopSectionsCopyright
+        if (original.item && original.item.copyright)
+            section.ruledSection
+                strong.section__title Information
+                .section__body
+                    p !{original.item.copyright}
+    if (original.item) && ((original.item.crossmark) || (original.item.formats && original.item.formats.am))
+        section.article__crossmark.ruledSection
+            .section__body
+                ul.rlist.spaced
+                    if (original.item.crossmark)
+                        li
+                            a(data-target="crossmark")
+                                i.icon-bookmark(aria-hidden="true")
+                                span Crossmark
+
+                        if(original.item.ids && original.item.ids.doi && original.item.ids.doi.value)
+                            meta(name="dc.identifier" scheme="doi" content="doi:"+ original.item.ids.doi.value)
+                    if (original.item.formats.am)
+                        li
+                            a(href=original.item.formats.am)
+                                i.icon-manusript(aria-hidden="true")
+                                span Authors manuscript
+        
+    block metaData
+    block tabKeywords
+        if (original.item && original.item.keywords && original.item.keywords.length>0)
+            section.article__keyword.ruledSection
+                strong.section__title Keywords
+                .section__body
+                    ul.rlist.rlist--inline
+                        each item, i in original.item.keywords
+                            if (item.searchUrl && item.label)
+                                li
+                                    a.badge-type(href = item.searchUrl) !{item.label}
+block acknowledgements
+    if (original.item && original.item.acknowledgements)
+        each item, i in original.item.acknowledgements
+            section.article__acknowledgements.ruledSection
+                if(item.title)
+                    strong.section__title !{item.title}
+                .section__body
+                    if(item.text)
+                        each paragraph, j in item.text
+                            if(paragraph)
+                                p !{paragraph}

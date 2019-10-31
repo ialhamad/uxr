@@ -1,0 +1,129 @@
+- var jaLabel = 'First Look';
+- var aopLabel = 'Just Published';
+
+.article-page-details-tab
+    if (data.content.type === "Article")
+        a.cover(href=data.content.group.tocLink)
+            img(src=data.content.group.coverImage.src alt="journal cover")
+        p.title
+            if (data.content.group.isAheadOfPrint)
+                a(href=data.content.group.tocLink)
+                    | #{aopLabel}
+            else if (data.content.group.isJustAccepted)
+                a(href=data.content.group.tocLink)
+                    | #{jaLabel}
+            else
+                if (data.content.group.title)
+                    a(href=data.content.group.tocLink)
+                        | !{data.content.group.title}
+                    br
+                | !{data.content.group.citationLine}
+                br
+                span.pubDate #{data.content.group.date}
+        if(data.content.group.serial.code!="pbiomes")    
+            a.subscribe.button.extra-border(href="https://www.apsnet.org/apsstore/subscribe/") Subscribe
+        if (data.content.group.serial.issn && data.content.group.serial.eissn)
+            p.issn
+                span ISSN: 
+                | #{data.content.group.serial.issn}
+                br
+                span e-ISSN: 
+                | #{data.content.group.serial.eissn}
+        else if (data.content.group.serial.issn)
+            p.issn
+                span ISSN: 
+                | #{data.content.group.serial.issn}
+        else if (data.content.group.serial.eissn)
+            p.issn
+                span e-ISSN: 
+                | #{data.content.group.serial.eissn}
+
+        if (data.content.group.attachments)
+            each attachment in data.content.group.attachments
+                if (attachment.name === "cover.pdf")
+                    p.coverDownload
+                        a(href=attachment.link)
+                            i.icon-file-pdf 
+                            span  Download Cover PDF
+        if (data.content.group.coverImage.caption)
+            div.coverCaption
+                p.coverCaptionHeading
+                    strong About the Cover
+                | !{data.content.group.coverImage.caption}
+        | !{pb.renderDropzone(thisWidget, "extraInfo")}
+
+
+    else if (data.content.type === "Chapter")
+        a.cover(href=data.content.group.bookLink)
+            img(src=data.content.group.coverImage.src alt="book cover")
+        p.title
+            a(href=data.content.group.bookLink) !{data.content.group.title}
+        if (data.content.group.isbn)
+            p.isbn
+                span ISBN: 
+                | #{data.content.group.isbn}
+        | !{pb.renderDropzone(thisWidget, "extraInfo")}
+        
+        
+    else if (data.content.type === "Issue")
+        a.cover(href=data.content.tocLink)
+            img(src=data.content.coverImage.src alt="journal cover")
+        p.title
+            if (data.content.isAheadOfPrint)
+                a(href=data.content.tocLink)
+                    | #{aopLabel}
+            else if (data.content.isJustAccepted)
+                a(href=data.content.tocLink)
+                    | #{jaLabel}
+            else
+                if (data.content.title)
+                    a(href=data.content.tocLink)
+                        | !{data.content.title}
+                    br
+                | !{data.content.citationLine}
+                br
+                span.pubDate #{data.content.date}
+        if(data.content.serial.code != "pbiomes")
+            a.subscribe.button.extra-border(href="https://www.apsnet.org/apsstore/subscribe/") Subscribe
+        if (data.content.serial.issn && data.content.serial.eissn)
+            p.issn
+                span ISSN: 
+                | #{data.content.serial.issn}
+                br
+                span e-ISSN: 
+                | #{data.content.serial.eissn}
+        else if (data.content.serial.issn)
+            p.issn
+                span ISSN: 
+                | #{data.content.serial.issn}
+        else if (data.content.serial.eissn)
+            p.issn
+                span e-ISSN: 
+                | #{data.content.serial.eissn}
+        
+        if (data.content.attachments)
+            each attachment in data.content.attachments
+                if (attachment.name === "cover.pdf")
+                    p.coverDownload
+                        a(href=attachment.link)
+                            i.icon-file-pdf 
+                            span  Download Cover PDF
+        if (data.content.coverImage.caption)
+            div.coverCaption
+                p.coverCaptionHeading
+                    strong About the Cover
+                | !{data.content.coverImage.caption}
+        | !{pb.renderDropzone(thisWidget, "extraInfo")}
+        
+
+    else if (data.content.type === "Book")
+        .bookdetails
+            a.cover(href=data.content.bookLink)
+                img(src=data.content.coverImage.src alt="book cover")
+            p.title
+                a(href=data.content.bookLink) !{data.content.title}
+            if (data.content.isbn)
+                p.isbn
+                    span ISBN: 
+                    | #{data.content.isbn}
+            | !{pb.renderDropzone(thisWidget, "extraInfo")}

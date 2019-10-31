@@ -1,0 +1,23 @@
+extends ../extended/ext-tabs-tmpl.jade
+block tabsPanes
+    ul.rlist.tab__content
+        if(data.content)
+            each item, I in data.content
+                if (item.content)
+                    li.tab__pane.nested-tab(id="pane-" + thisWidget.id + I +"-" + tabNumber aria-labelledby="pane-" + thisWidget.id + I +"-" + tabNumber + "con" role="tabpanel")
+                        - data = item;
+                        - var currentTabNumber = tabNumber;
+                        - tabNumber = tabNumber + I;
+                        +tabs()
+                        - data = dataOld;
+                        - tabNumber = currentTabNumber;
+                else
+                    li.tab__pane(id="pane-" + thisWidget.id + I +"-" + tabNumber aria-labelledby="pane-" + thisWidget.id + I +"-" + tabNumber + "con" role="tabpanel")
+                        +loi(item.issues,false,I)
+block tabsMain
+    div.loi.tab
+        - tabNumber++;
+
+        ul.rlist.loi__list.tab__nav.swipe__list(role="tablist")
+            +nav()
+        +pane()

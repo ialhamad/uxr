@@ -1,0 +1,12 @@
+query {
+  content {
+  	...on Issue {
+      title
+      volume
+      issue
+      coverDate
+      isAheadOfPrint
+      isJustAccepted
+    }
+  }
+}

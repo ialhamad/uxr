@@ -1,0 +1,7 @@
+query {
+  session {
+    identities {
+      type
+    }
+  }
+}

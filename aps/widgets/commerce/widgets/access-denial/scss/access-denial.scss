@@ -1,0 +1,164 @@
+.responsiveAccessDenialWidget {
+	h1 {
+		font-weight: 700;
+	}
+	
+	.article__content {
+		.article__breadcrumbs {
+			display: none;
+		}
+	}
+	
+	&.firstlookaccessdenial {
+		.tab__pane {
+			.article__acknowledgements {
+				display: none;
+			}
+		}
+	}
+}
+
+.bookPubContent {
+	.responsiveAccessDenialWidget {
+		.article__keyword, .article__copyright, .article__acknowledgements, .section__separator, .tab__spinner {
+			display: none;
+		}
+	}
+}
+
+.eCommercePurchaseAccessWidgetContainer {
+	.add-journal-to-cart {
+		header {
+			line-height: inherit;
+			padding: 0;
+			border: none;
+			position: relative;
+			.purchaseMessage {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: $item-added;
+				text-align: center;
+				color: $text-onDark;
+				padding: 0;
+				p.itemAddedMsgBox {
+					border: none;
+					line-height: 60px;
+					margin: 0;
+					padding: 3px 0 8px 0;
+					h3 {
+						@include font-size(14);
+						font-weight: 600;
+						color: $text-onDark;
+					}
+					&:before {
+						@include font-size(19);
+						vertical-align: middle;
+						position: static;
+						display: inline;
+						margin: 0 10px 0 0;
+					}
+				}
+			}
+			.add-to-cart-msg{
+				display: none;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: $item-hover;
+				text-align: center;
+				@include font-size(14);
+				font-weight: 600;
+				color: #fff;
+				line-height: 55px;
+				margin-left: 0;
+				margin-bottom: 0;
+				[class^="icon-"]{
+					@include font-size(19);
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+				&.added{
+					background: $item-added;
+				}
+			}
+			&:hover{
+				position: relative;
+				.add-to-cart-msg:not(.added){
+					display: block;
+					padding: 8px 0;
+				}
+			}
+		}
+		.journal-options-expanded {
+			padding: 10px;
+			background: $secondary-bg-color;
+			margin-bottom: 10px;
+			.add-article-to-cart,
+			.itemAddedMsgBox {
+				background: $site-page-background;
+			}
+		}
+	}
+
+	.addedMessage {
+		overflow: hidden;
+		.article-title{
+			@include media('>=tablet') {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			[class^="icon-"]{
+				color: $item-added;
+				@include font-size(25);
+				margin: 0 10px 0 0;
+			}
+			.article-title-content {
+				@include media('>=tablet') {
+					width: 60%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+				}
+				.text {
+					text-align: left;
+				}
+				.icon-check {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+		a.show-cart-link{
+			background: $item-hover;
+			&:hover{
+				background-color: $checkout-hover;
+			}
+			.text{
+				display: inline-block;
+				line-height: 1.3em;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+@include media('<tablet') {
+	.add-journal-to-cart {
+		.addedMessage {
+			.show-cart-link {
+				width: 100%;
+				margin-top: 15px;
+			}
+		}
+	}
+	.article-title-content {
+		line-height: 30px;
+	}
+}

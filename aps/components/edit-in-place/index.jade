@@ -1,0 +1,55 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+            markdown
+                table
+                    thead
+                        tr
+                            th Container element
+                            th Description
+                    tbody
+                        tr
+                            td `js-editable`
+                            td Main component container
+                        tr
+                            td `js-editable__text`
+                            td Shows value of `js-editable__input` input field and is clickable
+                        tr
+                            td `js-editable__input`
+                            td Input field, can be edited by clicking on `js-editable__input` element
+
+                table
+                    thead
+                        tr
+                            th Key/Mouse Action
+                            th Action
+                    tbody
+                        tr
+                            td click on the text
+                            td Shows input field for editing its value
+                        tr
+                            td click outside the input field
+                            td Store the new value into input field and hide input field
+                        tr
+                            td Enter
+                            td Store the new value into input field
+                        tr
+                            td ESC
+                            td Restore the origin value of input field
+    section.source_section
+        h2 Examples
+        markdown
+            p See the source code...
+        .source_example
+            .js-editable
+                .js-editable__text Editable
+                input.js-editable__input(type="text", value="Editable")
+
+            .js-editable
+                .js-editable__text Editable 2
+                input.js-editable__input(type="text", value="Editable 2")

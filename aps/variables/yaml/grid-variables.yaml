@@ -1,0 +1,134 @@
+# global: shared properties between all variables unless it has been overriden
+# type: type of variables
+# cssProperties css properties that might  use those variables
+# jsGroupe: Js object groupe name
+# value: the value of the variable
+# extension: extra text to be added at the end of the variable value ( will be added only in SCSS transformed values )
+# comment: commemnt line to be added above the variable
+# jsExport: detremin if the variable must be exposed /transformed to js object
+# suffix: comment to be added at the end of the line in SCSS transformed file
+---
+  global:
+    type: "size"
+    category: "font-size"
+    cssProperties:
+    - 'background*'
+    - 'border*'
+    - box-shadow
+  imports:
+  - ../aliases/break-points.yaml
+  jsGroupe: "grid"
+  strip: "true"
+  props:
+# == Media queries breakpoints
+# Define the breakpoints at which your layout will change, adapting to different screen sizes.
+    # Extra small screen / phone
+    # ** Deprecated `$screen-xs` as of v3.0.1
+    screen-xs:
+      value: '{!SCREEN_XS}'
+      comment: "Deprecated `$screen-xs` as of v3.0.1"
+      jsExport: "true"
+    screen-xs-min:
+      value: '$screen-xs'
+      comment: "Deprecated `$screen-xs-min` as of v3.2.0"
+    screen-phone:
+      value: '$screen-xs-min'
+      comment: "Deprecated `$screen-phone` as of v3.0.1"
+    # Small screen / tablet
+    screen-sm:
+      value: '{!SCREEN_SM}'
+      comment: "Deprecated `$screen-sm` as of v3.0.1"
+      jsExport: "true"
+    screen-sm-min:
+      value: '$screen-sm'
+    screen-tablet:
+      value: '$screen-sm-min'
+      comment: "Deprecated `$screen-tablet` as of v3.0.1"
+    # Medium screen / desktop
+    screen-md:
+      value: '{!SCREEN_MD}'
+      comment: "Deprecated `$screen-md` as of v3.0.1"
+      jsExport: "true"
+    screen-md-min:
+      value: '$screen-md'
+    screen-desktop:
+      value: '$screen-md-min'
+      comment: "Deprecated `$screen-desktop` as of v3.0.1"
+    # Medium screen / desktop
+    screen-lg:
+      value: '{!SCREEN_LG}'
+      comment: "Deprecated `$screen-md` as of v3.0.1"
+      jsExport: "true"
+    screen-lg-min:
+      value: '$screen-lg'
+    screen-lg-desktop:
+      value: '$screen-lg-min'
+      comment: "Deprecated `$screen-lg-desktop` as of v3.0.1"
+    # Large screen / desktop
+    screen-xlg:
+      value: '{!SCREEN_XLG}'
+      comment: "Deprecated `$screen-md` as of v3.0.1"
+      jsExport: "true"
+    screen-xlg-min:
+      value: '$screen-xlg'
+    screen-xlg-desktop:
+      value: '$screen-lg-min'
+      comment: "Deprecated `$screen-xlg-desktop` as of v3.0.1"
+
+# So media queries don't overlap when required, provide a maximum
+    screen-xs-max:
+      value: '($screen-sm-min - 1)'
+      comment: "So media queries don't overlap when required, provide a maximum"
+    screen-sm-max:
+      value: '($screen-md-min - 1)'
+    screen-md-max:
+      value: '($screen-lg-min - 1)'
+# == Grid system
+# Define your custom responsive grid.
+    grid-columns:
+      value: '{!GRID_COL}'
+      comment: "** Number of columns in the grid"
+    grid-gutter-width:
+      value: '{!GUTTER_WIDTH}'
+      comment: "** Padding between columns. Gets divided in half for the left and right"
+    #Navbar collapse
+    grid-float-breakpoint:
+      value: '$screen-sm-min'
+      comment: "** Point at which the navbar becomes uncollapsed"
+    grid-float-breakpoint-max:
+      value: '($grid-float-breakpoint - 1)'
+      comment: "** Point at which the navbar begins collapsing"
+# == Container sizes
+# Define the maximum width of `.container` for different screen sizes.
+    container-mobile:
+      value: '({!CONTAINER_MOBILE})'
+      comment: "Small screen / phone"
+      jsExport: "true"
+    container-xs:
+      value: '$container-mobile'
+      comment: "For `$screen-sm-min` and up"
+      jsExport: "true"
+    container-tablet:
+      value: '({!CONTAINER_TABLET})'
+      comment: "Small screen / tablet"
+      jsExport: "true"
+    container-sm:
+      value: '$container-tablet'
+      comment: "For `$screen-sm-min` and up"
+      jsExport: "true"
+    container-desktop:
+      value: '({!CONTAINER_DESKTOP})'
+      comment: "Medium screen / desktop"
+      jsExport: "true"
+    container-md:
+      value: '$container-desktop'
+      comment: "For `$screen-md-min` and up"
+      jsExport: "true"
+    container-large-desktop:
+      value: '({!CONTAINER_LARGE_DESKTOP})'
+      comment: "Large screen / wide desktop"
+      jsExport: "true"
+    container-lg:
+      value: '$container-large-desktop'
+      comment: "For `$screen-lg-min` and up"
+      jsExport: "true"

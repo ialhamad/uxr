@@ -1,0 +1,34 @@
+extends ../../../../../../ux3/widgets/publication-content/templates/article/extended/ext-coolbar-tmpl.jade
+
+block coolbarPrefix
+    - var original = data
+
+    block coolbarDate
+        - var coolbarData = {"sections": {"icon": "icon-Icon_Section-menu","label": "Sections"},"download": {"icon": "icon-Icon_Download","label": "View Article","items": []},"extra": [{"content": "<a href=\"#\" data-db-target-for=\"tools\" data-db-switch=\"icon-close_thin\" class=\"coolBar__ctrl\"><i aria-hidden=\"true\" class=\"icon-tools\"></i><span>Tools</span></a><ul data-db-target-of=\"tools\" class=\"coolBar__drop fixed rlist\"><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-export_citation\"></i><span>Export Citation</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-favorites\"></i><span>Add to Favorites</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-Email\"></i><span>Email a Friend</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-track\"></i><span>Track Citations</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-permissions\"></i><span>Permissions</span></a></li></ul>"},{"content": "<a href=\"#\" data-db-target-for=\"share\" data-db-switch=\"icon-close_thin\" class=\"coolBar__ctrl\"><i aria-hidden=\"true\" class=\"icon-share\"></i><span>Share</span></a><ul data-db-target-of=\"share\" class=\"coolBar__drop fixed rlist\"><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-facebook\"></i><span>Facebook</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-twitter\"></i><span>Twitter</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-linkedin\"></i><span>LinkedIn</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-google-plus\"></i><span>Google+</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-share\"></i><span>Reddit</span></a></li><li><a href=\"#\"><i aria-hidden=\"true\" class=\"icon-share\"></i><span>CiteULike</span></a></li></ul>"}]}
+    if(data.item && data.item.formats &&  coolbarData.download)
+        block prefixCoolbarExtraDownloadLinks
+        +download_item(data.item.formats.interpSumm,"icon-full-text","Public Summary",coolbarData.download.items)
+        +download_item(data.item.formats.fullText,"icon-full-text","Full Text",coolbarData.download.items)
+        +download_item(data.item.formats.pdf,"icon-file-pdf","PDF",coolbarData.download.items)
+        +download_item(data.item.formats.pdfPlus,"icon-file-pdf","PDF Plus",coolbarData.download.items)
+        if data.item.formats.altPdfs
+            each item,i in data.item.formats.altPdfs
+                +download_item(item.url,"icon-download", "View "+item.name,coolbarData.download.items)
+        +download_item(data.item.formats.ePub,"icon-full-text","ePub",coolbarData.download.items)
+        +download_item(data.item.formats.am,"icon-download","View AM",coolbarData.download.items)
+        +download_item(data.item.formats.amPdf,"icon-file-pdf","View AM PDF",coolbarData.download.items)
+        +download_item(data.item.formats.suppl,"icon-extra","Supplemental",coolbarData.download.items)
+        block additionalcoolbarLinks
+    block coolbarExtraDownloadLinks
+    - data  = coolbarData
+
+
+block downloadCoolbarSection
+    if (data.download && data.download.items.length > 0)
+        if(data.download && data.download.items)
+            each item, i in data.download.items
+                if(item.url)
+                    li.coolBar__section.coolBar--download.hidden-xs.hidden-sm
+                        a(href= item.url)
+                            i(class= item.icon)
+                            span !{item.text}

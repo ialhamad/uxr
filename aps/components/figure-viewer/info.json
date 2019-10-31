@@ -1,0 +1,6 @@
+{
+    "title": "Figure viewer",
+    "template": "doc",
+    "tag": ["components"],
+    "description": "Modal overlay with enlarged figure, caption and navigation"
+}

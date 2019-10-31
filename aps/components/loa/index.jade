@@ -1,0 +1,53 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/loa/templates/loa/loa-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use List of authors template.
+        +printJson({
+            "data": {
+                "authors": [
+                    {
+                        "text": "Nick Gayeski",
+                        "itemurl": "/author/search/url?q=Nick Gayeski"
+                    },
+                    {
+                        "text": "George Pess",
+                        "itemurl": "/author/search/url?q=George Pess"
+                    },
+                    {
+                        "text": "Tim Beechie",
+                        "itemurl": "/author/search/url?q=Tim Beechie"
+                    }
+                ]
+            }
+
+        })
+
+        markdown
+            table
+                thead
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `text`
+                        td Author name
+                    tr
+                        td `itemurl`
+                        td Author link
+    | #{''}
+
+    section.source_section
+        h2 List of authors
+        .source_example
+            | !{pb.render('loa', 'loa.json')}
+    | #{''}
+

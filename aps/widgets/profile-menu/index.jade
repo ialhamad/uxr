@@ -1,0 +1,121 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+    section.source_section
+        h2 Profile Menu widget
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/profile-menu/templates/profile-menu/profile-menu-tmpl.jade')
+        h3 Data
+        p The following the JSON structure provided by the Front-end:
+        +printJson({
+            "data": {
+                "isRegistered": true,
+                "isAuthor": false,
+                "isSiteEditor": true,
+                "isInstitutionAdmin": true,
+                "shibbolethAdminEnabled": false,
+                "institutionUserId": 520,
+                "institutionAdminMenu": {
+                    "institutionAccessEntitlements": {
+                        "label": "Access Entitlements",
+                        "link": "/action/institutionAccessEntitlements?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "showInstitutionUsageReport": {
+                        "label": "Usage reports",
+                        "link": "/action/showInstitutionUsageReport?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "institutionMultiIpShow": {
+                        "label": "IP Ranges",
+                        "link": "/action/institutionMultiIpShow?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "showInstitutionShibbolethConfig": {
+                        "label": "Shibboleth",
+                        "link": "/action/showInstitutionShibbolethConfig?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "institutionAdminSfxShow": {
+                        "label": "Link Resolver",
+                        "link": "/action/institutionAdminSfxShow?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "institutionAdminTpsShow": {
+                        "label": "Trusted Proxy Server setup",
+                        "link": "/action/institutionAdminTpsShow?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "showInstitutionAdminManager": {
+                        "label": "Manage Administrators",
+                        "link": "/action/showInstitutionAdminManager?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "showInstitutionAdminBanner": {
+                        "label": "Co-branding",
+                        "link": "/action/showInstitutionAdminBanner?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "institutionAdmin": {
+                        "label": "Holdings File",
+                        "link": "/action/institutionAdmin?institutionUserId\u003d520",
+                        "active": false
+                    },
+                    "showInstitutionDevicePairingManagement": {
+                        "label": "Pairing Management",
+                        "link": "/action/showInstitutionDevicePairingManagement?institutionUserId\u003d520",
+                        "active": false
+                    }
+                },
+                "accountMenu": {
+                    "AccountInfo": {
+                        "label": "Personal Details",
+                        "link": "/action/showPreferences?menuTab\u003dAccountInfo",
+                        "active": false
+                    },
+                    "address": {
+                        "label": "Address",
+                        "link": "/action/showPreferences?menuTab\u003daddress",
+                        "active": true
+                    },
+                    "licenses": {
+                        "label": "Access entitlements",
+                        "link": "/action/showPreferences?menuTab\u003dlicenses",
+                        "active": false
+                    },
+                    "Access": {
+                        "label": "Redeem Voucher",
+                        "link": "/action/showPreferences?menuTab\u003dAccess",
+                        "active": false
+                    },
+                    "Alerts": {
+                        "label": "Alerts",
+                        "link": "/action/showPreferences?menuTab\u003dAlerts",
+                        "active": false
+                    },
+                    "favorites": {
+                        "label": "Favorites",
+                        "link": "/action/showPreferences?menuTab\u003dfavorites",
+                        "active": false
+                    },
+                    "saved": {
+                        "label": "Saved Searches",
+                        "link": "/search/saved",
+                        "active": false
+                    },
+                    "author": {},
+                    "devices": {
+                        "label": "Device Pairing",
+                        "link": "/action/showPreferences?menuTab\u003ddevices",
+                        "active": false
+                    }
+                }
+            }
+        })
+        .source_example
+            | !{pb.render("profile-menu", "data.json")}
+    | #{''}

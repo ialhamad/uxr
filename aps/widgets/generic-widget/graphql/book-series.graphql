@@ -1,0 +1,19 @@
+query {
+  series {
+    ...on BookSeries {
+      groups {
+        ...on Book {
+          title
+          link(service:showBook)
+          isbn
+          eisbn
+          pubDate:earliestPubDate(format:"d MMMM YYYY")
+          authors:xslt(type:CONTRIBUTORS)
+          coverImage{
+            src
+          }
+        }
+      }
+    }
+  }
+}

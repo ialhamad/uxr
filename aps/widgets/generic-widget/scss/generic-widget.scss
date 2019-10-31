@@ -1,0 +1,119 @@
+.article-page-details-tab {
+	text-align: center;
+	margin: 0 auto;
+
+	.title {
+		font-weight: 700;
+		@include themify($themes) {
+			color: themed('color');
+		}
+
+		.pubDate {
+			color: $site-medium-text;
+			font-weight: 400;
+		}
+	}
+
+	.issn, .isbn {
+		span {
+			color: $site-medium-text;
+			font-weight: 700;
+		}
+	}
+	
+	.button.subscribe {
+		border-radius: 5px;
+	}
+	
+	.coverDownload {
+		
+		border: 1px solid $site-dark-border;
+		border-radius: 20px; 
+		color: $site-dark-text;
+		display: inline-block;
+		@include font-size(11);
+		font-weight: 600;
+		text-transform: uppercase;
+		
+		a {
+			display: inline-block;
+			padding: 8px;
+		}
+
+		.icon-file-pdf:before {
+			content: "\eadf ";
+		}
+	}
+	
+	.coverCaption {
+		a {
+			color: $site-brand-color;
+			@include themify($themes) {
+				color: themed('color');
+			}
+		}
+	}
+	
+	.bookdetails {
+		background-color: $site-page-tint;
+		border: 1px solid $site-faint-rule;
+		margin-bottom: 20px;
+		padding: 40px 0;
+	}
+}
+
+.book-header {
+	
+	.meta__info {
+		
+		.loa {
+			a {
+				color: $site-medium-text;
+				white-space: pre;
+			}
+		}
+		
+		.meta {
+			
+			&__general {
+				@include font-size(12);
+
+				.bookDate {
+					border-right: 1px solid $site-medium-text;
+					color: $site-medium-text;
+					font-weight: 700;
+					margin-right: 10px;
+					padding-right: 8px;
+				}
+
+				a {
+					@include themify($themes) {
+						color: themed('color');
+					}
+				}
+			}
+			
+			&__isbn {
+				color: $site-medium-text;
+				@include font-size(14);
+				span {
+					color: $site-dark-text;
+
+				}
+			}
+			
+			&__section {
+				.book-tools {
+					&.coolBar-share {
+						a {
+							padding: 28px 0 18px 0;
+							@include media('<tablet') {
+								padding: 18px 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

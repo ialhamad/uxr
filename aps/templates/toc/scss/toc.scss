@@ -1,0 +1,6 @@
+.tocPageHead {
+	margin-top: 30px;
+	@include themify($themes) {
+		color: themed('color');
+	}
+}

@@ -1,0 +1,26 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Exam Item
+            h3 Include template
+            +printJsCode('include specs/ux3/components/exam-item/templates/exam-item/exam-item-temp.jade')
+    | #{''}
+
+    section.source_section
+        h2 Exam list item example
+        .source_example
+            .container
+
+                | !{pb.render('exam-item', 'exam-list-data.json')}
+
+    section.source_section
+        h2 Completed exam item example
+        .source_example
+            .container
+                | !{pb.render('exam-item', 'completed-exam-data.json')}

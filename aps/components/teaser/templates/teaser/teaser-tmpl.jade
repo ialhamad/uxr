@@ -1,0 +1,10 @@
+extends ../../../../../ux3/components/teaser/templates/teaser/teaser-tmpl
+
+mixin heading(item)
+    block teaserHeader
+        if (item.title)
+            if (item.best)
+                a(href=item.best title=item.title)
+                    #{headingEl}(class="creative-work__title" data-truncate-lines="2" data-truncate-add-class="min-height") !{item.title}
+            else
+                #{headingEl}(class="creative-work__title" data-truncate-lines="2" data-truncate-add-class="min-height") !{item.title}

@@ -1,0 +1,7 @@
+{
+    "title": "Accordion-widget",
+    "template": "doc",
+    "tag": ["ready"],
+    "description": "Displays collapsible content panels",
+    "dependencies": ["component/accordion"]
+}

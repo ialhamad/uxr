@@ -1,0 +1,125 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+
+    section.source_section
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/citation/templates/citation/citation-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Citation template.
+        +printJson({
+            "config": {
+                "headingLevel": 4
+            },
+            "data": {
+                "itemUrl": "/baj/article/facets-2015-0010/",
+                "title": "A life-table model estimation of the parr capacity of a late 19<sup>th</sup> century Puget Sound steelhead population",
+                "type": "FACETS",
+                "volume": 2,
+                "issue": 5,
+                "authors": [
+                    {
+                        "text": "Nick Gayeski",
+                        "itemurl": "/author/search/url?q=Nick Gayeski"
+                    },
+                    {
+                        "text": "George Pess",
+                        "itemurl": "/author/search/url?q=George Pess"
+                    },
+                    {
+                        "text": "Tim Beechie",
+                        "itemurl": "/author/search/url?q=Tim Beechie"
+                    }
+                ]
+            }
+
+        })
+
+        markdown
+            p You can add custom classes to the container elements by passing an array of additional class names in `"addClassNames": ["...", "..."]` field for these elements. If you need to replace the default class name, use `"useClassNames": ["...", "..."]` instead. See the table below for the list of container elements and their default class names.
+
+            table
+                thead
+                    tr
+                        th Container element
+                        th Default class name
+                        th Description
+                tbody
+                    tr
+                        td `wrapper`
+                        td citation
+                        td Main component container
+
+            p Use `headingLevel` parameter to set custom heading level for Citation title. Default heading is `h3`.
+            p Use `markup` field if you need to wrap author name into another HTML element.
+    | #{''}
+
+    section.source_section
+        h2 Full Citation
+        p In this example we pass full data object to the Citation component.
+        +printJson({
+            "config": {
+                "headingLevel": 4
+            },
+            "data": {
+                "itemUrl": "/baj/article/facets-2015-0010/",
+                "title": "A life-table model estimation of the parr capacity of a late 19<sup>th</sup> century Puget Sound steelhead population",
+                "parentItem": {
+                    "title": "FACETS",
+                    "volume": 2,
+                    "issue": 5
+                },
+                "authors": [
+                    {
+                        "text": "Nick Gayeski",
+                        "itemUrl": "/author/search/url?q=Nick Gayeski"
+                    },
+                    {
+                        "text": "George Pess",
+                        "itemUrl": "/author/search/url?q=George Pess"
+                    },
+                    {
+                        "text": "Tim Beechie",
+                        "itemUrl": "/author/search/url?q=Tim Beechie"
+                    }
+                ]
+            }
+        })
+        .source_example
+            | !{pb.render('citation', 'full-content.json')}
+    | #{''}
+
+    section.source_section
+        h2 Partial Citation
+        p In this example we omitted the parent item information.
+        +printJson({
+            "config": {
+                "headingLevel": 2
+            },
+            "data": {
+                "itemUrl": "/baj/article/facets-2015-0010/",
+                "title": "A life-table model estimation of the parr capacity of a late 19<sup>th</sup> century Puget Sound steelhead population",
+                "authors": [
+                    {
+                        "text": "Nick Gayeski",
+                        "itemUrl": "/author/search/url?q=Nick Gayeski"
+                    },
+                    {
+                        "text": "George Pess",
+                        "itemUrl": "/author/search/url?q=George Pess"
+                    },
+                    {
+                        "text": "Tim Beechie",
+                        "itemUrl": "/author/search/url?q=Tim Beechie"
+                    }
+                ]
+            }
+        })
+        .source_example
+            | !{pb.render('citation', 'part-content.json')}
+    | #{''}

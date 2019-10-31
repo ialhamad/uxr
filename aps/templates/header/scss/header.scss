@@ -1,0 +1,75 @@
+.header {
+
+	&__logo {
+		img {
+			display: inline-block;
+		}
+		.mpmi {
+			img {
+				padding-right: 13px;
+				border-right: 1px solid $site-light-border;
+				margin-right: 14px;
+			}
+		}
+	}
+
+	&--first-row {
+		color: $text-onDark;
+		background-color: $site-brand-color;
+
+		&.homepage {
+			background-image: url('/pb-assets/ux3/images/hero-images/menu-background.jpg');
+			background-repeat: repeat-x;
+			background-position: bottom center;
+		}
+
+		@include themify($themes) {
+			background-color: themed('headerbgcolor');
+			color: themed('headertext');
+		}
+
+
+
+
+		@include media('>=desktop') {
+			.pull-right {
+				display: flex;
+				align-items: flex-end;
+				height: 68px;
+
+				.institution {
+					padding: 0 15px;
+				}
+			}
+		}
+	}
+
+	&__quick-menu {
+		@include media('>tablet') {
+			border-left: 1px solid $site-light-tint;
+		}
+		
+
+		@include themify($themes) {
+			border-color: themed('headerborder');
+		}
+
+		@include media('<desktop') {
+			margin-right: 30px;
+		}
+	}
+
+	.quick-menu {
+		&__item {
+			& > span {
+				color: $text-onDark;
+				@include themify($themes) {
+					color: themed('headertext');
+				}
+				font-family: $secondary-font-family;
+				@include font-size(10);
+				line-height: 12px;
+			}
+		}
+	}
+}

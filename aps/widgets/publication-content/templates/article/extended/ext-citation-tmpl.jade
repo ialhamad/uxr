@@ -1,0 +1,19 @@
+extends ../../../../../../ux3/widgets/publication-content/templates/article/extended/ext-citation-tmpl
+
+block citationPrefix
+    if(data.item)
+        - var original = data;
+        - var citationData = {"detailsTabAuthors":data.item.detailsTabAuthors,"itemUrl": data.item.formats.fullText,"title": data.item.titles && data.item.titles.primary ? data.item.titles.primary : "","subtitle": data.item.titles && data.item.titles.subtitle ? data.item.titles.subtitle : "","authors": data.item.contribsFull, "tocHeading": data.item.headings.primary,"type":data.item.type};
+        - data = citationData;
+            
+block citationAuthors
+    | !{data.authors}
+
+    if(data.detailsTabAuthors && data.detailsTabAuthors != "")
+        .article__affiliations
+            div.affiliations.accordion
+                a(href="#" title="Open affiliations" aria-controls="articleAffiliations" class="affiliations__ctrl accordion__control w-slide__btn"  data-slide-target="#articleAffiliations" )
+                    span.affiliations__label  Affiliations
+                    i(aria-hidden="true" class="icon-section_arrow_d")
+                div.div.affiliations__content.accordion__content(id="articleAffiliations")
+                    | !{ data.detailsTabAuthors}

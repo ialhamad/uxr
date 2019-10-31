@@ -1,0 +1,165 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin
+    include /specs/page-structure/helpers/print-template-include-mixin
+    include /specs/page-structure/helpers/print-js-code-mixin
+    section.source_section
+        h2 No Action
+        h3 No Action
+        .source_example
+            | !{pb.render("pd-action-bar", "no-actions", "no-actions.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    section.source_section
+        h2 Action Bar - Author
+
+        h3 Author Draft
+        +printJson({
+            "data": {
+                "cancelLink": "",
+                "editLink": "",
+                "doi": "",
+                "csrfToken": ""
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "author-draft", "author-draft.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+        h3 Author Cancelled
+        +printJson({
+            "data": {
+                "reinstateLink": "",
+                "doi": "",
+                "csrfToken": ""
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "author-cancelled", "author-cancelled.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+        h3 Author Rejected
+        +printJson({
+            "data": {
+                "comment": ""
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "author-rejected", "author-rejected.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+        h3 Author In Review
+        .source_example
+            | !{pb.render("pd-action-bar", "author-in-review", "no-actions.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+
+        h3 Author Submitted
+        +printJson({
+            "data": {
+                "cancelLink": "",
+                "updateLink": "",
+                "doi": "",
+                "csrfToken": ""
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "author-submitted", "author-submitted.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Author Approved
+        +printJson({
+            "data": {
+                "reviseLink": "",
+                "updateLink": "",
+                "doi": "",
+                "csrfToken": "",
+                "vor": "",
+                "journal": "",
+                "journals": [
+                    {
+                        "name": "...",
+                        "label": "..."
+                    }
+                ]
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "author-approved", "author-approved.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Author Approved Preprint
+        +printJson({
+            "data": {
+                "reviseLink": "",
+                "updateLink": "",
+                "doi": "",
+                "csrfToken": "",
+                "vor": "",
+                "journal": "",
+                "journals": [
+                    {
+                        "name": "...",
+                        "label": "..."
+                    }
+                ]
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "author-approved-preprint", "author-approved.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}
+
+    section.source_section
+        h2 Action Bar - Advisor
+
+        h3 Advisor Submitted
+        +printJson({
+            "data": {
+                "reviewLink": "",
+                "doi": "",
+                "csrfToken": ""
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "advisor-submitted", "advisor-submitted.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Advisor In Review
+        +printJson({
+            "data": {
+                "changeCategoryLink": "",
+                "approveLink": "",
+                "rejectLink": "",
+                "doi": "",
+                "csrfToken": "",
+                "title": "",
+                "category": "",
+                "categories": [
+                    {
+                        "name": "",
+                        "label": ""
+                    }
+                ],
+                "rejectionReasons": [
+                    {
+                        "name": "",
+                        "label": "",
+                        "comment": ""
+                    }
+                ]
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "advisor-in-review", "advisor-in-review.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Advisor Rejected
+        +printJson({
+            "data": {
+                "comment": ""
+            }
+        })
+        .source_example
+            | !{pb.render("pd-action-bar", "advisor-rejected", "advisor-rejected.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Advisor Approved
+        .source_example
+            | !{pb.render("pd-action-bar", "advisor-approved", "no-actions.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}

@@ -1,0 +1,33 @@
+{
+    "data": {
+        "breadcrumbs": {
+            "SiteHome": {
+                "label": "Home",
+                "link": "/"
+            },
+            "Serial": {
+                "label": "Phytopathology",
+                "link": "/journal/phyto"
+            },
+            "Group": {
+                "label": "Vol. X, No. 1",
+                "link": "/toc/phyto/313/1"
+            },
+            "Item": {
+                "label": "Balance between \u003citalic toggle\u003d\"yes\"\u003eS\u003c/italic\u003e-nitrosylation and denitrosylation modulates myoblast proliferation independently of soluble guanylyl cyclase activation",
+                "link": "/doi/full/10.1152/ajpcell.00140.2016"
+            }
+        }
+    },
+    "thisWidget": {
+        "properties": {
+            "homePageLabel": "Home",
+            "data": [],
+            "includeCurrentPage": "true",
+            "showHomePage": "true",
+            "overrideLabel": "No Label",
+            "browsePageLabel": "Browse Publications",
+            "listOfIssueLinkLabel": "Archive"
+        }
+    }
+}

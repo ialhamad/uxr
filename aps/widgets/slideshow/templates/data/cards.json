@@ -1,0 +1,17 @@
+{
+    "data": {
+        "widget": {
+            "items": "1",
+            "autoplay": true,
+            "speed": "3000",
+            "animation": "fade",
+            "indicators": true,
+            "arrow": true,
+            "controls": false,
+            "slides": [
+                "<a href=\"/journal/phyto\" class=\"home-banner__image\"><picture><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_450x280.png\" media=\"(max-width: 555px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_662x280.png\" media=\"(max-width: 768px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_782x280.png\" media=\"(max-width: 1100px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_998x280.png\" media=\"(max-width: 1500px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_1348x280.png\" media=\"(min-width: 1501px)\"><img src=\"/specs/products/aps/releasedAssets/images/home-slide-1_1348x280.png\"></picture></a>",
+                "<a href=\"/journal/phyto\" class=\"home-banner__image\"><picture><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_450x280.png\" media=\"(max-width: 555px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_662x280.png\" media=\"(max-width: 768px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_782x280.png\" media=\"(max-width: 1100px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_998x280.png\" media=\"(max-width: 1500px)\"><source srcset=\"/specs/products/aps/releasedAssets/images/home-slide-1_1348x280.png\" media=\"(min-width: 1501px)\"><img src=\"/specs/products/aps/releasedAssets/images/home-slide-1_1348x280.png\"></picture></a>"
+            ]
+        }
+    }
+}

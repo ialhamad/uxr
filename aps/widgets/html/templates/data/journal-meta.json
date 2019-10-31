@@ -1,0 +1,9 @@
+{
+    "thisWidget": {
+        "id": "htmlAssetwrapper",
+        "properties": {
+            "render": "html",
+            "html": "<div class=\"card card--gutter card--shadow meta__body\"><div class=\"meta__left-side left-side-image\"><img alt=\"cover\" src=\"/specs/products/aps/releasedAssets/images/mpmi.png\"><h1 class=\"meta__title\">Molecular Plant-Microbe Interactions®</h1><p class=\"meta__description\">Published by The American Phytopathological Society in cooperation with the International Society for Molecular Plant-Microbe Interactions</p><div class=\"meta__info\"><p class=\"meta__contrib\"><span>Editor-in-Chief:</span> John M. McDowell</p><p class=\"meta__issn\"><span>ISSN (print):</span> 0894-0282 | <span>ISSN (online):</span> 1943-7706</p></div><p class=\"meta__teaser\">Some text that would link to each of the journal's about pages as a teaser text.</p></div><div class=\"meta__right-side\"><a href\"#=\"href\" #\"=\"\" class=\"btn btn--inverse btn--journal-meta btn--alerts\">Alerts</a><a href\"#=\"href\" #\"=\"\" class=\"btn btn--inverse btn--journal-meta\">Submit an article</a><a href\"#=\"href\" #\"=\"\"class=\"btn btn--inverse btn--journal-meta\">Subscribe</a><p class=\"meta__twitter\"><a href=\"#\">Follow MPMI</a></p></div></div>"
+        }
+    }
+}

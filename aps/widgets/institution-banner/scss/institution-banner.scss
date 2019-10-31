@@ -1,0 +1,10 @@
+.institution {
+	border-right: none;
+	color: $text-onDark;
+	@include themify($themes) {
+		color: themed('headertext');
+	}
+	font-family: $secondary-font-family;
+	font-size: 10px;
+	line-height: 12px;
+}

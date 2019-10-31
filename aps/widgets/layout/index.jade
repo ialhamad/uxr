@@ -1,0 +1,204 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/layout/templates/layout/layout-tmpl.jade')
+        markdown
+            p The following data structure must exist to be able to use layout template.
+        +printJson({
+            "thisWidget": {
+                "properties": {
+                    "mainWrapper": "true",
+                    "isList": "true",
+                    "displayGutterless": "true",
+                    "displayFrame": "mobile"
+                }
+            },
+            "data": {
+                "columns": [
+                    {
+                        "config": {
+                            "width": "4"
+                        },
+                        "data": "Column with width 4"
+
+                    },
+                    {
+                        "config": {
+                            "width": "unspecified",
+                            "className": ["pull-right"]
+                        },
+                        "data": "Column with unspecified width and pull-left class"
+
+                    }
+                ]
+            }
+
+        })
+        markdown
+            p Wrapper configuration,
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `displayFrame`
+                        td Dropdown, choose what device the columns to stack on "full width columns" "mobile" or "tablet"
+                    tr
+                        td `displayGutterless`
+                        td Checkbox, adding class `gutterless`
+                    tr
+                        td `mainWrapper`
+                        td Checkbox, adding wrapper with class `container` to the row
+                    tr
+                        td `isList`
+                        td Checkbox, adding `ul` as wrapper to the columns and make the columns markup `li`
+
+
+            p Columns configuration,
+            table
+                thead
+                    tr
+                        th Property name
+                        th Description
+                tbody
+                    tr
+                        td `width`
+                        td Dropdown, from 1-12 width of the column
+                    tr
+                        td `markup`
+                        td Dropdown, column markup
+                    tr
+                        td `className`
+                        td Text field, adding class name to the column
+
+    | #{''}
+
+    section.source_section
+        h2 Usage
+        
+        h3 Layout 1 - 11
+        .source_example
+            | !{pb.render("layout", "layout-1-11.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 2 - 10
+        .source_example
+            | !{pb.render("layout", "layout-2-10.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 3 - 9
+        .source_example
+            | !{pb.render("layout", "layout-3-9.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 4 - 8
+        .source_example
+            | !{pb.render("layout", "layout-4-8.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 5 - 7
+        .source_example
+            | !{pb.render("layout", "layout-5-7.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 6 - 6
+        .source_example
+            | !{pb.render("layout", "layout-6-6.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 7 - 5
+        .source_example
+            | !{pb.render("layout", "layout-7-5.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 8 - 4
+        .source_example
+            | !{pb.render("layout", "layout-8-4.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 9 - 3
+        .source_example
+            | !{pb.render("layout", "layout-9-3.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 10 - 2
+        .source_example
+            | !{pb.render("layout", "layout-10-2.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 11 - 1
+        .source_example
+            | !{pb.render("layout", "layout-11-1.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 12
+        .source_example
+            | !{pb.render("layout", "layout-12.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout with 3 columns equal width
+        .source_example
+            | !{pb.render("layout", "layout.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 3 - 6 - 3
+        .source_example
+            | !{pb.render("layout", "layout-3-6-3.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 3 - 6 - 3 stack on mobile
+        .source_example
+            | !{pb.render("layout", "layout-3-6-3-stack-mobile.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 3 - 6 - 3 stack on tablet
+        .source_example
+            | !{pb.render("layout", "layout-3-6-3-stack-tablet.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 3 - 6 - 3 gutterless enabled
+        .source_example
+            | !{pb.render("layout", "layout-3-6-3-gutterless.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Layout 3 - 6 - 3 as list
+        .source_example
+            | !{pb.render("layout", "layout-3-6-3-list.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    section.source_section
+        h2 Flex layout
+
+
+        markdown
+            p The following data structure must exist to be able to use FLEX layout template.
+        +printJson({
+            "thisWidget": {
+                "properties": {
+                    "mainWrapper": "true"
+                }
+            },
+            "data": {
+                "columns": [
+                    {
+                        "config": {
+                            "width": "8"
+                        },
+                        "data": "Column with width 8"
+                    },
+                    {
+                        "config": {
+                            "width": "4",
+                            "className": "col-flex-md-3"
+                        },
+                        "data": "Column with width of 300 px"
+                    }
+                ]
+            }
+        })
+        markdown
+            p make sure to use `col-flex-{breakpoint}-{(number digit) from 1 to 10}` and use `flex-layout` class for the wrapper
+            p {(number digit) from 1 to 10} we have 10 variations starting from 1 to 10 and those numbers will reflect width values from 100 to 1000
+            p this supports responsive design, the width you provide will take affect based on the breakpoint {(breakpoint) xs, sm, md} provided, similar to what we have on the normal layout
+
+            p eg: `col-flex-md-3` --> will generate a 300px width on medium and large screens
+
+
+        h3 flex layout with right colm of width 300px
+        .source_example
+            | !{pb.render("layout", "layout-flex-300px.json", {"shared": {"model": {"config": {"wrapper": "true", "className": "flex-layout"}}}})}
+            
+
+    | #{''}
+

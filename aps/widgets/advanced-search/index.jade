@@ -1,0 +1,16 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    .source_info
+        p Empty
+
+    section.source_section
+        h2 Example
+        
+        h3 Advanced search
+        .source_example
+            .container
+                .col-md-8
+                    | !{pb.render("advanced-search", "data.json")}
+            
+

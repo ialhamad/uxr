@@ -1,0 +1,38 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    h1 Author Dashboard
+
+    p.source_info
+        |The Institutional login page template contains the following components: Header, Footer...
+
+    section.source_section
+        h2 Author Dashboard
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("header", "header.json")}
+
+            main.content.content--author-dashboard
+                .container
+                    .row
+                        .col-xs-12.col-sm-4
+                            | !{pb.render("pd-submission-list", "data.json")}
+
+
+                        .col-xs-12.col-sm-8.hidden-xs
+                            #dashboardMain.dashboard-main
+                                .row
+                                    .col-xs-12
+                                        .dashboard__action-bar
+                                            button.btn.btn--submit.btn--inverse Cancel
+                                            button.btn.btn--submit.btn--inverse Edit
+                                .row
+                                    .col-xs-12
+                                        | !{pb.render("pd-article-view", "data.json")}
+
+
+            | !{pb.render("footer", "footer.json")}
+    | #{''}
+

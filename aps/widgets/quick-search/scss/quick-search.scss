@@ -1,0 +1,60 @@
+.quick-search {
+	&__dropBlock {
+		background-color: $site-brand-color;
+		@include themify($themes) {
+			background-color: themed('color');
+		}
+	}
+
+	input {
+		background: $site-page-background;
+	}
+
+	.dropBlock {
+		a {
+			background: $site-page-background;
+			color: $site-brand-color;
+			@include themify($themes) {
+				color: themed('color');
+			}
+		}
+	}
+}
+.header__quick-menu {
+	.quick-menu__item {
+		& > span {
+			@include themify($themes) {
+				color: themed('headertext');
+			}
+		}
+	}
+}
+
+.quickSearchFormContainer {
+	.quick-search {
+		.dropBlock {
+			&>a {
+				border: none;
+				border-radius: 5px;
+				padding: 13px 0 13px 13px;
+			}
+			i {
+				color: $site-brand-color;
+				@include themify($themes) {
+					color: themed('color');
+				}
+			}
+		}
+		input {
+			border: none;
+			border-radius: 4px;
+			&[name=AllField] {
+				padding-right: 30px;
+			}
+		}
+
+		.quick-search-advanced-link {
+			color: $text-onDark;
+		}
+	}
+}

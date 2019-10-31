@@ -1,0 +1,48 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/table-of-content/templates/table-of-content/table-of-content-tmpl.jade')
+        markdown
+            p The following data structure must exist to be able to use table-of-content template.
+        +printJson({
+            "data": {
+                "group": {
+                    "contentType": "Issue",
+                    "issueType": "NORMAL",
+                    "volume": "30",
+                    "issue": "4",
+                    "isAheadOfPrint": false,
+                    "isForthcoming": false,
+                    "isJustAccepted": false,
+                    "coverDate": "July 2016",
+                    "related": {
+                        "issue": [
+                            {
+                                "title": "Issue Title",
+                                "doi": "doi.of.related.content"
+                            }
+                        ]
+                    },
+                    "tocXsl": "<h1> Lorem Lorem test</h1>"
+                }
+            },
+            "errors": []
+        })
+
+
+    | #{''}
+
+    section.source_section
+        h2 Usage
+        h3 Include template
+        .source_example
+            | !{pb.render("table-of-content", "table-of-content/markup", {"shared": {"model": {"config": {"wrapper": "true", "className": ["table-of-content"]}}}})}
+
+    | #{''}

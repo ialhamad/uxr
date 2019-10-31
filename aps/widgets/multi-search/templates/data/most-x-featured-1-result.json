@@ -1,0 +1,37 @@
+{
+    "data": {
+        "widget": {
+            "template": "article"
+        },
+        "items": [
+            {
+                "contentType": "Article",
+
+                "title": "Bridge Column Maximum Drift Estimation via Computer Vision",
+                "image": "/specs/ux3/releasedAssets/images/templates/home/news.png",
+                "tocHeading": "Technical Papers",
+                "best": "/doi/full/10.1061/%28ASCE%29CP.1943-5487.0000527",
+                "contribs": "<ul class=\"rlist--inline loa comma\"><li><a href=\"/author/search/url?q=Nick Gayeski\" title=\"Nick Gayeski\"><span>Nick Gayeski</span></a></li><li><a href=\"/author/search/url?q=George Pess\" title=\"George Pess\"><span>George Pess</span></a></li><li><a href=\"/author/search/url?q=Tim Beechie\" title=\"Tim Beechie\"><span>Tim Beechie</span></a></li></ul>",
+                "epubDate": "09/24/15 01:15 PM",
+                "group": {
+                    "contentType": "Issue",
+                    "issue": "4",
+                    "volume": "30",
+                    "issueType": "NORMAL",
+                    "isAheadOfPrint": false,
+                    "isJustAccepted": false,
+                    "isForthcoming": false,
+                    "tocLink": "/toc/jccee5/30/4",
+                    "serial": {
+                        "title": "Journal of Computing in Civil Engineering",
+                        "journalLink": "/action/showJournal?doi=10.1061%2Fjccee5",
+                        "code": "jccee5"
+                    },
+                    "citationLine": "Vol. 1, No. 4"
+                }
+            }
+        ]
+    },
+    "errors": []
+
+}

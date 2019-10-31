@@ -1,0 +1,15 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    h1 Article page
+
+    section.source_section
+        h2 Article page
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("header", "header-journal.json")}
+            | !{pb.render("publication-content", "demo/article", "content.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-phyto"]}}}})}
+            | !{pb.render("footer", "footer.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-phyto"]}}}})}
+    | #{''}

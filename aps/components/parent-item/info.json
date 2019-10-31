@@ -1,0 +1,6 @@
+{
+    "title": "Parent item",
+    "template": "doc",
+    "tag": ["components"],
+    "description": "Information about parent journal/publication - date, title, type, status, volume, issue"
+}

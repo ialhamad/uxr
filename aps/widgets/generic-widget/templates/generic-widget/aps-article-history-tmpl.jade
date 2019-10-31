@@ -1,0 +1,23 @@
+if (data.item)
+    ul.rlist.article-chapter-history-list
+        if (data.item.group.issueDate)
+            if ((data.item.group.isJustAccepted == false) && (data.item.group.isAheadOfPrint == false))
+                li
+                    span.item_label Issue Date: 
+                    | !{data.item.group.issueDate}
+
+        if (data.item.published)
+            if (data.item.group.isJustAccepted == false)
+                li
+                    span.item_label Published: 
+                    | !{data.item.published}
+
+        if (data.item.firstLook)
+            li
+                span.item_label First Look: 
+                | !{data.item.firstLook}
+
+        if (data.item.accepted)
+            li
+                span.item_label Accepted: 
+                | !{data.item.accepted}

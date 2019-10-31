@@ -1,0 +1,13 @@
+link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans')
+
+-
+    var screenUrl = '/specs/products/aps/releasedAssets/css/build.css';
+    var printUrl = '/specs/products/aps/releasedAssets/css/print.css';
+
+    if (production) {
+        screenUrl = '/products/aps/releasedAssets/css/' + (assets['build.css'] || 'build.css');
+        printUrl = '/products/aps/releasedAssets/css/' + (assets['print.css'] || 'print.css');
+    }
+
+link(rel='stylesheet', href=screenUrl)
+link(rel='stylesheet', href=printUrl, media='print')

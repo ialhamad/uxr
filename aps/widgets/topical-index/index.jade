@@ -1,0 +1,116 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/topical-index/templates/topical-index/topical-index-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Topical Index Widget template.
+
+        h4 when one or two levels of tags are returned.
+        +printJson({
+            "data": {
+                "taxonomies": [
+                    {
+                        "label": "Topics",
+                        "uri": "subject"
+                    }
+                ],
+                "search": {
+                    "facet": [
+                        {
+                            "count": 886,
+                            "tag": {
+                                "label": "Alternative Investments",
+                                "uri": "k-010",
+                                "link": "/topic/k-010",
+                                "fields": [
+                                    {
+                                        "name": "...",
+                                        "value": "...",
+                                        "type": "..."
+                                    }
+                                ]
+                            },
+                            "children": [
+                                {
+                                    "count": 13,
+                                    "tag": {
+                                        "label": "Closely Held Companies and Inactively Traded Securities",
+                                        "uri": "k-010-010",
+                                        "link": "/topic/k-010-010",
+                                        "fields": [
+                                            {
+                                                "name": "...",
+                                                "value": "...",
+                                                "type": "..."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        })
+
+        h4 when all tags are returned. There is still a hierarchy for the first level, and all child tags, regardless of level, are returned in tag.tags. Counts are not returned for any of the child levels.
+        +printJson({
+            "data": {
+                "taxonomies": [
+                    {
+                        "label": "Topics",
+                        "uri": "subject"
+                    }
+                ],
+                "search": {
+                    "facet": [
+                        {
+                            "count": 886,
+                            "tag": {
+                                "label": "Alternative Investments",
+                                "uri": "k-010",
+                                "link": "/topic/k-010",
+                                "tags": [
+                                    {
+                                        "label": "Closely Held Companies and Inactively Traded Securities",
+                                        "uri": "k-010-010",
+                                        "link": "/topic/k-010-010",
+                                        "fields": []
+                                    },
+                                    {
+                                        "label": "Commodities",
+                                        "uri": "k-010-020",
+                                        "link": "/topic/k-010-020",
+                                        "fields": []
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        })
+
+
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 Topical index with one or two tags
+        .source_example
+            | !{pb.render("topical-index", "data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Topical index with multiple tags
+        .source_example
+            | !{pb.render("topical-index", "multiple-tags-data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}

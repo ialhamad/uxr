@@ -1,0 +1,44 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/access-icon/templates/access-icon/access-icon-tmpl.jade')
+        h3 Data
+        p The following data structure must exist to be able to use Access Icon template.
+
+        +printJson({
+            "data": {
+                "access": "free-access",
+                "license": {
+                    "type": "free-access",
+                    "statement": "CC license text here",
+                    "cc-type": "cc-by"
+                }
+            }
+        })
+
+    | #{''}
+
+    section.source_section
+        h2 Full Access
+        .source_example(style="max-width: 500px")
+            | !{pb.render('access-icon', 'access-icon/access-icon', 'full-access.json')}
+    section.source_section
+        h2 No Access
+        .source_example(style="max-width: 500px")
+            | !{pb.render('access-icon', 'access-icon/access-icon', 'no-access.json')}
+    section.source_section
+        h2 Open Access
+        .source_example(style="max-width: 500px")
+            | !{pb.render('access-icon', 'access-icon/access-icon', 'open-access.json')}
+    section.source_section
+        h2 Free Access
+        .source_example(style="max-width: 500px")
+            | !{pb.render('access-icon', 'access-icon/access-icon', 'free-access.json')}
+
+    | #{''}

@@ -1,0 +1,79 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    .source_info
+        p We are showing the different image ratio sizes and their names. The template is used only for the logo image.
+    section.source_section
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/cover-image/templates/cover-image/cover-image-tmpl.jade')
+
+    block examples
+        section.source_section
+            h2 Single Covers by Content Type - No Metadata
+
+            h3 Journal
+            .source_example
+                | !{pb.render("cover-image", "single-journal.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+            h3 Issue
+            .source_example
+                | !{pb.render("cover-image", "single-issue.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+            h3 Article
+            .source_example
+                | !{pb.render("cover-image", "single-article.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+            h3 Book
+            .source_example
+                | !{pb.render("cover-image", "single-book.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+            h3 Chapter
+            .source_example
+                | !{pb.render("cover-image", "single-chapter.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        section.source_section
+            h2 Single Covers by Action
+
+            h3 No Action
+            .source_example
+                | !{pb.render("cover-image", "single-journal-noAction.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+            h3 Show Large Cover
+            .source_example
+                | !{pb.render("cover-image", "single-issue-showLargeCover.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+            h3 Link to Issue or Book
+            .source_example
+                | !{pb.render("cover-image", "single-book.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+            h3 Link to Series Home
+            .source_example
+                | !{pb.render("cover-image", "single-journal.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        section.source_section
+            h2 Covers with Metadata
+
+            h3 Journal
+            .source_example
+                | !{pb.render("cover-image", "meta-single-journal.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+            h3 Issue/Article - Issue Link
+            .source_example
+                | !{pb.render("cover-image", "meta-single-issue.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+            h3 Issue/Article - Journal Link
+            .source_example
+                | !{pb.render("cover-image", "meta-single-issue-series-link.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+            h3 Book/Chapter
+            .source_example
+                | !{pb.render("cover-image", "meta-single-book.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        section.source_section
+            h2 Most Recent Covers
+
+            h3 List of Covers given block grid classes
+            .source_example
+                | !{pb.render("cover-image", "recent.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["grid-lg-5  grid-md-4 grid-sm-3 grid-xs-2"]}}}})}
+
+    | #{''}

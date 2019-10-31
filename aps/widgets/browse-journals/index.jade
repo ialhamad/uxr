@@ -1,0 +1,9 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    section.source_section
+        h2 Browse Journals
+        
+        .source_example
+            | !{pb.render("browse-journals", "journals.json")}
+    | #{''}

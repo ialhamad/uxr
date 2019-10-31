@@ -1,0 +1,23 @@
+query {
+  content {
+    ...on Book {
+      doi
+      title(type:PRIMARY)
+      authors:xslt(type:CONTRIBUTORS)
+      pubdate:earliestPubDate(format:"YYYY")
+      pdfLink: link(format: HIGH_RES_PDF)
+      epubLink: link(format: EPUB)
+      downloadCitation: link(service: showCitFormats)
+      citationAlert: link(service: addCitationAlert)
+      addFavorite: link(service: addFavoritePublication)
+      isbn
+      eisbn
+      coverImage{
+        src
+      }
+      serial {
+        seriesTitle:title(type:PRIMARY)
+      }
+    }
+  }
+}

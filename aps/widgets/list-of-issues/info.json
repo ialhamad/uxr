@@ -1,0 +1,17 @@
+{
+    "title": "List of issues",
+    "template": "doc",
+    "tag": ["ready"],
+    "description": "Expandable list of publication issues - years, decades",
+    "dependencies": ["component/tabs"],
+    "templates": {
+        "default": "list-of-issues",
+        "alternative": {
+            "list-of-issues-new": {
+                "name": "List of Issues - New Version",
+                "path": "list-of-issues-new",
+                "deprecated": false
+            }
+        }
+    }
+}

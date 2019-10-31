@@ -1,0 +1,75 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/search-search/templates/search-search/search-history-tmpl.jade')
+        h3 Data
+        p The following (or similar) data structure must exist to be able to use Defined list template.
+
+        +printJson({
+
+            "data": {
+                "noSearchesMessage": "You do not have any saved searches",
+                "searches": [
+                    {
+                        "searchName": "All: test (0)",
+                        "searchedOn": "2017 Nov 08",
+                        "runDate": "Mar 23, 17",
+                        "runUrl": "/action/doSearch?AllField",
+                        "deleteUrl": "/action/doDeleteSearch?queryId=13&searchType=saved"
+                    },
+                    {
+                        "searchName": "All: test (5)",
+                        "searchedOn": "2017 Nov 08",
+                        "runDate": "Mar 23, 17",
+                        "runUrl": "/action/doSearch?AllFieldt",
+                        "deleteUrl": "/action/doDeleteSearch?queryId=13&searchType=saved"
+                    },
+                    {
+                        "searchName": "All: test (0)",
+                        "searchedOn": "2017 Nov 08",
+                        "runDate": "Mar 23, 17",
+                        "runUrl": "/action/doSearch?AllFieldt",
+                        "deleteUrl": "/action/doDeleteSearch?queryId=13&searchType=saved"
+                    },
+                    {
+                        "searchName": "All: test (1)",
+                        "searchedOn": "2017 Nov 08",
+                        "runDate": "Mar 23, 17",
+                        "runUrl": "/action/doSearch?AllField",
+                        "deleteUrl": "/action/doDeleteSearch?queryId=13&searchType=saved"
+                    },
+                    {
+                        "searchName": "All: test (0)",
+                        "searchedOn": "2017 Nov 08",
+                        "runDate": "Mar 23, 17",
+                        "runUrl": "/action/doSearch?AllField",
+                        "deleteUrl": "/action/doDeleteSearch?queryId=13&searchType=saved"
+                    }
+                ],
+                "properties": {
+                    "numberOfSearchesToDisplay": "5"
+                }
+            }
+        })
+
+        p In the above example we are using <a href="../../components/facet/"><strong>Facet</strong></a>, <a href="../../components/facet-date/"><strong>Facet Date</strong></a> ,  <a href="../../components/alphanumeric/"><strong>Alphanumeric</strong></a>
+            |and <a href="../../components/applied-facets/"><strong>Applied Facets</strong></a> components.
+    | #{''}
+
+    section.source_section
+        h2 Example
+
+        h3 Search History
+        .source_example
+            .container
+                | !{pb.render("search-history", "data.json")}
+    | #{''}
+
+

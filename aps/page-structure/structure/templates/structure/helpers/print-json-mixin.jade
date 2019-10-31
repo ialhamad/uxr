@@ -1,0 +1,7 @@
+mixin printJson(data)
+    - let dataOutput = JSON.stringify(data, null, 4)
+    p
+        em
+            small Click <code>Show source code</code> to view the code!
+    code.src-js #{dataOutput}
+

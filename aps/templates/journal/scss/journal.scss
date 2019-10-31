@@ -1,0 +1,141 @@
+.meta {
+	&-wrapper {
+		background-color: $site-light-tint;
+		@include themify($themes) {
+			background-color: themed('color');
+			background-image: themed('heroimage');
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+
+	&__left-side {
+		&.left-side-image {
+			img {
+				box-shadow: 0 2px 6px $site-box-shadow-color;
+				padding-right: 0;
+				margin: 0 20px 30px 0;
+				width: initial;
+			}
+		}
+
+		.meta__title {
+			color: $primary-text-color;
+			line-height: 1.2;
+			@include themify($themes) {
+				color: themed('color');
+			}
+		}
+
+		.meta__description {
+			color: $site-dark-text;
+			font-size: 14px;
+			font-style: italic;
+			line-height: 21px;
+		}
+
+		.meta__info {
+			font-size: 14px;
+			line-height: 31px;
+
+			.meta__contrib {
+				font-size: 13px;
+				line-height: 50px;
+				span {
+					color: $primary-text-color;
+					font-weight: 600;
+					&::before {
+						color: $primary-text-color;
+						@include themify($themes) {
+							color: themed('color');
+						}
+						content:"\e957";
+						font-family: icomoon!important;
+						font-size: 14px;
+						padding-right: 4px;
+						speak: none;
+					}
+				}
+			}
+
+			.meta__issn {
+				font-size: 13px;
+				line-height: 19px;
+
+				span {
+					color: $primary-text-color;
+					font-weight: 600;
+				}
+			}
+		}
+
+		.meta__teaser {
+			color: $site-dark-text;
+			font-size: 14px;
+			line-height: 1.6;
+		}
+	}
+
+	&__body {
+		h1 {
+			min-height: 0;
+		}
+	}
+
+
+
+	&__right-side {
+		.btn {
+			border-radius: 5px;
+			font-size: 14px;
+			font-weight: 400;
+			@include media('<tablet') {
+				margin: 5px;
+			}
+
+
+			&.btn--alerts {
+				padding-right: 25px;
+
+
+				&::before {
+					content: "\e954";
+					font-family: icomoon!important;
+					speak: none;
+					padding-right: 10px;
+				}
+			}
+		}
+		.meta__twitter {
+			color: $site-dark-text;
+			font-size: 13px;
+			padding: 20px 0 10px 0;
+
+			&::before {
+				color: $twitter-brand;
+				content: "\e62c";
+				font-family: icomoon!important;
+				speak: none;
+				padding-right: 10px;
+			}
+		}
+	}
+
+}
+.column-tint {
+	.rlist {
+		background-color: $site-page-tint;
+		padding: 20px 12px 0 12px;
+	}
+	.section__header {
+		margin-bottom: 0;
+	}
+}
+.trademark {
+	font-size: 46%;
+	vertical-align: 20%;
+}
+
+.grid-sm-2 > .creative-work {
+	margin-left: 15px;
+}

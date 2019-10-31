@@ -1,0 +1,46 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+    section.source_section
+        h2 Tabs widget sample
+        p Tabs widget is using #[a(href="/specs/ux3/components/accordion/") Tabs] template in component and it uses #[a(href="/specs/products/fum/widgets/render-inline/") pb.render] to render those accordion panes.
+
+
+        p The following the JSON structure Provided by the Front-end:
+        +printJson({
+            "model": {
+                "config": {
+                    "type": "tabbed"
+                },
+                "data": {
+                    "items": [
+                        {
+                            "label": "Accordion w/ mixer 1"
+                        },
+                        {
+                            "label": "Accordion w/ mixer 2",
+                            "class": "accordion-class"
+                        },
+                        {
+                            "label": "Accordion w/ mixer 3"
+                        },
+                        {
+                            "label": "external link",
+                            "url": "/home"
+                        }
+                    ]
+                }
+            }
+        })
+
+        p For more details about accordion please visit #[a(href="/specs/ux3/components/accordion/") accordion components].
+
+    | #{''}
+
+    section.source_section
+        h2 Example
+        .source_example
+            | !{pb.render("accordion-widget", "content.json", {"shared": {"model": {"config": {"wrapper": "true"}}}})}

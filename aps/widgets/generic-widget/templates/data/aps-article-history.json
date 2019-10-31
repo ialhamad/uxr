@@ -1,0 +1,15 @@
+{
+    "data": {
+        "item": {
+            "published": "12 Feb 2018",
+            "accepted": "10 Jan 2018",
+            "firstLook": "16 Jan 2018",
+            "group": {
+                "isJustAccepted": false,
+                "isAheadOfPrint": false,
+                "issueDate": "30 Mar 2018"
+            }
+        }
+    },
+    "errors": []
+}

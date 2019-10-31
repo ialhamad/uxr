@@ -1,0 +1,130 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/components/breadcrumbs/templates/breadcrumbs/breadcrumbs-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Breadcrumbs template.
+        +printJson({
+            "data": {
+                "breadcrumbs": {
+                    "book": {
+                        "title": "Tissue Analysis for Drug Development",
+                        "homePage": "/doi/book/10.4155/9781909453678"
+                    },
+                    "journal": {
+                        "title": "Concussion",
+                        "homePage": "/journal/cnc"
+                    },
+                    "citationLine": {
+                        "label": "Vol.1,No.3",
+                        "link": "http://habuemiesh:18080/toc/cnc/1/3"
+                    }
+                }
+            }
+        })
+
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 Article Breadcrumbs - No Widget Properties Selected
+        markdown
+            | ` Journal Title, Citation Line `
+        .source_example
+            | !{pb.render("breadcrumbs", "content-item-no-options.json")}
+
+        h3 Article - Include Homepage Link
+        markdown
+            | ` Home, Journal Title, Citation Line `
+        .source_example
+            | !{pb.render("breadcrumbs", "content-item-include-home.json")}
+
+        h3 Article - Include Browse Link
+        markdown
+            | ` Browse Publications, Journal Title, Citation Line `
+        .source_example
+            | !{pb.render("breadcrumbs", "content-item-include-browse.json")}
+
+        h3 Article - Include Archive Link
+        markdown
+            | ` Journal Title, Archive, Citation Line `
+        .source_example
+            | !{pb.render("breadcrumbs", "content-item-include-archive.json")}
+
+        h3 Article - Include Current Page
+        markdown
+            | ` Journal Title, Citation Line, Article Title `
+        .source_example
+            | !{pb.render("breadcrumbs", "content-item-include-current-page.json")}
+
+        h3 Article - Override Current Page Label (only works if Include Current Page is enabled, too)
+        markdown
+            | ` Journal Title, Citation Line, Current Page `
+        .source_example
+            | !{pb.render("breadcrumbs", "content-item-override-current-label.json")}
+
+
+        h3 Article - Custom Links
+        markdown
+            | `Journal Title, Citation Line, custom links  `
+        .source_example
+            | !{pb.render("breadcrumbs", "content-item-custom-links.json")}
+
+        h3 Journal Homepage
+        markdown
+            | ` Home, Journal Title `
+        .source_example
+            | !{pb.render("breadcrumbs", "journal-home.json")}
+
+        h3 Table of Contents
+        markdown
+            | ` Home, Journal Title, Citation Line `
+        .source_example
+            | !{pb.render("breadcrumbs", "table-of-contents.json")}
+
+        h3 List of Issues
+        markdown
+            | ` Home, Journal Title, List of Issues `
+        .source_example
+            | !{pb.render("breadcrumbs", "list-of-issues.json")}
+
+        h3 Journal Custom Page
+        markdown
+            | ` Home, Journal Title, Journal-specific Custom Page `
+        .source_example
+            | !{pb.render("breadcrumbs", "journal-custom-page.json")}
+
+        h3 Profile Page
+        markdown
+            | ` Home, User Profile `
+        .source_example
+            | !{pb.render("breadcrumbs", "profile.json")}
+
+        h3 Book - Default Book Series
+        markdown
+            | ` Book Title `
+        .source_example
+            | !{pb.render("breadcrumbs", "book-default-series.json")}
+
+        h3 Book - Non-default Book Series
+        markdown
+            | ` Book Series Title, Book Title `
+        .source_example
+            | !{pb.render("breadcrumbs", "book-data.json")}
+
+        h3 Book Chapter
+        markdown
+            | ` Book Title, Chapter Title `
+        .source_example
+            | !{pb.render("breadcrumbs", "book-chapter.json")}
+            
+    | #{''}

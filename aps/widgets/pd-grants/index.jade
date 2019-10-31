@@ -1,0 +1,68 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+
+block content
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin
+        include /specs/page-structure/helpers/print-template-include-mixin
+        include /specs/page-structure/helpers/print-js-code-mixin
+
+        h2 Usage
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use funders widget.
+
+        +printJson({
+            "data": {
+                "forms": [
+                    {
+                        "grant-number": {
+                            "value": "DE-6734-48855",
+                            "message": {}
+                        },
+                        "recepient": {
+                            "value": "Jet Propulsion",
+                            "message": {}
+                        },
+                        "funder": {
+                            "value": [
+                                "Department of Energy",
+                                "Secretary"
+                            ]
+                        }
+                    },
+                    {
+                        "grant-number": {
+                            "value": "DE-6734-000566",
+                            "message": {}
+                        },
+                        "recepient": {
+                            "value": "Institue of Systems Engineering",
+                            "message": {}
+                        },
+                        "funder": {
+                            "value": [
+                                "Secretary of Defense"
+                            ]
+                        }
+                    }
+                ],
+                "funderSearchLink": "#"
+            }
+        })
+
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 Funders - Update
+        .source_example
+            | !{pb.render("pd-grants", "pd-grants-update", "data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Funders -  Readonly
+        .source_example
+            | !{pb.render("pd-grants", "pd-grants-read-only", "data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}

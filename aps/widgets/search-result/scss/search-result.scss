@@ -1,0 +1,26 @@
+.search-result {
+	&__body {
+		.search__item {
+			.meta {
+				&__title {
+					color: $creative-title-color;
+				}
+				&__authors {
+					.hlFld-ContribAuthor {
+						a {
+							white-space: pre;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.showPublications {
+		
+		.hlFld-ContribAuthor {
+			a {
+				white-space: pre;
+			}
+		}
+	}
+}

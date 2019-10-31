@@ -1,0 +1,47 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+block content
+
+    include /specs/page-structure/helpers/print-json-mixin.jade
+    include /specs/page-structure/helpers/print-js-code-mixin.jade
+    include /specs/page-structure/helpers/print-html-code-mixin.jade
+
+    section.source_section
+        h2 Link Resolver widget
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/link-resolver/templates/link-resolver/link-resolver-tmpl.jade')
+        h3 Data
+        p The following the JSON structure provided by the Front-end:
+        +printJson({
+            "data": {
+                "extraPageTitle": "title",
+                "updateForm": {
+                    "updateUrl": true,
+                    "baseUrl": {
+                        "value": "http://url.com/foo",
+                        "label": "Base URL:",
+                        "errorMsg": "error"
+                    },
+                    "currentButtonImage": {
+                        "title": "Current OpenURL Button:",
+                        "imageUrl": "/pathToImage/image.jpg"
+                    },
+                    "uploadImageButtonLabel": "Upload New Image:",
+                    "submitButtonLabel": "Update"
+                },
+                "disableButtonLabel": "Disable OpenURL linking"
+            }
+        })
+        .source_example
+            | !{pb.render("link-resolver", "default.json")}
+    | #{''}
+
+    section.source_section
+        h2 Link Resolver Example : no values
+        .source_example
+            | !{pb.render("link-resolver", "example_empty.json")}
+
+    section.source_section
+        h2 Link Resolver Example : with values
+        .source_example
+            | !{pb.render("link-resolver", "example.json")}
+    | #{''}

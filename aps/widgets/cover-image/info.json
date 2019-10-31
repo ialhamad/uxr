@@ -1,0 +1,6 @@
+{
+    "title": "Cover image",
+    "template": "doc",
+    "tag": ["ready"],
+    "dependencies": ["component/figure", "component/figure-viewer"]
+}

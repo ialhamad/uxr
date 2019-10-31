@@ -1,0 +1,6 @@
+{
+    "title": "lazy-load",
+    "template": "doc",
+    "tag": ["htmlStructure"],
+    "description": "Component for asynchronous content loading"
+}

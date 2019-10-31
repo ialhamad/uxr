@@ -1,0 +1,6 @@
+{
+    "title": "Shared Widget",
+    "template": "doc",
+    "tag": ["ready"],
+    "description": "Helper wrapper widget"
+}

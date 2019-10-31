@@ -1,0 +1,78 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+
+        h2 Usage
+        h3 Include template
+        +printJsCode('include /specs/ux3/widgets/multi-search/templates/multi-search/multi-search-tmpl.jade')
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use Multi Search template.
+        +printJson({
+            "data": {
+                "items": [
+                    {
+                        "type": "Article",
+                        "title": "Medicare Beneficiaries With Advanced Lung Cancer Experience Diverse Patterns Of Care From Diagnosis To Death",
+                        "tocHeading": "Care At The End Of Life",
+                        "best": "http://hhusban:18080/doi/10.1377/hlthaff.2017.0448",
+                        "epubDate": "4 Sep 2017",
+                        "contribs": "<ul class=\"rlist--inline loa mobile-authors\" title=\"list of authors\"><li><span class=\"hlFld-ContribAuthor\"><a href=\"/author/Schuler%2C+Megan+S\" title=\"Megan S. Schuler\">Megan S. Schuler</a></span></li><sup>1</sup>, <li><span class=\"hlFld-ContribAuthor\"><a href=\"/author/Joyce%2C+Nina+R\" title=\"Nina R. Joyce\">Nina R. Joyce</a></span></li><sup>2</sup>, <li><span class=\"hlFld-ContribAuthor\"><a href=\"/author/Huskamp%2C+Haiden+A\" title=\"Haiden A. Huskamp\">Haiden A. Huskamp</a></span></li><sup>3</sup>, <li><span class=\"hlFld-ContribAuthor\"><a href=\"/author/Lamont%2C+Elizabeth+B\" title=\"Elizabeth B. Lamont\">Elizabeth B. Lamont</a></span></li><sup>4</sup>, and <li><span class=\"hlFld-ContribAuthor\"><a href=\"/author/Hatfield%2C+Laura+A\" title=\"Laura A. Hatfield\">Laura A. Hatfield</a></span></li><sup>5</sup></ul>",
+                        "group": {
+                            "type": "Issue",
+                            "issue": "7",
+                            "volume": "36",
+                            "issueType": "normal",
+                            "isAheadOfPrint": false,
+                            "isJustAccepted": false,
+                            "isForthcoming": false,
+                            "sequence": "",
+                            "coverDate": "1 Jul 2017",
+                            "citationLine": "<a href=http://hhusban:18080/toc/hlthaff/36/7>Vol. 36, No. 7</a>",
+                            "tocLink": "http://hhusban:18080/toc/hlthaff/36/7",
+                            "serial": {
+                                "title": "Health Affairs",
+                                "journalLink": "http://hhusban:18080/journal/hlthaff",
+                                "code": "hlthaff"
+                            },
+                            "coverImage": {
+                                "src": "/home/hhusban/publisher/hope/journals/content/hlthaff/2017/hlthaff.2017.36.issue-7/hlthaff.2017.36.issue-7/20170828/hlthaff.2017.36.issue-7.cover.jpg"
+                            }
+                        }
+                    },
+                    {
+                        "type": "Digital Object Pub",
+                        "render": "\r\n<h1 class=\"title\">\r\n<a href=\"/do/10.1377/hblog2006.20/full\">Why Health Affairs Is Launching A Blog - 20</a>\r\n</h1>\r\n<h2>List view to be defined</h2>\r\n",
+                        "group": {
+                            "type": "Digital Object Pub Group"
+                        }
+                    }
+                ]
+            },
+            "errors": []
+        })
+
+
+    | #{''}
+
+    section.source_section
+        h2 Examples
+
+        h3 Most Cited
+        markdown
+            p for the bellow example it render the article type
+        .source_example
+            | !{pb.render("multi-search", "data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+        h3 Most Cited - digital object
+        markdown
+            p for the bellow example it render the digital object type
+
+        .source_example
+            | !{pb.render("multi-search", "do-data.json", {"shared": {"model": {"config": {"wrapper": "false"}}}})}
+
+    | #{''}

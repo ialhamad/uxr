@@ -1,0 +1,15 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    h1 Chapter page
+
+    section.source_section
+        h2 Chapter page
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("header", "header", "header-journal.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-bacteriology"]}}}})}
+            | !{pb.render("publication-content", "demo/chapter", "chapter.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-bacteriology"]}}}})}
+            | !{pb.render("footer", "footer.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["series-series-bacteriology"]}}}})}
+    | #{''}

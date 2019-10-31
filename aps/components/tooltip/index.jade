@@ -1,0 +1,36 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+block content
+
+    section.source_section
+
+        include /specs/page-structure/helpers/print-json-mixin.jade
+        include /specs/page-structure/helpers/print-js-code-mixin.jade
+        h2 Usage
+        h3 Data
+        markdown
+            p The following data structure must exist to be able to use tooltip.
+
+        +printJson({
+            "data": {
+                "type": "text",
+                "title": "tooltip title",
+                "text": "tooltip text",
+                "outertext": "Hover me"
+            }
+        })
+
+    | #{''}
+
+    section.source_section
+        h2 Examples XXX
+
+        h3 Tooltip text
+        .source_example
+            | !{pb.render('tooltip', 'tooltip.json')}
+
+        h3 Tooltip icon
+        .source_example
+            | !{pb.render('tooltip', 'tooltip-icon.json')}
+
+    | #{''}

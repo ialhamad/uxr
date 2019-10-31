@@ -1,0 +1,6 @@
+{
+    "title": "Layout Widget",
+    "template": "doc",
+    "tag": ["ready"],
+    "description": "Grid layout helper"
+}

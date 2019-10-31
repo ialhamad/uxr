@@ -1,0 +1,26 @@
+extends /specs/products/aps/page-structure/structure/templates/structure/layout-tmpl.jade
+
+
+
+block content
+
+    h1 Authors Index Page
+    section.source_section
+        h2 Authors Index Page
+        markdown
+        code.src-html
+        .source_example
+            | !{pb.render("header", "header.json")}
+            main.content
+
+                .container.author-index
+                    .row
+                        .col-sm-4
+                            #filter.hidden-xs.hidden-sm.search__filters
+                                div.author-index__facet-title AUTHORS
+                                | !{pb.render("search-facets", "facet-index.json")}
+                        .col-sm-8
+                            | !{pb.render("author-index", "content.json")}
+
+            | !{pb.render("footer", "footer.json")}
+    | #{''}

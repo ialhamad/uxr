@@ -1,0 +1,8 @@
+extends ../../../../../ux3/widgets/publication-content/templates/article/details-tab-tmpl.jade
+
+block detailsTabTopDropzone
+    | !{pb.render("generic-widget", "generic-widget/issue-book-details", "issue-book-details-chapter.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["clearfix ruledSection"]}}}})}
+    | !{pb.render("html", "article-count.json", {"shared": {"model": {"config": {"wrapper": "true", "className": [" "]}}}})}
+    | !{pb.render("html", "altmetric-widget.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["clearfix"]}}}})}
+    | !{pb.render("html", "dimensions-badge.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["clearfix ruledSection"]}}}})}
+    | !{pb.render("article-chapter-history", "data.json", {"shared": {"model": {"config": {"wrapper": "true", "className": ["ruledSection"], "headingLevel": "h6", "headingClass": ["section__title"]}, "data": {"title": "Publication History"}}}})}

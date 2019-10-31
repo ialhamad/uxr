@@ -1,0 +1,25 @@
+{
+    "data": {
+        "breadcrumbs": {
+            "SiteHome": {
+                "label": "Home",
+                "link": "/"
+            },
+            "Serial": {
+                "label": "Phytopathology",
+                "link": "/journal/phyto"
+            }
+        }
+    },
+    "thisWidget": {
+        "properties": {
+            "homePageLabel": "Home",
+            "data": [],
+            "includeCurrentPage": "true",
+            "showHomePage": "true",
+            "overrideLabel": "No Label",
+            "browsePageLabel": "Browse Publications",
+            "listOfIssueLinkLabel": "Archive"
+        }
+    }
+}

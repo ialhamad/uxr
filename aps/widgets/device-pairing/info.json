@@ -1,0 +1,14 @@
+{
+    "title": "Device Pairing",
+    "tag": ["ready"],
+    "templates": {
+        "default": "device-pairing",
+        "alternative": {
+            "device-pairing-institution": {
+                "name": "Device Pairing Institution",
+                "path": "device-pairing-institution",
+                "deprecated": false
+            }
+        }
+    }
+}
